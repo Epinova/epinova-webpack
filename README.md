@@ -1,10 +1,10 @@
-# epinova-webpack
+# @epinova/webpack
 Default Webpack configuration for Epinova Webpack projects
 
 ## Usage
 `webpack.config.js`
 
-    const epinovaConfig = require('epinova-webpack');
+    const epinovaConfig = require('@epinova/webpack');
     const path = require('path');
 
     module.exports = (env, argv) => {
