@@ -1,0 +1,383 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`development 1`] = `
+Object {
+  "devServer": Object {
+    "compress": true,
+    "contentBase": "/Users/alex/Code/epinova-webpack",
+    "disableHostCheck": true,
+    "headers": Object {
+      "Access-Control-Allow-Origin": "*",
+    },
+    "host": "0.0.0.0",
+    "port": 8080,
+    "publicPath": "http://bs-local.com:8080/dist/",
+  },
+  "devtool": "cheap-module-source-map",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "exclude": /node_modules/,
+        "loader": "babel-loader",
+        "test": /\\\\\\.js\\$/,
+      },
+      Object {
+        "test": /\\\\\\.css\\$/,
+        "use": Array [
+          Object {
+            "loader": "/Users/alex/Code/epinova-webpack/node_modules/mini-css-extract-plugin/dist/loader.js",
+            "options": Object {
+              "hmr": true,
+              "reloadAll": true,
+            },
+          },
+          Object {
+            "loader": "css-loader",
+            "options": Object {
+              "importLoaders": 1,
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "postcss-loader",
+            "options": Object {
+              "sourceMap": true,
+            },
+          },
+        ],
+      },
+      Object {
+        "test": /\\\\\\.scss\\$/,
+        "use": Array [
+          Object {
+            "loader": "/Users/alex/Code/epinova-webpack/node_modules/mini-css-extract-plugin/dist/loader.js",
+            "options": Object {
+              "hmr": true,
+              "reloadAll": true,
+            },
+          },
+          Object {
+            "loader": "css-loader",
+            "options": Object {
+              "importLoaders": 2,
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "postcss-loader",
+            "options": Object {
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "sass-loader",
+            "options": Object {
+              "fiber": [Function],
+              "implementation": Object {
+                "info": "dart-sass	1.20.3	(Sass Compiler)	[Dart]
+dart2js	2.3.1	(Dart Compiler)	[Dart]",
+                "render": [Function],
+                "renderSync": [Function],
+                "run_": [Function],
+                "types": Object {
+                  "Boolean": [Function],
+                  "Color": [Function],
+                  "Error": [Function],
+                  "List": [Function],
+                  "Map": [Function],
+                  "Null": [Function],
+                  "Number": [Function],
+                  "String": [Function],
+                },
+              },
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "optimization": Object {
+    "minimizer": Array [
+      OptimizeCssAssetsWebpackPlugin {
+        "deleteAssetsMap": Object {},
+        "options": Object {
+          "assetNameRegExp": /\\\\\\.css\\$/g,
+          "assetProcessors": Array [
+            Object {
+              "phase": "compilation.optimize-chunk-assets",
+              "processor": [Function],
+              "regExp": /\\\\\\.css\\$/g,
+            },
+          ],
+          "canPrint": undefined,
+          "cssProcessor": [Function],
+          "cssProcessorOptions": Object {
+            "discardComments": Object {
+              "removeAll": true,
+            },
+          },
+          "cssProcessorPluginOptions": Object {},
+        },
+        "phaseAssetProcessors": Object {
+          "compilation.optimize-assets": Array [],
+          "compilation.optimize-chunk-assets": Array [
+            Object {
+              "phase": "compilation.optimize-chunk-assets",
+              "processor": [Function],
+              "regExp": /\\\\\\.css\\$/g,
+            },
+          ],
+          "emit": Array [],
+        },
+        "pluginDescriptor": Object {
+          "name": "OptimizeCssAssetsWebpackPlugin",
+        },
+      },
+      TerserPlugin {
+        "options": Object {
+          "cache": false,
+          "cacheKeys": [Function],
+          "chunkFilter": [Function],
+          "exclude": undefined,
+          "extractComments": false,
+          "include": undefined,
+          "minify": undefined,
+          "parallel": true,
+          "sourceMap": false,
+          "terserOptions": Object {
+            "output": Object {
+              "comments": false,
+            },
+          },
+          "test": /\\\\\\.m\\?js\\(\\\\\\?\\.\\*\\)\\?\\$/i,
+          "warningsFilter": [Function],
+        },
+      },
+    ],
+    "splitChunks": Object {
+      "chunks": "initial",
+    },
+  },
+  "output": Object {
+    "filename": "[name].js",
+    "hashDigestLength": 8,
+    "path": "/Users/alex/Code/epinova-webpack/dist",
+    "publicPath": "http://bs-local.com:8080/dist/",
+  },
+  "plugins": Array [
+    ManifestPlugin {
+      "opts": Object {
+        "basePath": "",
+        "fileName": "manifest.json",
+        "filter": null,
+        "generate": null,
+        "map": null,
+        "publicPath": null,
+        "seed": null,
+        "serialize": [Function],
+        "sort": null,
+        "transformExtensions": /\\^\\(gz\\|map\\)\\$/i,
+        "writeToFileEmit": true,
+      },
+    },
+    MiniCssExtractPlugin {
+      "options": Object {
+        "chunkFilename": "[name].css",
+        "filename": "[name].css",
+        "moduleFilename": [Function],
+      },
+    },
+  ],
+}
+`;
+
+exports[`production 1`] = `
+Object {
+  "devServer": Object {
+    "compress": true,
+    "contentBase": "/Users/alex/Code/epinova-webpack",
+    "disableHostCheck": true,
+    "headers": Object {
+      "Access-Control-Allow-Origin": "*",
+    },
+    "host": "0.0.0.0",
+    "port": 8080,
+    "publicPath": "http://bs-local.com:8080/dist/",
+  },
+  "devtool": false,
+  "module": Object {
+    "rules": Array [
+      Object {
+        "exclude": /node_modules/,
+        "loader": "babel-loader",
+        "test": /\\\\\\.js\\$/,
+      },
+      Object {
+        "test": /\\\\\\.css\\$/,
+        "use": Array [
+          Object {
+            "loader": "/Users/alex/Code/epinova-webpack/node_modules/mini-css-extract-plugin/dist/loader.js",
+            "options": Object {
+              "hmr": false,
+              "reloadAll": true,
+            },
+          },
+          Object {
+            "loader": "css-loader",
+            "options": Object {
+              "importLoaders": 1,
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "postcss-loader",
+            "options": Object {
+              "sourceMap": true,
+            },
+          },
+        ],
+      },
+      Object {
+        "test": /\\\\\\.scss\\$/,
+        "use": Array [
+          Object {
+            "loader": "/Users/alex/Code/epinova-webpack/node_modules/mini-css-extract-plugin/dist/loader.js",
+            "options": Object {
+              "hmr": false,
+              "reloadAll": true,
+            },
+          },
+          Object {
+            "loader": "css-loader",
+            "options": Object {
+              "importLoaders": 2,
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "postcss-loader",
+            "options": Object {
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "sass-loader",
+            "options": Object {
+              "fiber": [Function],
+              "implementation": Object {
+                "info": "dart-sass	1.20.3	(Sass Compiler)	[Dart]
+dart2js	2.3.1	(Dart Compiler)	[Dart]",
+                "render": [Function],
+                "renderSync": [Function],
+                "run_": [Function],
+                "types": Object {
+                  "Boolean": [Function],
+                  "Color": [Function],
+                  "Error": [Function],
+                  "List": [Function],
+                  "Map": [Function],
+                  "Null": [Function],
+                  "Number": [Function],
+                  "String": [Function],
+                },
+              },
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "optimization": Object {
+    "minimizer": Array [
+      OptimizeCssAssetsWebpackPlugin {
+        "deleteAssetsMap": Object {},
+        "options": Object {
+          "assetNameRegExp": /\\\\\\.css\\$/g,
+          "assetProcessors": Array [
+            Object {
+              "phase": "compilation.optimize-chunk-assets",
+              "processor": [Function],
+              "regExp": /\\\\\\.css\\$/g,
+            },
+          ],
+          "canPrint": undefined,
+          "cssProcessor": [Function],
+          "cssProcessorOptions": Object {
+            "discardComments": Object {
+              "removeAll": true,
+            },
+          },
+          "cssProcessorPluginOptions": Object {},
+        },
+        "phaseAssetProcessors": Object {
+          "compilation.optimize-assets": Array [],
+          "compilation.optimize-chunk-assets": Array [
+            Object {
+              "phase": "compilation.optimize-chunk-assets",
+              "processor": [Function],
+              "regExp": /\\\\\\.css\\$/g,
+            },
+          ],
+          "emit": Array [],
+        },
+        "pluginDescriptor": Object {
+          "name": "OptimizeCssAssetsWebpackPlugin",
+        },
+      },
+      TerserPlugin {
+        "options": Object {
+          "cache": false,
+          "cacheKeys": [Function],
+          "chunkFilter": [Function],
+          "exclude": undefined,
+          "extractComments": false,
+          "include": undefined,
+          "minify": undefined,
+          "parallel": true,
+          "sourceMap": false,
+          "terserOptions": Object {
+            "output": Object {
+              "comments": false,
+            },
+          },
+          "test": /\\\\\\.m\\?js\\(\\\\\\?\\.\\*\\)\\?\\$/i,
+          "warningsFilter": [Function],
+        },
+      },
+    ],
+    "splitChunks": Object {
+      "chunks": "initial",
+    },
+  },
+  "output": Object {
+    "filename": "[name].[contenthash].js",
+    "hashDigestLength": 8,
+    "path": "/Users/alex/Code/epinova-webpack/dist",
+    "publicPath": "/dist/",
+  },
+  "plugins": Array [
+    ManifestPlugin {
+      "opts": Object {
+        "basePath": "",
+        "fileName": "manifest.json",
+        "filter": null,
+        "generate": null,
+        "map": null,
+        "publicPath": null,
+        "seed": null,
+        "serialize": [Function],
+        "sort": null,
+        "transformExtensions": /\\^\\(gz\\|map\\)\\$/i,
+        "writeToFileEmit": true,
+      },
+    },
+    MiniCssExtractPlugin {
+      "options": Object {
+        "chunkFilename": "[name].[contenthash].css",
+        "filename": "[name].[contenthash].css",
+        "moduleFilename": [Function],
+      },
+    },
+  ],
+}
+`;
