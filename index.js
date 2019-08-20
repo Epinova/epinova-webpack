@@ -1,27 +1,24 @@
-const path = require("path");
-
-const ManifestPlugin = require("webpack-manifest-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
+const ManifestPlugin = require('webpack-manifest-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = function(env, argv) {
     return {
         devServer: {
-            contentBase: path.join(__dirname),
             compress: true,
             disableHostCheck: true,
-            headers: { "Access-Control-Allow-Origin": "*" },
-            host: "0.0.0.0",
+            headers: { 'Access-Control-Allow-Origin': '*' },
+            host: '0.0.0.0',
             port: 8080,
-            publicPath: "http://bs-local.com:8080/dist/"
+            publicPath: 'http://bs-local.com:8080/dist/'
         },
-        devtool: argv.mode === "development" ? "cheap-module-source-map" : false,
+        devtool: argv.mode === 'development' ? 'cheap-module-source-map' : false,
         module: {
             rules: [
                 {
                     test: /\.js$/,
-                    loader: "babel-loader",
+                    loader: 'babel-loader',
                     exclude: /node_modules/
                 },
                 {
@@ -30,19 +27,19 @@ module.exports = function(env, argv) {
                         {
                             loader: MiniCssExtractPlugin.loader,
                             options: {
-                                hmr: argv.mode === "development",
+                                hmr: argv.mode === 'development',
                                 reloadAll: true
                             }
                         },
                         {
-                            loader: "css-loader",
+                            loader: 'css-loader',
                             options: {
                                 importLoaders: 1,
                                 sourceMap: true
                             }
                         },
                         {
-                            loader: "postcss-loader",
+                            loader: 'postcss-loader',
                             options: {
                                 sourceMap: true
                             }
@@ -55,28 +52,28 @@ module.exports = function(env, argv) {
                         {
                             loader: MiniCssExtractPlugin.loader,
                             options: {
-                                hmr: argv.mode === "development",
+                                hmr: argv.mode === 'development',
                                 reloadAll: true
                             }
                         },
                         {
-                            loader: "css-loader",
+                            loader: 'css-loader',
                             options: {
                                 importLoaders: 2,
                                 sourceMap: true
                             }
                         },
                         {
-                            loader: "postcss-loader",
+                            loader: 'postcss-loader',
                             options: {
                                 sourceMap: true
                             }
                         },
                         {
-                            loader: "sass-loader",
+                            loader: 'sass-loader',
                             options: {
-                                fiber: require("fibers"),
-                                implementation: require("sass")
+                                fiber: require('fibers'),
+                                implementation: require('sass')
                             }
                         }
                     ]
@@ -102,18 +99,17 @@ module.exports = function(env, argv) {
                 })
             ],
             splitChunks: {
-                chunks: "initial"
+                chunks: 'initial'
             }
         },
         output: {
             hashDigestLength: 8,
-            path: path.resolve(__dirname, "dist"),
             publicPath:
-            argv.mode === "development"
-            ? "http://bs-local.com:8080/dist/"
-            : "/dist/",
+                argv.mode === 'development'
+                    ? 'http://bs-local.com:8080/dist/'
+                    : '/dist/',
             filename:
-            argv.mode === "development" ? "[name].js" : "[name].[contenthash].js"
+            argv.mode === 'development' ? '[name].js' : '[name].[contenthash].js'
         },
         plugins: [
             new ManifestPlugin({
@@ -121,9 +117,9 @@ module.exports = function(env, argv) {
             }),
             new MiniCssExtractPlugin({
                 filename:
-                argv.mode === "development"
-                ? "[name].css"
-                : "[name].[contenthash].css"
+                argv.mode === 'development'
+                ? '[name].css'
+                : '[name].[contenthash].css'
             })
         ]
     };

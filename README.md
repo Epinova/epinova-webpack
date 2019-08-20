@@ -1,11 +1,11 @@
 # epinova-webpack
-
 Default Webpack configuration for Epinova Webpack projects
 
 ## Usage
 `webpack.config.js`
 
     const epinovaConfig = require('epinova-webpack');
+    const path = require('path');
 
     module.exports = (env, argv) => {
         const config = epinovaConfig(env, argv);
@@ -14,19 +14,23 @@ Default Webpack configuration for Epinova Webpack projects
             global: './Scripts/global/index.js'
         };
 
+        config.output.path = path.resolve(__dirname, 'dist');
+
+        config.devServer.contentBase = path.join(__dirname);
+
         return config;
     };
 
 ## Customization/Examples
 
 ### GlobbedEntriesPlugin
-`webpack.config.js`
+`npm i --save globbed-webpack-entries-plugin`
 
-    const epinovaConfig = require('epinova-wepack');
+    ...
     const GlobbedEntriesPlugin = require('globbed-webpack-entries-plugin');
 
     module.exports = (env, argv) => {
-        const config = epinovaConfig(env, argv);
+        ...
 
         config.entry = GlobbedEntriesPlugin.entries({
             global: [
@@ -35,39 +39,27 @@ Default Webpack configuration for Epinova Webpack projects
             ]
         });
 
-        config.module.rules.push({
-            test: /\.ts$/,
-            exclude: /node_modules/,
-            loader: 'ts-loader',
-            options: {
-                onlyCompileBundledFiles: true,
-            },
-        });
+        config.plugins.push(new GlobbedEntriesPlugin());
 
-        return config;
+        ...
     };
 
 
-### TypeScript
-`webpack.config.js`
+### Vue
+`npm i --save vue vue-loader vue-template-compiler`
 
-    const epinovaConfig = require('epinova-wepack');
+    ...
+    const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
     module.exports = (env, argv) => {
-        const config = epinovaConfig(env, argv);
-
-        config.entry = {
-            global: './Scripts/global/index.js'
-        };
+        ...
 
         config.module.rules.push({
-            test: /\.ts$/,
-            exclude: /node_modules/,
-            loader: 'ts-loader',
-            options: {
-                onlyCompileBundledFiles: true,
-            },
-        });
+            test: /\.vue$/,
+            loader: 'vue-loader'
+        })
 
-        return config;
+        config.plugins.push(new VueLoaderPlugin());
+
+        ...
     };

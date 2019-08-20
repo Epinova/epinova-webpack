@@ -4,7 +4,6 @@ exports[`development 1`] = `
 Object {
   "devServer": Object {
     "compress": true,
-    "contentBase": "/Users/alex/Code/epinova-webpack",
     "disableHostCheck": true,
     "headers": Object {
       "Access-Control-Allow-Origin": "*",
@@ -161,7 +160,6 @@ dart2js	2.3.1	(Dart Compiler)	[Dart]",
   "output": Object {
     "filename": "[name].js",
     "hashDigestLength": 8,
-    "path": "/Users/alex/Code/epinova-webpack/dist",
     "publicPath": "http://bs-local.com:8080/dist/",
   },
   "plugins": Array [
@@ -195,7 +193,6 @@ exports[`production 1`] = `
 Object {
   "devServer": Object {
     "compress": true,
-    "contentBase": "/Users/alex/Code/epinova-webpack",
     "disableHostCheck": true,
     "headers": Object {
       "Access-Control-Allow-Origin": "*",
@@ -352,7 +349,6 @@ dart2js	2.3.1	(Dart Compiler)	[Dart]",
   "output": Object {
     "filename": "[name].[contenthash].js",
     "hashDigestLength": 8,
-    "path": "/Users/alex/Code/epinova-webpack/dist",
     "publicPath": "/dist/",
   },
   "plugins": Array [
