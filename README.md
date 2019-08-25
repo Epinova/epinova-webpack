@@ -4,62 +4,81 @@ Default Webpack configuration for Epinova Webpack projects
 ## Usage
 `webpack.config.js`
 
-    const epinovaConfig = require('@epinova/webpack');
-    const path = require('path');
+```javascript
+const epinovaWebpackConfig = require('@epinova/webpack');
 
-    module.exports = (env, argv) => {
-        const config = epinovaConfig(env, argv);
+const config = epinovaWebpackConfig({}, config => {
+    config.entry = './Scripts/global/index.js';
 
-        config.entry = {
-            global: './Scripts/global/index.js'
-        };
+    return config;
+});
 
-        config.output.path = path.resolve(__dirname, 'dist');
+module.exports = config;
+```
 
-        config.devServer.contentBase = path.join(__dirname);
+## Advanced
 
-        return config;
-    };
+```javascript
+const epinovaWebpackConfig = require('@epinova/webpack');
 
-## Customization/Examples
+const config = epinovaWebpackConfig({
+    path: 'public',
+    devServerPort: 9000
+}, (config, env, argv) => {
+    config.entry = './Scripts/global/index.js';
 
-### GlobbedEntriesPlugin
+    if(env === 'development') {
+        ...
+    }
+
+    return config;
+});
+
+module.exports = config;
+```
+
+# Customization/Examples
+
+## GlobbedEntriesPlugin
 `npm i --save globbed-webpack-entries-plugin`
 
-    ...
-    const GlobbedEntriesPlugin = require('globbed-webpack-entries-plugin');
+```javascript
+const epinovaWebpackConfig = require('@epinova/webpack');
+const GlobbedEntriesPlugin = require('globbed-webpack-entries-plugin');
 
-    module.exports = (env, argv) => {
-        ...
+const config = epinovaWebpackConfig({}, config => {
+    config.entry = GlobbedEntriesPlugin.entries({
+        global: [
+            './Scripts/global/**/*.js',
+            './Styles/global/**/*.scss'
+        ]
+    });
 
-        config.entry = GlobbedEntriesPlugin.entries({
-            global: [
-                './Scripts/global/**/*.js',
-                './Styles/global/**/*.scss'
-            ]
-        });
+    config.plugins.push(new GlobbedEntriesPlugin());
+});
 
-        config.plugins.push(new GlobbedEntriesPlugin());
+module.exports = config;
+```
 
-        ...
-    };
-
-
-### Vue
+## Vue
 `npm i --save vue vue-loader vue-template-compiler`
 
+```javascript
+const epinovaWebpackConfig = require('@epinova/webpack');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+
+const config = epinovaWebpackConfig({}, config => {
     ...
-    const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
-    module.exports = (env, argv) => {
-        ...
+    config.module.rules.push({
+        test: /\.vue$/,
+        loader: 'vue-loader'
+    });
 
-        config.module.rules.push({
-            test: /\.vue$/,
-            loader: 'vue-loader'
-        })
+    config.plugins.push(new VueLoaderPlugin());
 
-        config.plugins.push(new VueLoaderPlugin());
+    ...
+});
 
-        ...
-    };
+module.exports = config;
+```
