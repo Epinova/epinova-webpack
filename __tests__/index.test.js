@@ -1,4 +1,4 @@
-const config = require('./index');
+const config = require('../index');
 
 test('errors', () => {
     expect(() => config(undefined)).toThrowError();

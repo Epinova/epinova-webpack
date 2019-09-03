@@ -30,7 +30,7 @@
     "webpack-manifest-plugin": "2.0.4"
   },
   "peerDependencies": {
-    "webpack-cli": "3.3.2"
+    "webpack-cli": "^3.3.2"
   },
   "devDependencies": {
     "jest": "^24.9.0"
