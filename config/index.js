@@ -134,7 +134,7 @@ module.exports = function(userOptions, callback) {
                 hashDigestLength: 8,
                 publicPath:
                     isDevServer
-                        ? options.browserstackUrl + ':' + options.devServerPort + '/' + path + '/'
+                        ? options.browserstackUrl + ':' + options.devServerPort + '/' + options.path + '/'
                         : '/' + options.path + '/',
                 filename:
                 argv.mode === 'development' ? '[name].js' : '[name].[contenthash].js'

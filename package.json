@@ -1,43 +1,43 @@
 {
-  "name": "@epinova/webpack",
-  "version": "1.0.4",
-  "description": "Epinova Webpack default configuration",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest",
-    "publish": "npm publish --access public"
-  },
-  "license": "MIT",
-  "repository": {
-    "url": "git+https://github.com/Epinova/epinova-webpack.git"
-  },
-  "dependencies": {
-    "@babel/core": "7.4.5",
-    "@babel/plugin-syntax-dynamic-import": "7.2.0",
-    "@babel/polyfill": "7.4.4",
-    "@babel/preset-env": "7.4.5",
-    "@babel/register": "7.4.4",
-    "babel-loader": "8.0.6",
-    "css-loader": "2.1.1",
-    "fibers": "4.0.1",
-    "mini-css-extract-plugin": "0.7.0",
-    "optimize-css-assets-webpack-plugin": "5.0.1",
-    "postcss-loader": "3.0.0",
-    "postcss-preset-env": "6.6.0",
-    "sass": "1.20.3",
-    "sass-loader": "7.1.0",
-    "webpack": "4.32.2",
-    "webpack-manifest-plugin": "2.0.4"
-  },
-  "peerDependencies": {
-    "webpack-cli": "^3.3.2"
-  },
-  "devDependencies": {
-    "jest": "^24.9.0"
-  },
-  "bugs": {
-    "url": "https://github.com/Epinova/epinova-webpack/issues"
-  },
-  "homepage": "https://github.com/Epinova/epinova-webpack#readme",
-  "author": ""
+    "name": "@epinova/webpack",
+    "version": "1.0.4",
+    "description": "Epinova Webpack default configuration",
+    "main": "config/index.js",
+    "scripts": {
+        "test": "jest",
+        "publish": "npm publish --access public"
+    },
+    "license": "MIT",
+    "repository": {
+        "url": "git+https://github.com/Epinova/epinova-webpack.git"
+    },
+    "dependencies": {
+        "@babel/core": "7.4.5",
+        "@babel/plugin-syntax-dynamic-import": "7.2.0",
+        "@babel/polyfill": "7.4.4",
+        "@babel/preset-env": "7.4.5",
+        "@babel/register": "7.4.4",
+        "babel-loader": "8.0.6",
+        "css-loader": "2.1.1",
+        "fibers": "4.0.1",
+        "mini-css-extract-plugin": "0.7.0",
+        "optimize-css-assets-webpack-plugin": "5.0.1",
+        "postcss-loader": "3.0.0",
+        "postcss-preset-env": "6.6.0",
+        "sass": "1.20.3",
+        "sass-loader": "7.1.0",
+        "webpack": "4.32.2",
+        "webpack-manifest-plugin": "2.0.4"
+    },
+    "peerDependencies": {
+        "webpack-cli": "^3.3.2"
+    },
+    "devDependencies": {
+        "jest": "^24.9.0"
+    },
+    "bugs": {
+        "url": "https://github.com/Epinova/epinova-webpack/issues"
+    },
+    "homepage": "https://github.com/Epinova/epinova-webpack#readme",
+    "author": ""
 }
