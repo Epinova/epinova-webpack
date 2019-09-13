@@ -1,7 +1,7 @@
 const epinovaWebpackConfig = require('../config')
 
 module.exports = epinovaWebpackConfig({}, config => {
-    config.entry = './test.js'
+    config.entry = './app.js'
 
     return config;
 })
