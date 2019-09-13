@@ -33,7 +33,9 @@
         "webpack-cli": "^3.3.2"
     },
     "devDependencies": {
-        "jest": "^24.9.0"
+        "@types/jest": "^24.0.18",
+        "jest": "^24.9.0",
+        "jest-serializer-path": "^0.1.15"
     },
     "bugs": {
         "url": "https://github.com/Epinova/epinova-webpack/issues"
