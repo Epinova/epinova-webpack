@@ -1,40 +1,47 @@
-const config = require('../index');
+const config = require("../config");
+const serializer = require("jest-serializer-path");
 
-test('errors', () => {
+expect.addSnapshotSerializer(serializer);
+
+test("errors", () => {
     expect(() => config(undefined)).toThrowError();
-    expect(() => config('dist', {})).toThrowError();
+    expect(() => config("dist", {})).toThrowError();
 });
 
-test('configuration', () => {
-    const path = 'public'
+test("configuration", () => {
+    const path = "public";
 
-    const env = 'test'
+    const env = "test";
     const argv = {
-        mode: 'development'
-    }
+        mode: "development"
+    };
 
     const c = config({ path }, (config, configEnv, configArgv) => {
-        config.entry = './Scripts/global/index.js';
+        config.entry = "./Scripts/global/index.js";
 
-        expect(configEnv).toEqual(env)
-        expect(configArgv).toEqual(argv)
+        expect(configEnv).toEqual(env);
+        expect(configArgv).toEqual(argv);
 
         return config;
     });
 
     const value = c(env, argv);
 
-    expect(typeof c).toEqual('function');
-    expect(typeof value).toEqual('object');
-    expect(value.entry).toEqual('./Scripts/global/index.js');
-    expect(value.devServer.publicPath.includes(path)).toEqual(true)
-    expect(value.output.publicPath).toEqual(`/${path}/`)
+    expect(typeof c).toEqual("function");
+    expect(typeof value).toEqual("object");
+    expect(value.entry).toEqual("./Scripts/global/index.js");
+    expect(value.devServer.publicPath.includes(path)).toEqual(true);
+    expect(value.output.publicPath).toEqual(`/${path}/`);
 });
 
-test('development', () => {
-    expect(config({ path: 'dist' })('development', { mode: 'development' })).toMatchSnapshot();
+test("development", () => {
+    expect(
+        config({ path: "dist" })("development", { mode: "development" })
+    ).toMatchSnapshot();
 });
 
-test('production', () => {
-    expect(config({ path: 'dist' })('production', { mode: 'production' })).toMatchSnapshot();
+test("production", () => {
+    expect(
+        config({ path: "dist" })("production", { mode: "production" })
+    ).toMatchSnapshot();
 });
