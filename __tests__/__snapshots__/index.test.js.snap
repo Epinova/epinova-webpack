@@ -187,6 +187,13 @@ dart2js	2.3.1	(Dart Compiler)	[Dart]",
       },
     },
   ],
+  "resolve": Object {
+    "extensions": Array [
+      ".js",
+      ".vue",
+      ".json",
+    ],
+  },
 }
 `;
 
@@ -377,5 +384,12 @@ dart2js	2.3.1	(Dart Compiler)	[Dart]",
       },
     },
   ],
+  "resolve": Object {
+    "extensions": Array [
+      ".js",
+      ".vue",
+      ".json",
+    ],
+  },
 }
 `;

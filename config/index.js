@@ -42,6 +42,9 @@ module.exports = function(userOptions, callback) {
                 publicPath: options.browserstackUrl + ':' + options.devServerPort + '/' + options.path + '/'
             },
             devtool: argv.mode === 'development' ? 'cheap-module-source-map' : false,
+            resolve: {
+                extensions: ['.js', '.vue', '.json']
+            },
             module: {
                 rules: [
                     {
