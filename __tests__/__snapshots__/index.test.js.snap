@@ -36,6 +36,7 @@ Object {
             "options": Object {
               "importLoaders": 1,
               "sourceMap": true,
+              "url": false,
             },
           },
           Object {
@@ -61,6 +62,7 @@ Object {
             "options": Object {
               "importLoaders": 2,
               "sourceMap": true,
+              "url": false,
             },
           },
           Object {
@@ -233,6 +235,7 @@ Object {
             "options": Object {
               "importLoaders": 1,
               "sourceMap": true,
+              "url": false,
             },
           },
           Object {
@@ -258,6 +261,7 @@ Object {
             "options": Object {
               "importLoaders": 2,
               "sourceMap": true,
+              "url": false,
             },
           },
           Object {

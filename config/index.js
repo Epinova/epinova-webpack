@@ -66,7 +66,8 @@ module.exports = function(userOptions, callback) {
                                 loader: 'css-loader',
                                 options: {
                                     importLoaders: 1,
-                                    sourceMap: true
+                                    sourceMap: true,
+                                    url: false
                                 }
                             },
                             {
@@ -91,7 +92,8 @@ module.exports = function(userOptions, callback) {
                                 loader: 'css-loader',
                                 options: {
                                     importLoaders: 2,
-                                    sourceMap: true
+                                    sourceMap: true,
+                                    url: false
                                 }
                             },
                             {
