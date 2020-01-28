@@ -55,6 +55,8 @@ const config = epinovaWebpackConfig({}, config => {
     });
 
     config.plugins.push(new GlobbedEntriesPlugin());
+
+    return config;
 });
 
 module.exports = config;
@@ -77,7 +79,7 @@ const config = epinovaWebpackConfig({}, config => {
 
     config.plugins.push(new VueLoaderPlugin());
 
-    ...
+    return config;
 });
 
 module.exports = config;
