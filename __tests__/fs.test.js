@@ -2,6 +2,10 @@
  * @jest-environment node
  */
 
+jest.mock('fs-extra', () => {
+      return { outputFileSync: function (outputFile, output) {} };
+  });
+
 const webpack = require("webpack");
 const { createFsFromVolume, Volume } = require("memfs");
 const joinPath = require("memory-fs/lib/join");
@@ -50,7 +54,7 @@ test("fs", async () => {
 
             config.optimization = {};
 
-            config.plugins = [];
+            // config.plugins = [];
 
             return config;
         })("development", { mode: "development" });
@@ -72,7 +76,9 @@ test("fs", async () => {
                 hash: true,
                 modules: false
             })
-        ).toMatchSnapshot();
-        expect(vol.toJSON()).toMatchSnapshot();
+        ).toMatchSnapshot({
+            hash: expect.any(String)
+        });
+        expect(Object.keys(vol.toJSON())).toMatchSnapshot();
     });
 });
