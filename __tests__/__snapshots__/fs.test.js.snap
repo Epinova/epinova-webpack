@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fs 1`] = `
+Object {
+  "assets": Array [
+    Object {
+      "chunkNames": Array [
+        "main",
+      ],
+      "chunks": Array [
+        0,
+      ],
+      "emitted": true,
+      "isOverSizeLimit": undefined,
+      "name": "main.js",
+      "size": 995,
+    },
+    Object {
+      "chunkNames": Array [
+        "main",
+      ],
+      "chunks": Array [
+        0,
+      ],
+      "emitted": true,
+      "isOverSizeLimit": undefined,
+      "name": "main.js.map",
+      "size": 97,
+    },
+  ],
+  "assetsByChunkName": Object {
+    "main": Array [
+      "main.js",
+      "main.js.map",
+    ],
+  },
+  "builtAt": 1482363367071,
+  "children": Array [],
+  "chunks": Array [
+    Object {
+      "children": Array [],
+      "childrenByOrder": Object {},
+      "entry": true,
+      "files": Array [
+        "main.js",
+        "main.js.map",
+      ],
+      "filteredModules": 0,
+      "hash": "c985b4bc",
+      "id": 0,
+      "initial": true,
+      "modules": Array [
+        Object {
+          "assets": Array [],
+          "built": true,
+          "cacheable": true,
+          "chunks": Array [
+            0,
+          ],
+          "depth": 0,
+          "errors": 0,
+          "failed": false,
+          "id": 0,
+          "identifier": "<PROJECT_ROOT>/node_modules/babel-loader/lib/index.js!<PROJECT_ROOT>/example/app.js",
+          "index": 0,
+          "index2": 0,
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "name": "./example/app.js",
+          "optimizationBailout": Array [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module",
+          ],
+          "optional": false,
+          "prefetched": false,
+          "profile": undefined,
+          "providedExports": null,
+          "reasons": Array [
+            Object {
+              "explanation": undefined,
+              "loc": "main",
+              "module": null,
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "moduleName": null,
+              "type": "single entry",
+              "userRequest": "<PROJECT_ROOT>/example/app.js",
+            },
+          ],
+          "size": 27,
+          "source": "console.log('Hello world');",
+          "usedExports": true,
+          "warnings": 0,
+        },
+      ],
+      "names": Array [
+        "main",
+      ],
+      "origins": Array [
+        Object {
+          "loc": "main",
+          "module": "",
+          "moduleId": undefined,
+          "moduleIdentifier": "",
+          "moduleName": "",
+          "reasons": Array [],
+          "request": "<PROJECT_ROOT>/example/app.js",
+        },
+      ],
+      "parents": Array [],
+      "reason": undefined,
+      "recorded": undefined,
+      "rendered": true,
+      "siblings": Array [],
+      "size": 27,
+    },
+  ],
+  "entrypoints": Object {
+    "main": Object {
+      "assets": Array [
+        "main.js",
+        "main.js.map",
+      ],
+      "childAssets": Object {},
+      "children": Object {},
+      "chunks": Array [
+        0,
+      ],
+      "isOverSizeLimit": undefined,
+    },
+  },
+  "errors": Array [],
+  "filteredAssets": 0,
+  "hash": "15e0a20f",
+  "namedChunkGroups": Object {
+    "main": Object {
+      "assets": Array [
+        "main.js",
+        "main.js.map",
+      ],
+      "childAssets": Object {},
+      "children": Object {},
+      "chunks": Array [
+        0,
+      ],
+      "isOverSizeLimit": undefined,
+    },
+  },
+  "outputPath": "/dist",
+  "publicPath": "/dist/",
+  "time": 0,
+  "version": "4.32.2",
+  "warnings": Array [
+    "configuration
+The 'mode' option has not been set, webpack will fallback to 'production' for this value. Set 'mode' option to 'development' or 'production' to enable defaults for each environment.
+You can also set it to 'none' to disable any default behavior. Learn more: https://webpack.js.org/configuration/mode/",
+  ],
+}
+`;
+
+exports[`fs 2`] = `
+Object {
+  "/dist/main.js": "!function(e){var t={};function r(n){if(t[n])return t[n].exports;var o=t[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,r),o.l=!0,o.exports}r.m=e,r.c=t,r.d=function(e,t,n){r.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},r.r=function(e){\\"undefined\\"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})},r.t=function(e,t){if(1&t&&(e=r(e)),8&t)return e;if(4&t&&\\"object\\"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(r.r(n),Object.defineProperty(n,\\"default\\",{enumerable:!0,value:e}),2&t&&\\"string\\"!=typeof e)for(var o in e)r.d(n,o,function(t){return e[t]}.bind(null,o));return n},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,\\"a\\",t),t},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r.p=\\"/dist/\\",r(r.s=0)}([function(e,t){console.log(\\"Hello world\\")}]);
+//# sourceMappingURL=main.js.map",
+  "/dist/main.js.map": "{\\"version\\":3,\\"file\\":\\"main.js\\",\\"sources\\":[\\"webpack:///main.js\\"],\\"mappings\\":\\"AAAA\\",\\"sourceRoot\\":\\"\\"}",
+}
+`;

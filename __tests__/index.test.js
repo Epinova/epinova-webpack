@@ -1,5 +1,6 @@
-const config = require("../config");
 const serializer = require("jest-serializer-path");
+
+const config = require("../config");
 
 expect.addSnapshotSerializer(serializer);
 
