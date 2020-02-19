@@ -8,6 +8,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 const defaultOptions = {
     path: 'dist',
+    outputPath: undefined,
     devServerContentBase: path.resolve(process.env.PWD),
     devServerHost: '0.0.0.0',
     devServerPort: 8080,
@@ -144,6 +145,7 @@ module.exports = function(userOptions, callback) {
                     isDevServer
                         ? options.browserstackUrl + ':' + options.devServerPort + '/' + options.path + '/'
                         : '/' + options.path + '/',
+                path: options.outputPath,
                 filename:
                 argv.mode === 'development' ? '[name].js' : '[name].[contenthash].js'
             },

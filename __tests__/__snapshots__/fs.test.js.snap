@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fs 1`] = `
+Object {
+  "assets": Array [
+    Object {
+      "chunkNames": Array [
+        "main",
+      ],
+      "chunks": Array [
+        0,
+      ],
+      "emitted": true,
+      "isOverSizeLimit": undefined,
+      "name": "main.js",
+      "size": 995,
+    },
+    Object {
+      "chunkNames": Array [
+        "main",
+      ],
+      "chunks": Array [
+        0,
+      ],
+      "emitted": true,
+      "isOverSizeLimit": undefined,
+      "name": "main.js.map",
+      "size": 97,
+    },
+    Object {
+      "chunkNames": Array [],
+      "chunks": Array [],
+      "emitted": true,
+      "isOverSizeLimit": undefined,
+      "name": "manifest.json",
+      "size": 70,
+    },
+  ],
+  "assetsByChunkName": Object {
+    "main": Array [
+      "main.js",
+      "main.js.map",
+    ],
+  },
+  "builtAt": 1482363367071,
+  "children": Array [],
+  "chunks": Array [
+    Object {
+      "children": Array [],
+      "childrenByOrder": Object {},
+      "entry": true,
+      "files": Array [
+        "main.js",
+        "main.js.map",
+      ],
+      "filteredModules": 0,
+      "hash": "9291632e",
+      "id": 0,
+      "initial": true,
+      "modules": Array [
+        Object {
+          "assets": Array [],
+          "built": true,
+          "cacheable": true,
+          "chunks": Array [
+            0,
+          ],
+          "depth": 0,
+          "errors": 0,
+          "failed": false,
+          "id": 0,
+          "identifier": "<PROJECT_ROOT>/node_modules/babel-loader/lib/index.js!<PROJECT_ROOT>/example/app.js",
+          "index": 0,
+          "index2": 0,
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "name": "./example/app.js",
+          "optimizationBailout": Array [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module",
+          ],
+          "optional": false,
+          "prefetched": false,
+          "profile": undefined,
+          "providedExports": null,
+          "reasons": Array [
+            Object {
+              "explanation": undefined,
+              "loc": "main",
+              "module": null,
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "moduleName": null,
+              "type": "single entry",
+              "userRequest": "<PROJECT_ROOT>/example/app.js",
+            },
+          ],
+          "size": 27,
+          "source": "console.log('Hello world');",
+          "usedExports": true,
+          "warnings": 0,
+        },
+      ],
+      "names": Array [
+        "main",
+      ],
+      "origins": Array [
+        Object {
+          "loc": "main",
+          "module": "",
+          "moduleId": undefined,
+          "moduleIdentifier": "",
+          "moduleName": "",
+          "reasons": Array [],
+          "request": "<PROJECT_ROOT>/example/app.js",
+        },
+      ],
+      "parents": Array [],
+      "reason": undefined,
+      "recorded": undefined,
+      "rendered": true,
+      "siblings": Array [],
+      "size": 27,
+    },
+  ],
+  "entrypoints": Object {
+    "main": Object {
+      "assets": Array [
+        "main.js",
+        "main.js.map",
+      ],
+      "childAssets": Object {},
+      "children": Object {},
+      "chunks": Array [
+        0,
+      ],
+      "isOverSizeLimit": undefined,
+    },
+  },
+  "errors": Array [],
+  "filteredAssets": 0,
+  "hash": Any<String>,
+  "namedChunkGroups": Object {
+    "main": Object {
+      "assets": Array [
+        "main.js",
+        "main.js.map",
+      ],
+      "childAssets": Object {},
+      "children": Object {},
+      "chunks": Array [
+        0,
+      ],
+      "isOverSizeLimit": undefined,
+    },
+  },
+  "outputPath": "/dist",
+  "publicPath": "/dist/",
+  "time": 0,
+  "version": "4.32.2",
+  "warnings": Array [
+    "configuration
+The 'mode' option has not been set, webpack will fallback to 'production' for this value. Set 'mode' option to 'development' or 'production' to enable defaults for each environment.
+You can also set it to 'none' to disable any default behavior. Learn more: https://webpack.js.org/configuration/mode/",
+  ],
+}
+`;
+
+exports[`fs 2`] = `
+Array [
+  "/dist/main.js",
+  "/dist/main.js.map",
+  "/dist/manifest.json",
+]
+`;
