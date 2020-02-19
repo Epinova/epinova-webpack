@@ -90,6 +90,6 @@ module.exports = config;
 [Browserstack does not like localhost url's](https://www.browserstack.com/question/759) so it is possible to start this config with a `--browserstack` argument. Example package.json script:
 ```javascript
 {
-    "develop:browserstack": "webpack-dev-server --mode development --hot --hot-only --browserstack=http://bs-local.com",
+    "test:browserstack": "webpack-dev-server --mode development --hot --hot-only --browserstack=http://bs-local.com",
 }
 ```
