@@ -1,3 +1,6 @@
+const path = require('path');
+
+const argv = require('yargs').argv
 const ManifestPlugin = require('webpack-manifest-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -5,10 +8,10 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 const defaultOptions = {
     path: 'dist',
-    devServerContentBase: process.env.PWD,
+    devServerContentBase: path.resolve(process.env.PWD),
     devServerHost: '0.0.0.0',
     devServerPort: 8080,
-    browserstackUrl: 'http://bs-local.com'
+    browserstackUrl: argv.browserstack || 'http://127.0.0.1'
 }
 
 module.exports = function(userOptions, callback) {

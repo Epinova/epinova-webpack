@@ -5,6 +5,7 @@
     "main": "test.js",
     "scripts": {
         "develop": "webpack-dev-server --mode development --hot --hot-only",
+        "test:browserstack": "webpack-dev-server --mode development --hot --hot-only --browserstack=http://bs-local.com",
         "build": "webpack --mode production --config webpack.config.js",
         "build:watch": "webpack --mode development --watch",
         "build:develop": "webpack --mode development"
