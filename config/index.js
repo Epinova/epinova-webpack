@@ -9,7 +9,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const defaultOptions = {
     path: 'dist',
     outputPath: undefined,
-    devServerContentBase: path.resolve(process.env.PWD),
+    devServerContentBase: path.resolve(process.cwd() || process.env.PWD || __dirname),
     devServerHost: '0.0.0.0',
     devServerPort: 8080,
     browserstackUrl: argv.browserstack || 'http://127.0.0.1'
