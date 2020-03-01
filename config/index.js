@@ -83,7 +83,7 @@ module.exports = function(userOptions, callback) {
                         ]
                     },
                     {
-                        test: /\.scss$/,
+                        test: /\.s(c|a)ss$/,
                         use: [
                             {
                                 loader: MiniCssExtractPlugin.loader,
