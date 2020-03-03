@@ -48,7 +48,7 @@ Object {
         ],
       },
       Object {
-        "test": /\\\\\\.scss\\$/,
+        "test": /\\\\\\.s\\(c\\|a\\)ss\\$/,
         "use": Array [
           Object {
             "loader": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
@@ -248,7 +248,7 @@ Object {
         ],
       },
       Object {
-        "test": /\\\\\\.scss\\$/,
+        "test": /\\\\\\.s\\(c\\|a\\)ss\\$/,
         "use": Array [
           Object {
             "loader": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
