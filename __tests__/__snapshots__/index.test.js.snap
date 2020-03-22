@@ -73,26 +73,6 @@ Object {
           },
           Object {
             "loader": "sass-loader",
-            "options": Object {
-              "fiber": [Function],
-              "implementation": Object {
-                "info": "dart-sass	1.20.3	(Sass Compiler)	[Dart]
-dart2js	2.3.1	(Dart Compiler)	[Dart]",
-                "render": [Function],
-                "renderSync": [Function],
-                "run_": [Function],
-                "types": Object {
-                  "Boolean": [Function],
-                  "Color": [Function],
-                  "Error": [Function],
-                  "List": [Function],
-                  "Map": [Function],
-                  "Null": [Function],
-                  "Number": [Function],
-                  "String": [Function],
-                },
-              },
-            },
           },
         ],
       },
@@ -103,12 +83,12 @@ dart2js	2.3.1	(Dart Compiler)	[Dart]",
       OptimizeCssAssetsWebpackPlugin {
         "deleteAssetsMap": Object {},
         "options": Object {
-          "assetNameRegExp": /\\\\\\.css\\$/g,
+          "assetNameRegExp": /\\\\\\.css\\(\\\\\\?\\.\\*\\)\\?\\$/i,
           "assetProcessors": Array [
             Object {
               "phase": "compilation.optimize-chunk-assets",
               "processor": [Function],
-              "regExp": /\\\\\\.css\\$/g,
+              "regExp": /\\\\\\.css\\(\\\\\\?\\.\\*\\)\\?\\$/i,
             },
           ],
           "canPrint": undefined,
@@ -126,7 +106,7 @@ dart2js	2.3.1	(Dart Compiler)	[Dart]",
             Object {
               "phase": "compilation.optimize-chunk-assets",
               "processor": [Function],
-              "regExp": /\\\\\\.css\\$/g,
+              "regExp": /\\\\\\.css\\(\\\\\\?\\.\\*\\)\\?\\$/i,
             },
           ],
           "emit": Array [],
@@ -186,15 +166,19 @@ dart2js	2.3.1	(Dart Compiler)	[Dart]",
       "options": Object {
         "chunkFilename": "[name].css",
         "filename": "[name].css",
+        "ignoreOrder": false,
         "moduleFilename": [Function],
       },
     },
   ],
   "resolve": Object {
     "extensions": Array [
+      ".wasm",
+      ".mjs",
       ".js",
-      ".vue",
       ".json",
+      ".vue",
+      ".jsx",
     ],
   },
 }
@@ -273,26 +257,6 @@ Object {
           },
           Object {
             "loader": "sass-loader",
-            "options": Object {
-              "fiber": [Function],
-              "implementation": Object {
-                "info": "dart-sass	1.20.3	(Sass Compiler)	[Dart]
-dart2js	2.3.1	(Dart Compiler)	[Dart]",
-                "render": [Function],
-                "renderSync": [Function],
-                "run_": [Function],
-                "types": Object {
-                  "Boolean": [Function],
-                  "Color": [Function],
-                  "Error": [Function],
-                  "List": [Function],
-                  "Map": [Function],
-                  "Null": [Function],
-                  "Number": [Function],
-                  "String": [Function],
-                },
-              },
-            },
           },
         ],
       },
@@ -303,12 +267,12 @@ dart2js	2.3.1	(Dart Compiler)	[Dart]",
       OptimizeCssAssetsWebpackPlugin {
         "deleteAssetsMap": Object {},
         "options": Object {
-          "assetNameRegExp": /\\\\\\.css\\$/g,
+          "assetNameRegExp": /\\\\\\.css\\(\\\\\\?\\.\\*\\)\\?\\$/i,
           "assetProcessors": Array [
             Object {
               "phase": "compilation.optimize-chunk-assets",
               "processor": [Function],
-              "regExp": /\\\\\\.css\\$/g,
+              "regExp": /\\\\\\.css\\(\\\\\\?\\.\\*\\)\\?\\$/i,
             },
           ],
           "canPrint": undefined,
@@ -326,7 +290,7 @@ dart2js	2.3.1	(Dart Compiler)	[Dart]",
             Object {
               "phase": "compilation.optimize-chunk-assets",
               "processor": [Function],
-              "regExp": /\\\\\\.css\\$/g,
+              "regExp": /\\\\\\.css\\(\\\\\\?\\.\\*\\)\\?\\$/i,
             },
           ],
           "emit": Array [],
@@ -386,15 +350,19 @@ dart2js	2.3.1	(Dart Compiler)	[Dart]",
       "options": Object {
         "chunkFilename": "[name].[contenthash].css",
         "filename": "[name].[contenthash].css",
+        "ignoreOrder": false,
         "moduleFilename": [Function],
       },
     },
   ],
   "resolve": Object {
     "extensions": Array [
+      ".wasm",
+      ".mjs",
       ".js",
-      ".vue",
       ".json",
+      ".vue",
+      ".jsx",
     ],
   },
 }
