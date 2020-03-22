@@ -107,11 +107,7 @@ module.exports = function(userOptions, callback) {
                                 }
                             },
                             {
-                                loader: 'sass-loader',
-                                options: {
-                                    fiber: require('fibers'),
-                                    implementation: require('sass')
-                                }
+                                loader: 'sass-loader'
                             }
                         ]
                     }
