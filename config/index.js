@@ -47,7 +47,7 @@ module.exports = function(userOptions, callback) {
             },
             devtool: argv.mode === 'development' ? 'cheap-module-source-map' : false,
             resolve: {
-                extensions: ['.js', '.vue', '.json']
+                extensions: ['.wasm', '.mjs', '.js', '.json', '.vue', '.jsx']
             },
             module: {
                 rules: [
