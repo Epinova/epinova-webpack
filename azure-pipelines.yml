@@ -20,3 +20,27 @@ steps:
     npm run build --if-present
     npm test
   displayName: 'npm install, build, and test'
+
+- script: |
+    npm pack
+  displayName: 'Package for npm release'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: '*.tgz'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/npm'
+  displayName: 'Copy npm package'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: 'package.json' 
+    TargetFolder: $(Build.ArtifactStagingDirectory)/npm
+  displayName: 'Copy package.json'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/npm'
+    ArtifactName: npm
+  displayName: 'Publish npm artifact'
