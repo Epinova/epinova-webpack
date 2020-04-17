@@ -1,22 +1,17 @@
 {
-    "name": "@epinova/webpack",
-    "version": "1.0.10",
-    "description": "Epinova Webpack default configuration",
-    "main": "config/index.js",
-    "scripts": {
-        "test": "jest",
-        "publish": "npm publish --access public"
+    "author": "Alexander Nilsson <alexander.nilsson@epinova.no>",
+    "bugs": {
+        "url": "https://github.com/Epinova/epinova-webpack/issues"
     },
-    "license": "MIT",
-    "repository": {
-        "url": "git+https://github.com/Epinova/epinova-webpack.git"
-    },
+    "contributors": [
+        "George Gooding <george.gooding@epinova.no>"
+    ],
     "dependencies": {
         "@babel/core": "7.9.0",
         "@babel/plugin-syntax-dynamic-import": "7.8.3",
-        "@babel/preset-env": "7.9.0",
+        "@babel/preset-env": "7.9.5",
         "babel-loader": "8.1.0",
-        "css-loader": "3.4.2",
+        "css-loader": "3.5.2",
         "fibers": "4.0.2",
         "mini-css-extract-plugin": "0.9.0",
         "optimize-css-assets-webpack-plugin": "5.0.3",
@@ -24,22 +19,30 @@
         "postcss-preset-env": "6.7.0",
         "sass": "1.26.3",
         "sass-loader": "8.0.2",
-        "webpack": "4.42.0",
+        "webpack": "4.42.1",
         "webpack-manifest-plugin": "2.2.0",
         "yargs": "^15.3.1"
     },
-    "peerDependencies": {
-        "webpack-cli": "^3.3.11"
-    },
+    "description": "Epinova Webpack default configuration",
     "devDependencies": {
-        "@types/jest": "^25.1.4",
-        "jest": "^25.1.0",
+        "@types/jest": "^25.2.1",
+        "jest": "^25.3.0",
         "jest-serializer-path": "^0.1.15",
         "memfs": "^3.1.2"
     },
-    "bugs": {
-        "url": "https://github.com/Epinova/epinova-webpack/issues"
-    },
     "homepage": "https://github.com/Epinova/epinova-webpack#readme",
-    "author": ""
+    "license": "MIT",
+    "main": "config/index.js",
+    "name": "@epinova/webpack",
+    "peerDependencies": {
+        "webpack-cli": "^3.3.11"
+    },
+    "repository": {
+        "url": "git+https://github.com/Epinova/epinova-webpack.git"
+    },
+    "scripts": {
+        "publish": "npm publish --access public",
+        "test": "jest"
+    },
+    "version": "1.0.11"
 }
