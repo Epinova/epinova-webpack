@@ -1,4 +1,12 @@
+# IDE files
+*.suo
+*.user
+*.sln.docstates
+.vs
+# Node
 node_modules/
+# Garbage
 Thumbs.db
 .DS_Store
+# Project
 example/dist
