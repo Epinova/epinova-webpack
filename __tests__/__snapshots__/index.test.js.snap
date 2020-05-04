@@ -197,6 +197,7 @@ dart2js	2.3.1	(Dart Compiler)	[Dart]",
       ".json",
     ],
   },
+  "stats": "errors-warnings",
 }
 `;
 
@@ -397,5 +398,6 @@ dart2js	2.3.1	(Dart Compiler)	[Dart]",
       ".json",
     ],
   },
+  "stats": "errors-warnings",
 }
 `;
