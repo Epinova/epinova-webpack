@@ -13,8 +13,36 @@ Object {
       "emitted": true,
       "info": Object {},
       "isOverSizeLimit": undefined,
+      "name": "main.css",
+      "size": 76,
+    },
+    Object {
+      "chunkNames": Array [
+        "main",
+      ],
+      "chunks": Array [
+        0,
+      ],
+      "emitted": true,
+      "info": Object {
+        "development": true,
+      },
+      "isOverSizeLimit": undefined,
+      "name": "main.css.map",
+      "size": 213,
+    },
+    Object {
+      "chunkNames": Array [
+        "main",
+      ],
+      "chunks": Array [
+        0,
+      ],
+      "emitted": true,
+      "info": Object {},
+      "isOverSizeLimit": undefined,
       "name": "main.js",
-      "size": 995,
+      "size": 1050,
     },
     Object {
       "chunkNames": Array [
@@ -38,35 +66,313 @@ Object {
       "info": Object {},
       "isOverSizeLimit": undefined,
       "name": "manifest.json",
-      "size": 70,
+      "size": 142,
     },
   ],
   "assetsByChunkName": Object {
     "main": Array [
+      "main.css",
       "main.js",
+      "main.css.map",
       "main.js.map",
     ],
   },
   "builtAt": 1482363367071,
-  "children": Array [],
+  "children": Array [
+    Object {
+      "assets": Array [],
+      "assetsByChunkName": Object {},
+      "children": Array [],
+      "chunks": Array [
+        Object {
+          "children": Array [],
+          "childrenByOrder": Object {},
+          "entry": true,
+          "files": Array [
+            "*",
+          ],
+          "filteredModules": 0,
+          "hash": "607a6815",
+          "id": 0,
+          "initial": true,
+          "modules": Array [
+            Object {
+              "assets": Array [],
+              "built": true,
+              "cacheable": true,
+              "chunks": Array [
+                0,
+              ],
+              "depth": 0,
+              "errors": 0,
+              "failed": false,
+              "id": 0,
+              "identifier": "<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/src/index.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
+              "index": 0,
+              "index2": 1,
+              "issuer": null,
+              "issuerId": null,
+              "issuerName": null,
+              "issuerPath": null,
+              "name": "./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js!./example/app.scss",
+              "optimizationBailout": Array [
+                "ModuleConcatenation bailout: Module is not an ECMAScript module",
+              ],
+              "optional": false,
+              "prefetched": false,
+              "profile": undefined,
+              "providedExports": null,
+              "reasons": Array [
+                Object {
+                  "explanation": undefined,
+                  "loc": "mini-css-extract-plugin",
+                  "module": null,
+                  "moduleId": null,
+                  "moduleIdentifier": null,
+                  "moduleName": null,
+                  "type": "single entry",
+                  "userRequest": "!!<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/src/index.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
+                },
+              ],
+              "size": 519,
+              "source": "// Imports
+var ___CSS_LOADER_API_IMPORT___ = require(\\"../node_modules/css-loader/dist/runtime/api.js\\");
+exports = ___CSS_LOADER_API_IMPORT___(true);
+// Module
+exports.push([module.id, \\"body p{color:hotpink;text-align:center}\\", \\"\\",{\\"version\\":3,\\"sources\\":[\\"<PROJECT_ROOT>/example/app.scss\\"],\\"names\\":[],\\"mappings\\":\\"AACI,OACI,aAAA,CACA,iBAAA\\",\\"file\\":\\"app.scss\\",\\"sourcesContent\\":[\\"body {/n    p {/n        color: hotpink;/n        text-align: center;/n    }/n}/n\\"]}]);
+// Exports
+module.exports = exports;
+",
+              "usedExports": true,
+              "warnings": 0,
+            },
+            Object {
+              "assets": Array [],
+              "built": true,
+              "cacheable": true,
+              "chunks": Array [
+                0,
+              ],
+              "depth": 1,
+              "errors": 0,
+              "failed": false,
+              "id": 1,
+              "identifier": "<PROJECT_ROOT>/node_modules/css-loader/dist/runtime/api.js",
+              "index": 1,
+              "index2": 0,
+              "issuer": "<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/src/index.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
+              "issuerId": 0,
+              "issuerName": "./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js!./example/app.scss",
+              "issuerPath": Array [
+                Object {
+                  "id": 0,
+                  "identifier": "<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/src/index.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
+                  "name": "./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js!./example/app.scss",
+                  "profile": undefined,
+                },
+              ],
+              "name": "./node_modules/css-loader/dist/runtime/api.js",
+              "optimizationBailout": Array [
+                "ModuleConcatenation bailout: Module is not an ECMAScript module",
+              ],
+              "optional": false,
+              "prefetched": false,
+              "profile": undefined,
+              "providedExports": null,
+              "reasons": Array [
+                Object {
+                  "explanation": undefined,
+                  "loc": "2:34-91",
+                  "module": "./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js!./example/app.scss",
+                  "moduleId": 0,
+                  "moduleIdentifier": "<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/src/index.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
+                  "moduleName": "./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js!./example/app.scss",
+                  "type": "cjs require",
+                  "userRequest": "../node_modules/css-loader/dist/runtime/api.js",
+                },
+              ],
+              "size": 2517,
+              "source": "\\"use strict\\";
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+// eslint-disable-next-line func-names
+module.exports = function (useSourceMap) {
+  var list = []; // return the list of modules as css string
+
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = cssWithMappingToString(item, useSourceMap);
+
+      if (item[2]) {
+        return \\"@media \\".concat(item[2], \\" {\\").concat(content, \\"}\\");
+      }
+
+      return content;
+    }).join('');
+  }; // import a list of modules into the list
+  // eslint-disable-next-line func-names
+
+
+  list.i = function (modules, mediaQuery, dedupe) {
+    if (typeof modules === 'string') {
+      // eslint-disable-next-line no-param-reassign
+      modules = [[null, modules, '']];
+    }
+
+    var alreadyImportedModules = {};
+
+    if (dedupe) {
+      for (var i = 0; i < this.length; i++) {
+        // eslint-disable-next-line prefer-destructuring
+        var id = this[i][0];
+
+        if (id != null) {
+          alreadyImportedModules[id] = true;
+        }
+      }
+    }
+
+    for (var _i = 0; _i < modules.length; _i++) {
+      var item = [].concat(modules[_i]);
+
+      if (dedupe && alreadyImportedModules[item[0]]) {
+        // eslint-disable-next-line no-continue
+        continue;
+      }
+
+      if (mediaQuery) {
+        if (!item[2]) {
+          item[2] = mediaQuery;
+        } else {
+          item[2] = \\"\\".concat(mediaQuery, \\" and \\").concat(item[2]);
+        }
+      }
+
+      list.push(item);
+    }
+  };
+
+  return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring
+
+  var cssMapping = item[3];
+
+  if (!cssMapping) {
+    return content;
+  }
+
+  if (useSourceMap && typeof btoa === 'function') {
+    var sourceMapping = toComment(cssMapping);
+    var sourceURLs = cssMapping.sources.map(function (source) {
+      return \\"/*# sourceURL=\\".concat(cssMapping.sourceRoot || '').concat(source, \\" */\\");
+    });
+    return [content].concat(sourceURLs).concat([sourceMapping]).join('/n');
+  }
+
+  return [content].join('/n');
+} // Adapted from convert-source-map (MIT)
+
+
+function toComment(sourceMap) {
+  // eslint-disable-next-line no-undef
+  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+  var data = \\"sourceMappingURL=data:application/json;charset=utf-8;base64,\\".concat(base64);
+  return \\"/*# \\".concat(data, \\" */\\");
+}",
+              "usedExports": true,
+              "warnings": 0,
+            },
+          ],
+          "names": Array [
+            "mini-css-extract-plugin",
+          ],
+          "origins": Array [
+            Object {
+              "loc": "mini-css-extract-plugin",
+              "module": "",
+              "moduleId": undefined,
+              "moduleIdentifier": "",
+              "moduleName": "",
+              "reasons": Array [],
+              "request": "!!<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/src/index.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
+            },
+          ],
+          "parents": Array [],
+          "reason": undefined,
+          "recorded": undefined,
+          "rendered": true,
+          "siblings": Array [],
+          "size": 3036,
+        },
+      ],
+      "entrypoints": Object {
+        "mini-css-extract-plugin": Object {
+          "assets": Array [
+            "*",
+          ],
+          "childAssets": Object {},
+          "children": Object {},
+          "chunks": Array [
+            0,
+          ],
+          "isOverSizeLimit": undefined,
+        },
+      },
+      "errors": Array [],
+      "filteredAssets": 0,
+      "logging": Object {
+        "webpack.buildChunkGraph.visitModules": Object {
+          "debug": false,
+          "entries": Array [],
+          "filteredEntries": 2,
+        },
+      },
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-1!node_modules/postcss-loader/src/index.js??ref--6-2!node_modules/sass-loader/dist/cjs.js!example/app.scss",
+      "namedChunkGroups": Object {
+        "mini-css-extract-plugin": Object {
+          "assets": Array [
+            "*",
+          ],
+          "childAssets": Object {},
+          "children": Object {},
+          "chunks": Array [
+            0,
+          ],
+          "isOverSizeLimit": undefined,
+        },
+      },
+      "outputPath": "/dist",
+      "publicPath": "/dist/",
+      "warnings": Array [],
+    },
+  ],
   "chunks": Array [
     Object {
       "children": Array [],
       "childrenByOrder": Object {},
       "entry": true,
       "files": Array [
+        "main.css",
         "main.js",
+        "main.css.map",
         "main.js.map",
       ],
       "filteredModules": 0,
-      "hash": "e814257f",
+      "hash": "163598c8",
       "id": 0,
       "initial": true,
       "modules": Array [
         Object {
           "assets": Array [],
           "built": true,
-          "cacheable": true,
+          "cacheable": undefined,
           "chunks": Array [
             0,
           ],
@@ -74,13 +380,61 @@ Object {
           "errors": 0,
           "failed": false,
           "id": 0,
-          "identifier": "<PROJECT_ROOT>/node_modules/babel-loader/lib/index.js!<PROJECT_ROOT>/example/app.js",
+          "identifier": "multi <PROJECT_ROOT>/example/app.js <PROJECT_ROOT>/example/app.scss",
           "index": 0,
-          "index2": 0,
+          "index2": 3,
           "issuer": null,
           "issuerId": null,
           "issuerName": null,
           "issuerPath": null,
+          "name": "multi ./example/app.js ./example/app.scss",
+          "optimizationBailout": Array [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module",
+          ],
+          "optional": false,
+          "prefetched": false,
+          "profile": undefined,
+          "providedExports": null,
+          "reasons": Array [
+            Object {
+              "explanation": undefined,
+              "module": null,
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "moduleName": null,
+              "type": "multi entry",
+              "userRequest": undefined,
+            },
+          ],
+          "size": 40,
+          "usedExports": true,
+          "warnings": 0,
+        },
+        Object {
+          "assets": Array [],
+          "built": true,
+          "cacheable": true,
+          "chunks": Array [
+            0,
+          ],
+          "depth": 1,
+          "errors": 0,
+          "failed": false,
+          "id": 1,
+          "identifier": "<PROJECT_ROOT>/node_modules/babel-loader/lib/index.js!<PROJECT_ROOT>/example/app.js",
+          "index": 1,
+          "index2": 0,
+          "issuer": "multi <PROJECT_ROOT>/example/app.js <PROJECT_ROOT>/example/app.scss",
+          "issuerId": 0,
+          "issuerName": "multi ./example/app.js ./example/app.scss",
+          "issuerPath": Array [
+            Object {
+              "id": 0,
+              "identifier": "multi <PROJECT_ROOT>/example/app.js <PROJECT_ROOT>/example/app.scss",
+              "name": "multi ./example/app.js ./example/app.scss",
+              "profile": undefined,
+            },
+          ],
           "name": "./example/app.js",
           "optimizationBailout": Array [
             "ModuleConcatenation bailout: Module is not an ECMAScript module",
@@ -92,17 +446,128 @@ Object {
           "reasons": Array [
             Object {
               "explanation": undefined,
-              "loc": "main",
-              "module": null,
-              "moduleId": null,
-              "moduleIdentifier": null,
-              "moduleName": null,
+              "loc": "main[0]",
+              "module": "multi ./example/app.js ./example/app.scss",
+              "moduleId": 0,
+              "moduleIdentifier": "multi <PROJECT_ROOT>/example/app.js <PROJECT_ROOT>/example/app.scss",
+              "moduleName": "multi ./example/app.js ./example/app.scss",
               "type": "single entry",
               "userRequest": "<PROJECT_ROOT>/example/app.js",
             },
           ],
           "size": 27,
           "source": "console.log('Hello world');",
+          "usedExports": true,
+          "warnings": 0,
+        },
+        Object {
+          "assets": Array [],
+          "built": true,
+          "cacheable": true,
+          "chunks": Array [
+            0,
+          ],
+          "depth": 1,
+          "errors": 0,
+          "failed": false,
+          "id": 2,
+          "identifier": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-0!<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/src/index.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
+          "index": 2,
+          "index2": 2,
+          "issuer": "multi <PROJECT_ROOT>/example/app.js <PROJECT_ROOT>/example/app.scss",
+          "issuerId": 0,
+          "issuerName": "multi ./example/app.js ./example/app.scss",
+          "issuerPath": Array [
+            Object {
+              "id": 0,
+              "identifier": "multi <PROJECT_ROOT>/example/app.js <PROJECT_ROOT>/example/app.scss",
+              "name": "multi ./example/app.js ./example/app.scss",
+              "profile": undefined,
+            },
+          ],
+          "name": "./example/app.scss",
+          "optimizationBailout": Array [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module",
+          ],
+          "optional": false,
+          "prefetched": false,
+          "profile": undefined,
+          "providedExports": null,
+          "reasons": Array [
+            Object {
+              "explanation": undefined,
+              "loc": "main[1]",
+              "module": "multi ./example/app.js ./example/app.scss",
+              "moduleId": 0,
+              "moduleIdentifier": "multi <PROJECT_ROOT>/example/app.js <PROJECT_ROOT>/example/app.scss",
+              "moduleName": "multi ./example/app.js ./example/app.scss",
+              "type": "single entry",
+              "userRequest": "<PROJECT_ROOT>/example/app.scss",
+            },
+          ],
+          "size": 370,
+          "source": "// extracted by mini-css-extract-plugin
+    if(module.hot) {
+      // 1482363367071
+      var cssReload = require(\\"<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\\")(module.id, {\\"hmr\\":true,\\"reloadAll\\":true,\\"locals\\":false});
+      module.hot.dispose(cssReload);
+      module.hot.accept(undefined, cssReload);
+    }
+  ",
+          "usedExports": true,
+          "warnings": 0,
+        },
+        Object {
+          "assets": Array [],
+          "built": false,
+          "cacheable": undefined,
+          "chunks": Array [
+            0,
+          ],
+          "depth": 2,
+          "errors": 0,
+          "failed": false,
+          "id": "",
+          "identifier": "css <PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/src/index.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss 0",
+          "index": 3,
+          "index2": 1,
+          "issuer": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-0!<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/src/index.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
+          "issuerId": 2,
+          "issuerName": "./example/app.scss",
+          "issuerPath": Array [
+            Object {
+              "id": 0,
+              "identifier": "multi <PROJECT_ROOT>/example/app.js <PROJECT_ROOT>/example/app.scss",
+              "name": "multi ./example/app.js ./example/app.scss",
+              "profile": undefined,
+            },
+            Object {
+              "id": 2,
+              "identifier": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-0!<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/src/index.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
+              "name": "./example/app.scss",
+              "profile": undefined,
+            },
+          ],
+          "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js!./example/app.scss",
+          "optimizationBailout": Array [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module",
+          ],
+          "optional": false,
+          "prefetched": false,
+          "profile": undefined,
+          "providedExports": null,
+          "reasons": Array [
+            Object {
+              "explanation": undefined,
+              "module": "./example/app.scss",
+              "moduleId": 2,
+              "moduleIdentifier": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-0!<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/src/index.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
+              "moduleName": "./example/app.scss",
+              "type": undefined,
+              "userRequest": undefined,
+            },
+          ],
+          "size": 39,
           "usedExports": true,
           "warnings": 0,
         },
@@ -118,7 +583,7 @@ Object {
           "moduleIdentifier": "",
           "moduleName": "",
           "reasons": Array [],
-          "request": "<PROJECT_ROOT>/example/app.js",
+          "request": null,
         },
       ],
       "parents": Array [],
@@ -126,13 +591,15 @@ Object {
       "recorded": undefined,
       "rendered": true,
       "siblings": Array [],
-      "size": 27,
+      "size": 476,
     },
   ],
   "entrypoints": Object {
     "main": Object {
       "assets": Array [
+        "main.css",
         "main.js",
+        "main.css.map",
         "main.js.map",
       ],
       "childAssets": Object {},
@@ -156,7 +623,9 @@ Object {
   "namedChunkGroups": Object {
     "main": Object {
       "assets": Array [
+        "main.css",
         "main.js",
+        "main.css.map",
         "main.js.map",
       ],
       "childAssets": Object {},
@@ -181,7 +650,9 @@ You can also set it to 'none' to disable any default behavior. Learn more: https
 
 exports[`fs 2`] = `
 Array [
+  "/dist/main.css",
   "/dist/main.js",
+  "/dist/main.css.map",
   "/dist/main.js.map",
   "/dist/manifest.json",
 ]
