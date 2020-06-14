@@ -42,5 +42,5 @@
         "publish": "npm publish --access public",
         "test": "jest"
     },
-    "version": "1.0.12"
+    "version": "1.0.13"
 }
