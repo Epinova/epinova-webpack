@@ -29,7 +29,7 @@ Object {
       },
       "isOverSizeLimit": undefined,
       "name": "main.css.map",
-      "size": 213,
+      "size": 211,
     },
     Object {
       "chunkNames": Array [
@@ -92,7 +92,7 @@ Object {
             "*",
           ],
           "filteredModules": 0,
-          "hash": "59a44ca4",
+          "hash": "cf66f952",
           "id": 0,
           "initial": true,
           "modules": Array [
@@ -103,71 +103,21 @@ Object {
               "chunks": Array [
                 0,
               ],
-              "depth": 0,
-              "errors": 0,
-              "failed": false,
-              "id": 0,
-              "identifier": "<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/src/index.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
-              "index": 0,
-              "index2": 1,
-              "issuer": null,
-              "issuerId": null,
-              "issuerName": null,
-              "issuerPath": null,
-              "name": "./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js!./example/app.scss",
-              "optimizationBailout": Array [
-                "ModuleConcatenation bailout: Module is not an ECMAScript module",
-              ],
-              "optional": false,
-              "prefetched": false,
-              "profile": undefined,
-              "providedExports": null,
-              "reasons": Array [
-                Object {
-                  "explanation": undefined,
-                  "loc": "mini-css-extract-plugin",
-                  "module": null,
-                  "moduleId": null,
-                  "moduleIdentifier": null,
-                  "moduleName": null,
-                  "type": "single entry",
-                  "userRequest": "!!<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/src/index.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
-                },
-              ],
-              "size": 519,
-              "source": "// Imports
-var ___CSS_LOADER_API_IMPORT___ = require(\\"../node_modules/css-loader/dist/runtime/api.js\\");
-exports = ___CSS_LOADER_API_IMPORT___(true);
-// Module
-exports.push([module.id, \\"body p{color:hotpink;text-align:center}\\", \\"\\",{\\"version\\":3,\\"sources\\":[\\"<PROJECT_ROOT>/example/app.scss\\"],\\"names\\":[],\\"mappings\\":\\"AACI,OACI,aAAA,CACA,iBAAA\\",\\"file\\":\\"app.scss\\",\\"sourcesContent\\":[\\"body {/n    p {/n        color: hotpink;/n        text-align: center;/n    }/n}/n\\"]}]);
-// Exports
-module.exports = exports;
-",
-              "usedExports": true,
-              "warnings": 0,
-            },
-            Object {
-              "assets": Array [],
-              "built": true,
-              "cacheable": true,
-              "chunks": Array [
-                0,
-              ],
               "depth": 1,
               "errors": 0,
               "failed": false,
-              "id": 1,
+              "id": 0,
               "identifier": "<PROJECT_ROOT>/node_modules/css-loader/dist/runtime/api.js",
               "index": 1,
               "index2": 0,
-              "issuer": "<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/src/index.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
-              "issuerId": 0,
-              "issuerName": "./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js!./example/app.scss",
+              "issuer": "<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/dist/cjs.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
+              "issuerId": 1,
+              "issuerName": "./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js!./example/app.scss",
               "issuerPath": Array [
                 Object {
-                  "id": 0,
-                  "identifier": "<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/src/index.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
-                  "name": "./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js!./example/app.scss",
+                  "id": 1,
+                  "identifier": "<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/dist/cjs.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
+                  "name": "./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js!./example/app.scss",
                   "profile": undefined,
                 },
               ],
@@ -182,12 +132,22 @@ module.exports = exports;
               "reasons": Array [
                 Object {
                   "explanation": undefined,
-                  "loc": "2:34-91",
-                  "module": "./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js!./example/app.scss",
-                  "moduleId": 0,
-                  "moduleIdentifier": "<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/src/index.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
-                  "moduleName": "./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js!./example/app.scss",
-                  "type": "cjs require",
+                  "loc": "2:0-89",
+                  "module": "./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js!./example/app.scss",
+                  "moduleId": 1,
+                  "moduleIdentifier": "<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/dist/cjs.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
+                  "moduleName": "./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js!./example/app.scss",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "../node_modules/css-loader/dist/runtime/api.js",
+                },
+                Object {
+                  "explanation": undefined,
+                  "loc": "3:30-57",
+                  "module": "./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js!./example/app.scss",
+                  "moduleId": 1,
+                  "moduleIdentifier": "<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/dist/cjs.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
+                  "moduleName": "./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js!./example/app.scss",
+                  "type": "harmony import specifier",
                   "userRequest": "../node_modules/css-loader/dist/runtime/api.js",
                 },
               ],
@@ -286,6 +246,60 @@ function toComment(sourceMap) {
   var data = \\"sourceMappingURL=data:application/json;charset=utf-8;base64,\\".concat(base64);
   return \\"/*# \\".concat(data, \\" */\\");
 }",
+              "usedExports": Array [
+                "default",
+              ],
+              "warnings": 0,
+            },
+            Object {
+              "assets": Array [],
+              "built": true,
+              "cacheable": true,
+              "chunks": Array [
+                0,
+              ],
+              "depth": 0,
+              "errors": 0,
+              "failed": false,
+              "id": 1,
+              "identifier": "<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/dist/cjs.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
+              "index": 0,
+              "index2": 1,
+              "issuer": null,
+              "issuerId": null,
+              "issuerName": null,
+              "issuerPath": null,
+              "name": "./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js!./example/app.scss",
+              "optimizationBailout": Array [
+                "ModuleConcatenation bailout: Module uses module.id",
+              ],
+              "optional": false,
+              "prefetched": false,
+              "profile": undefined,
+              "providedExports": Array [
+                "default",
+              ],
+              "reasons": Array [
+                Object {
+                  "explanation": undefined,
+                  "loc": "mini-css-extract-plugin",
+                  "module": null,
+                  "moduleId": null,
+                  "moduleIdentifier": null,
+                  "moduleName": null,
+                  "type": "single entry",
+                  "userRequest": "!!<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/dist/cjs.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
+                },
+              ],
+              "size": 541,
+              "source": "// Imports
+import ___CSS_LOADER_API_IMPORT___ from \\"../node_modules/css-loader/dist/runtime/api.js\\";
+var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(true);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, \\"body p{color:hotpink;text-align:center}\\", \\"\\",{\\"version\\":3,\\"sources\\":[\\"webpack://example/app.scss\\"],\\"names\\":[],\\"mappings\\":\\"AACI,OACI,aAAA,CACA,iBAAA\\",\\"sourcesContent\\":[\\"body {/n    p {/n        color: hotpink;/n        text-align: center;/n    }/n}/n\\"],\\"sourceRoot\\":\\"\\"}]);
+// Exports
+export default ___CSS_LOADER_EXPORT___;
+",
               "usedExports": true,
               "warnings": 0,
             },
@@ -301,7 +315,7 @@ function toComment(sourceMap) {
               "moduleIdentifier": "",
               "moduleName": "",
               "reasons": Array [],
-              "request": "!!<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/src/index.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
+              "request": "!!<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/dist/cjs.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
             },
           ],
           "parents": Array [],
@@ -309,7 +323,7 @@ function toComment(sourceMap) {
           "recorded": undefined,
           "rendered": true,
           "siblings": Array [],
-          "size": 3036,
+          "size": 3058,
         },
       ],
       "entrypoints": Object {
@@ -334,7 +348,7 @@ function toComment(sourceMap) {
           "filteredEntries": 2,
         },
       },
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-1!node_modules/postcss-loader/src/index.js??ref--6-2!node_modules/sass-loader/dist/cjs.js!example/app.scss",
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-1!node_modules/postcss-loader/dist/cjs.js??ref--6-2!node_modules/sass-loader/dist/cjs.js!example/app.scss",
       "namedChunkGroups": Object {
         "mini-css-extract-plugin": Object {
           "assets": Array [
@@ -365,7 +379,7 @@ function toComment(sourceMap) {
         "main.js.map",
       ],
       "filteredModules": 0,
-      "hash": "4cc9f3aa",
+      "hash": "beb5082f",
       "id": 0,
       "initial": true,
       "modules": Array [
@@ -471,7 +485,7 @@ function toComment(sourceMap) {
           "errors": 0,
           "failed": false,
           "id": 2,
-          "identifier": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-0!<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/src/index.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
+          "identifier": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-0!<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/dist/cjs.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
           "index": 2,
           "index2": 2,
           "issuer": "multi <PROJECT_ROOT>/example/app.js <PROJECT_ROOT>/example/app.scss",
@@ -528,10 +542,10 @@ function toComment(sourceMap) {
           "errors": 0,
           "failed": false,
           "id": "",
-          "identifier": "css <PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/src/index.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss 0",
+          "identifier": "css <PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/dist/cjs.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss 0",
           "index": 3,
           "index2": 1,
-          "issuer": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-0!<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/src/index.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
+          "issuer": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-0!<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/dist/cjs.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
           "issuerId": 2,
           "issuerName": "./example/app.scss",
           "issuerPath": Array [
@@ -543,12 +557,12 @@ function toComment(sourceMap) {
             },
             Object {
               "id": 2,
-              "identifier": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-0!<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/src/index.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
+              "identifier": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-0!<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/dist/cjs.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
               "name": "./example/app.scss",
               "profile": undefined,
             },
           ],
-          "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js!./example/app.scss",
+          "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js!./example/app.scss",
           "optimizationBailout": Array [
             "ModuleConcatenation bailout: Module is not an ECMAScript module",
           ],
@@ -561,7 +575,7 @@ function toComment(sourceMap) {
               "explanation": undefined,
               "module": "./example/app.scss",
               "moduleId": 2,
-              "moduleIdentifier": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-0!<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/src/index.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
+              "moduleIdentifier": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-0!<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ref--6-1!<PROJECT_ROOT>/node_modules/postcss-loader/dist/cjs.js??ref--6-2!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js!<PROJECT_ROOT>/example/app.scss",
               "moduleName": "./example/app.scss",
               "type": undefined,
               "userRequest": undefined,
@@ -639,7 +653,7 @@ function toComment(sourceMap) {
   "outputPath": "/dist",
   "publicPath": "/dist/",
   "time": 0,
-  "version": "4.43.0",
+  "version": "4.44.2",
   "warnings": Array [
     "configuration
 The 'mode' option has not been set, webpack will fallback to 'production' for this value. Set 'mode' option to 'development' or 'production' to enable defaults for each environment.
