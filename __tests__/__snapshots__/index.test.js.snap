@@ -181,6 +181,7 @@ Object {
       ".jsx",
     ],
   },
+  "stats": "errors-warnings",
 }
 `;
 
@@ -365,5 +366,6 @@ Object {
       ".jsx",
     ],
   },
+  "stats": "errors-warnings",
 }
 `;

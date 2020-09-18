@@ -36,6 +36,7 @@ module.exports = function(userOptions, callback) {
         const isDevServer = process.env.WEBPACK_DEV_SERVER
 
         return callback({
+            stats: 'errors-warnings',
             devServer: {
                 compress: true,
                 disableHostCheck: true,
