@@ -42,8 +42,6 @@ module.exports = function(userOptions, callback) {
             publicPath = publicPath.replace("http", "https");
         }
 
-        console.log(publicPath, options.https);
-
         return callback({
             stats: 'errors-warnings',
             devServer: {
