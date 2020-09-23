@@ -50,7 +50,12 @@ test("fs", async () => {
 
     const promise = new Promise((resolve, reject) => {
         const c = config({ path: "dist", outputPath: "/dist" }, config => {
-            config.entry = path.join(__dirname, "../example/app.js");
+            config.entry = {
+                main: [
+                    path.join(__dirname, "../example/app.js"),
+                    path.join(__dirname, "../example/app.scss"),
+                ]
+            }
 
             config.optimization = {};
 

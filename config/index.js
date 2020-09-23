@@ -8,6 +8,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 const defaultOptions = {
     path: 'dist',
+    https: false,
     outputPath: undefined,
     devServerContentBase: path.resolve(process.cwd() || process.env.PWD || __dirname),
     devServerHost: '0.0.0.0',
@@ -35,16 +36,23 @@ module.exports = function(userOptions, callback) {
     return function(env, argv) {
         const isDevServer = process.env.WEBPACK_DEV_SERVER
 
+        let publicPath = options.browserstackUrl + ':' + options.devServerPort + '/' + options.path + '/';
+
+        if(! argv.browserstackUrl && options.https) {
+            publicPath = publicPath.replace("http", "https");
+        }
+
         return callback({
             stats: 'errors-warnings',
             devServer: {
                 compress: true,
                 disableHostCheck: true,
                 headers: { 'Access-Control-Allow-Origin': '*' },
+                https: options.https,
                 host: options.devServerHost,
                 port: options.devServerPort,
                 contentBase: options.devServerContentBase,
-                publicPath: options.browserstackUrl + ':' + options.devServerPort + '/' + options.path + '/'
+                publicPath,
             },
             devtool: argv.mode === 'development' ? 'cheap-module-source-map' : false,
             resolve: {
@@ -140,7 +148,7 @@ module.exports = function(userOptions, callback) {
                 hashDigestLength: 8,
                 publicPath:
                     isDevServer
-                        ? options.browserstackUrl + ':' + options.devServerPort + '/' + options.path + '/'
+                        ? publicPath
                         : '/' + options.path + '/',
                 path: options.outputPath,
                 filename:
