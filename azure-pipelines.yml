@@ -26,10 +26,12 @@ stages:
               versionSpec: "10.x"
             displayName: "Install Node.js"
 
-          - script: npm install
-          - script: npm install fibers@4
-          - script: npm run build
-          - script: npm test
+          - script: |
+              npm install
+              npm install fibers@4
+              npm run build --if-present
+              npm test
+            displayName: "npm install, build & test"
 
       - job: node_12
         displayName: Node 12
@@ -39,10 +41,12 @@ stages:
               versionSpec: "12.x"
             displayName: "Install Node.js"
 
-          - script: npm install
-          - script: npm install fibers@5
-          - script: npm run build
-          - script: npm test
+          - script: |
+              npm install
+              npm install fibers@5
+              npm run build --if-present
+              npm test
+            displayName: "npm install, build & test"
 
       - job: node_14
         displayName: Node 14
@@ -52,10 +56,12 @@ stages:
               versionSpec: "14.x"
             displayName: "Install Node.js"
 
-          - script: npm install
-          - script: npm install fibers@5
-          - script: npm run build
-          - script: npm test
+          - script: |
+              npm install
+              npm install fibers@5
+              npm run build --if-present
+              npm test
+            displayName: "npm install, build & test"
 
   - stage: publish
     displayName: Pack and Publish
