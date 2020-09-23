@@ -14,9 +14,9 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "webpack": "^4.39.3",
-        "webpack-cli": "^3.3.8",
-        "webpack-dev-server": "^3.8.0"
+        "webpack": "^4.44.2",
+        "webpack-cli": "^3.3.12",
+        "webpack-dev-server": "^3.11.0"
     },
     "devDependencies": {
         "fibers": "^5.0.0"
