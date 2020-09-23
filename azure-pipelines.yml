@@ -67,8 +67,14 @@ stages:
     displayName: Pack and Publish
     condition: and(succeeded(), eq(variables.isMain, true))
     jobs:
-      - job: Pack
+      - job: pack_and_publish
+        displayName: Pack & Publish
         steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: "14.x"
+            displayName: "Node 14"
+
           - script: |
               npm pack
             displayName: "Package for npm release"
