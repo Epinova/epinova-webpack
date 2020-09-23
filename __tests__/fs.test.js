@@ -2,9 +2,9 @@
  * @jest-environment node
  */
 
-jest.mock('fs-extra', () => {
-      return { outputFileSync: function (outputFile, output) {} };
-  });
+jest.mock("fs-extra", () => {
+    return { outputFileSync: function (outputFile, output) {} };
+});
 
 const webpack = require("webpack");
 const { createFsFromVolume, Volume } = require("memfs");
@@ -41,7 +41,7 @@ function buildWebpackCompiler(fs, webpackConfig) {
 
     return compiler;
 }
-test("fs", async () => {
+test("fs", async (done) => {
     Date.now = jest.fn(() => 1482363367071);
 
     const vol = new Volume();
@@ -49,17 +49,15 @@ test("fs", async () => {
     fs.mkdirSync("/dist");
 
     const promise = new Promise((resolve, reject) => {
-        const c = config({ path: "dist", outputPath: "/dist" }, config => {
+        const c = config({ path: "dist", outputPath: "/dist" }, (config) => {
             config.entry = {
                 main: [
                     path.join(__dirname, "../example/app.js"),
                     path.join(__dirname, "../example/app.scss"),
-                ]
-            }
+                ],
+            };
 
-            config.optimization = {};
-
-            // config.plugins = [];
+            // config.optimization = {};
 
             return config;
         })("development", { mode: "development" });
@@ -74,16 +72,8 @@ test("fs", async () => {
         });
     });
 
-    return promise.then(stats => {
-        expect(
-            stats.toJson({
-                assets: true,
-                hash: true,
-                modules: false
-            })
-        ).toMatchSnapshot({
-            hash: expect.any(String)
-        });
-        expect(Object.keys(vol.toJSON())).toMatchSnapshot();
+    return promise.then((stats) => {
+        expect(vol.toJSON()).toMatchSnapshot();
+        done();
     });
 });
