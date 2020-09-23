@@ -7,10 +7,10 @@ Default Webpack configuration for Epinova Webpack projects
 `webpack.config.js`
 
 ```javascript
-const epinovaWebpackConfig = require("@epinova/webpack");
+const epinovaWebpackConfig = require('@epinova/webpack');
 
 const config = epinovaWebpackConfig({}, (config) => {
-    config.entry = "./Scripts/global/index.js";
+    config.entry = './Scripts/global/index.js';
 
     return config;
 });
@@ -72,12 +72,12 @@ For Firefox you need to open the console and check for lines such as `Error load
 `npm i --save globbed-webpack-entries-plugin`
 
 ```javascript
-const epinovaWebpackConfig = require("@epinova/webpack");
-const GlobbedEntriesPlugin = require("globbed-webpack-entries-plugin");
+const epinovaWebpackConfig = require('@epinova/webpack');
+const GlobbedEntriesPlugin = require('globbed-webpack-entries-plugin');
 
 const config = epinovaWebpackConfig({}, (config) => {
     config.entry = GlobbedEntriesPlugin.entries({
-        global: ["./Scripts/global/**/*.js", "./Styles/global/**/*.scss"],
+        global: ['./Scripts/global/**/*.js', './Styles/global/**/*.scss'],
     });
 
     config.plugins.push(new GlobbedEntriesPlugin());
