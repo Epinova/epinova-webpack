@@ -41,7 +41,10 @@ function buildWebpackCompiler(fs, webpackConfig) {
 
     return compiler;
 }
-test("fs", async (done) => {
+
+test("fs", () => {
+    expect.assertions(2);
+
     Date.now = jest.fn(() => 1482363367071);
 
     const vol = new Volume();
@@ -50,6 +53,8 @@ test("fs", async (done) => {
 
     const promise = new Promise((resolve, reject) => {
         const c = config({ path: "dist", outputPath: "/dist" }, (config) => {
+            config.mode = "production";
+
             config.entry = {
                 main: [
                     path.join(__dirname, "../example/app.js"),
@@ -57,16 +62,11 @@ test("fs", async (done) => {
                 ],
             };
 
-            // config.optimization = {};
-
             return config;
-        })("development", { mode: "development" });
+        })("production", { mode: "production" });
 
-        const compiler = buildWebpackCompiler(fs, c);
-        return compiler.run((err, stats) => {
-            if (err) {
-                return reject(err);
-            }
+        buildWebpackCompiler(fs, c).run((err, stats) => {
+            if (err) reject(err);
 
             resolve(stats);
         });
@@ -74,6 +74,6 @@ test("fs", async (done) => {
 
     return promise.then((stats) => {
         expect(vol.toJSON()).toMatchSnapshot();
-        done();
+        expect(stats.toJson("minimal")).toMatchSnapshot();
     });
 });
