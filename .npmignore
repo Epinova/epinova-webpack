@@ -1,5 +1,6 @@
 __tests__
 .editorconfig
+.prettierrc
 example
 .github
 azure-pipelines.yml

@@ -37,7 +37,7 @@ Object {
             "options": Object {
               "importLoaders": 1,
               "sourceMap": true,
-              "url": false,
+              "url": [Function],
             },
           },
           Object {
@@ -63,7 +63,7 @@ Object {
             "options": Object {
               "importLoaders": 2,
               "sourceMap": true,
-              "url": false,
+              "url": [Function],
             },
           },
           Object {
@@ -76,6 +76,14 @@ Object {
             "loader": "sass-loader",
           },
         ],
+      },
+      Object {
+        "loader": "url-loader",
+        "options": Object {
+          "limit": 8192,
+          "outputPath": "assets",
+        },
+        "test": /\\\\\\.\\(svg\\|png\\|jpg\\)\\$/i,
       },
     ],
   },
@@ -223,7 +231,7 @@ Object {
             "options": Object {
               "importLoaders": 1,
               "sourceMap": true,
-              "url": false,
+              "url": [Function],
             },
           },
           Object {
@@ -249,7 +257,7 @@ Object {
             "options": Object {
               "importLoaders": 2,
               "sourceMap": true,
-              "url": false,
+              "url": [Function],
             },
           },
           Object {
@@ -262,6 +270,14 @@ Object {
             "loader": "sass-loader",
           },
         ],
+      },
+      Object {
+        "loader": "url-loader",
+        "options": Object {
+          "limit": 8192,
+          "outputPath": "assets",
+        },
+        "test": /\\\\\\.\\(svg\\|png\\|jpg\\)\\$/i,
       },
     ],
   },
