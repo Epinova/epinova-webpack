@@ -146,7 +146,7 @@ module.exports = function (userOptions, callback) {
                             ],
                         },
                         {
-                            test: /\.(svg|png|jpg)$/i,
+                            test: /\.(svg|png|jpg|gif)$/i,
                             loader: 'url-loader',
                             options: {
                                 limit: 8192,
