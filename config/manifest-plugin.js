@@ -106,6 +106,7 @@ module.exports = /** @class */ (function () {
             for (const chunk of chunks) {
                 const name = chunk.name;
                 if (!name) continue;
+                if (name.indexOf("vendors~") !== -1) continue;
                 if (
                     Object.prototype.hasOwnProperty.call(
                         this.manifest.chunks,
