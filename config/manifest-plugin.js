@@ -32,6 +32,7 @@ module.exports = /** @class */ (function () {
         );
         this.manifest = { assets: {}, chunks: {} };
         this.isWebpack4 = false;
+        this.isDevServer = process.env.WEBPACK_DEV_SERVER;
         this.addAssets = this.addAssets.bind(this);
     }
     /**
@@ -257,12 +258,22 @@ module.exports = /** @class */ (function () {
         var output = JSON.stringify(this.manifest, null, 2);
         var outputPath = this.getOutputPath();
 
-        if (!fs.existsSync(outputPath)) fs.mkdirSync(path.resolve(outputPath));
-
-        fs.writeFileSync(
-            path.join(this.getOutputPath(), this.options.filename),
-            output
+        // Expose the manifest file into the assets compilation
+        // The file is automatically created by the compiler
+        this.compilation.emitAsset(
+            this.options.filename,
+            new RawSource(output, false)
         );
+
+        if (this.isDevServer) {
+            if (!fs.existsSync(outputPath))
+                fs.mkdirSync(path.resolve(outputPath));
+
+            fs.writeFileSync(
+                path.join(this.getOutputPath(), this.options.filename),
+                output
+            );
+        }
     };
     /**
      * Throw an error
