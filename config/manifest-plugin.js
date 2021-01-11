@@ -47,6 +47,11 @@ module.exports = /** @class */ (function () {
             "ChunksWebpackPlugin",
             this.hookCallback.bind(this)
         );
+
+        compiler.hooks["afterEmit"].tap(
+            "ChunksWebpackPlugin",
+            this.writeChunksManifestFile.bind(this)
+        );
     };
     /**
      * Hook expose by the Webpack compiler
@@ -257,7 +262,6 @@ module.exports = /** @class */ (function () {
     ChunksWebpackPlugin.prototype.createChunksManifestFile = function () {
         // Stringify the content of the manifest
         var output = JSON.stringify(this.manifest, null, 2);
-        var outputPath = this.getOutputPath();
 
         // Expose the manifest file into the assets compilation
         // The file is automatically created by the compiler
@@ -265,16 +269,26 @@ module.exports = /** @class */ (function () {
             this.options.filename,
             new RawSource(output, false)
         );
+    };
+    /**
+     * Write the chunks manifest file to disk
+     * Contains all scripts and styles chunks grouped by entrypoint
+     */
+    ChunksWebpackPlugin.prototype.writeChunksManifestFile = function () {
+        if (!this.isDevServer) return;
 
-        if (this.isDevServer) {
-            if (!fs.existsSync(outputPath))
-                fs.mkdirSync(path.resolve(outputPath));
+        // Stringify the content of the manifest
+        var output = JSON.stringify(this.manifest, null, 2);
+        var outputPath = this.getOutputPath();
 
-            fs.writeFileSync(
-                path.join(this.getOutputPath(), this.options.filename),
-                output
-            );
-        }
+        console.error("writing files to disk", this.isDevServer);
+
+        if (!fs.existsSync(outputPath)) fs.mkdirSync(path.resolve(outputPath));
+
+        fs.writeFileSync(
+            path.join(this.getOutputPath(), this.options.filename),
+            output
+        );
     };
     /**
      * Throw an error
