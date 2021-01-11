@@ -148,27 +148,24 @@ Object {
     "publicPath": "/dist/",
   },
   "plugins": Array [
-    ManifestPlugin {
-      "opts": Object {
-        "basePath": "",
-        "fileName": "manifest.json",
-        "filter": null,
-        "generate": null,
-        "map": null,
-        "publicPath": null,
-        "seed": null,
-        "serialize": [Function],
-        "sort": null,
-        "transformExtensions": /\\^\\(gz\\|map\\)\\$/i,
-        "writeToFileEmit": true,
-      },
-    },
     MiniCssExtractPlugin {
       "options": Object {
         "chunkFilename": "[name].css",
         "filename": "[name].css",
         "ignoreOrder": false,
         "moduleFilename": [Function],
+      },
+    },
+    ChunksWebpackPlugin {
+      "addAssets": [Function],
+      "fs": null,
+      "isWebpack4": false,
+      "manifest": Object {
+        "assets": Object {},
+        "chunks": Object {},
+      },
+      "options": Object {
+        "filename": "manifest.json",
       },
     },
   ],
@@ -334,27 +331,24 @@ Object {
     "publicPath": "/dist/",
   },
   "plugins": Array [
-    ManifestPlugin {
-      "opts": Object {
-        "basePath": "",
-        "fileName": "manifest.json",
-        "filter": null,
-        "generate": null,
-        "map": null,
-        "publicPath": null,
-        "seed": null,
-        "serialize": [Function],
-        "sort": null,
-        "transformExtensions": /\\^\\(gz\\|map\\)\\$/i,
-        "writeToFileEmit": true,
-      },
-    },
     MiniCssExtractPlugin {
       "options": Object {
         "chunkFilename": "[name].[contenthash].css",
         "filename": "[name].[contenthash].css",
         "ignoreOrder": false,
         "moduleFilename": [Function],
+      },
+    },
+    ChunksWebpackPlugin {
+      "addAssets": [Function],
+      "fs": null,
+      "isWebpack4": false,
+      "manifest": Object {
+        "assets": Object {},
+        "chunks": Object {},
+      },
+      "options": Object {
+        "filename": "manifest.json",
       },
     },
   ],

@@ -20,7 +20,6 @@
         "sass-loader": "^10.0.2",
         "webpack": "^4.44.2",
         "webpack-cli": "^3.3.12",
-        "webpack-manifest-plugin": "~2.2.0",
         "yargs": "^16.0.3"
     },
     "description": "Epinova Webpack default configuration",

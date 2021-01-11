@@ -2,7 +2,7 @@
  * @jest-environment node
  */
 
-jest.mock("fs-extra", () => {
+jest.mock("fs", () => {
     return { outputFileSync: function (outputFile, output) {} };
 });
 

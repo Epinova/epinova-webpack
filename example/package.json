@@ -14,12 +14,17 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "normalize-scss": "^7.0.1",
+        "vue": "^2.6.12",
+        "vuex": "^3.6.0"
+    },
+    "devDependencies": {
+        "clean-webpack-plugin": "^3.0.0",
+        "fibers": "^5.0.0",
+        "svg-spritemap-webpack-plugin": "^3.8.2",
         "webpack": "^4.44.2",
         "webpack-cli": "^3.3.12",
         "webpack-dev-server": "^3.11.0"
-    },
-    "devDependencies": {
-        "fibers": "^5.0.0"
     },
     "postcss": {
         "plugins": {
