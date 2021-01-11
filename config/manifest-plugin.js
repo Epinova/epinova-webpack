@@ -281,8 +281,6 @@ module.exports = /** @class */ (function () {
         var output = JSON.stringify(this.manifest, null, 2);
         var outputPath = this.getOutputPath();
 
-        console.error("writing files to disk", this.isDevServer);
-
         if (!fs.existsSync(outputPath)) fs.mkdirSync(path.resolve(outputPath));
 
         fs.writeFileSync(
