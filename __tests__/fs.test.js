@@ -2,10 +2,6 @@
  * @jest-environment node
  */
 
-jest.mock("fs", () => {
-    return { outputFileSync: function (outputFile, output) {} };
-});
-
 const webpack = require("webpack");
 const { createFsFromVolume, Volume } = require("memfs");
 const joinPath = require("memory-fs/lib/join");

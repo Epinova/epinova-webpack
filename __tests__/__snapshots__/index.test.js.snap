@@ -158,7 +158,7 @@ Object {
     },
     ChunksWebpackPlugin {
       "addAssets": [Function],
-      "fs": null,
+      "isDevServer": undefined,
       "isWebpack4": false,
       "manifest": Object {
         "assets": Object {},
@@ -341,7 +341,7 @@ Object {
     },
     ChunksWebpackPlugin {
       "addAssets": [Function],
-      "fs": null,
+      "isDevServer": undefined,
       "isWebpack4": false,
       "manifest": Object {
         "assets": Object {},
