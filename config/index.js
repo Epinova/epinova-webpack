@@ -1,32 +1,32 @@
-const path = require("path");
+const path = require('path');
 
-const argv = require("yargs").argv;
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
-const ChunksWebpackPlugin = require("./manifest-plugin");
+const argv = require('yargs').argv;
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const ChunksWebpackPlugin = require('./manifest-plugin');
 
 const defaultOptions = {
-    path: "dist",
+    path: 'dist',
     https: false,
     outputPath: undefined,
     devServerContentBase: path.resolve(
         process.cwd() || process.env.PWD || __dirname
     ),
-    devServerHost: "0.0.0.0",
+    devServerHost: '0.0.0.0',
     devServerPort: 8080,
-    browserstackUrl: argv.browserstack || "http://127.0.0.1",
+    browserstackUrl: argv.browserstack || 'http://127.0.0.1',
 };
 
 module.exports = function (userOptions, callback) {
-    if (typeof userOptions !== "object") {
+    if (typeof userOptions !== 'object') {
         throw new Error(
             "Parameter 'userOptions' must be an object. Receieved: " +
                 typeof userOptions
         );
     }
 
-    if (typeof callback !== "function" && typeof callback !== "undefined") {
+    if (typeof callback !== 'function' && typeof callback !== 'undefined') {
         throw new Error(
             "Parameter 'callback' must be a function or undefined. Receieved: " +
                 typeof callback
@@ -46,23 +46,23 @@ module.exports = function (userOptions, callback) {
 
         let publicPath =
             options.browserstackUrl +
-            ":" +
+            ':' +
             options.devServerPort +
-            "/" +
+            '/' +
             options.path +
-            "/";
+            '/';
 
         if (!argv.browserstackUrl && options.https) {
-            publicPath = publicPath.replace("http", "https");
+            publicPath = publicPath.replace('http', 'https');
         }
 
         return callback(
             {
-                stats: "errors-warnings",
+                stats: 'errors-warnings',
                 devServer: {
                     compress: true,
                     disableHostCheck: true,
-                    headers: { "Access-Control-Allow-Origin": "*" },
+                    headers: { 'Access-Control-Allow-Origin': '*' },
                     https: options.https,
                     host: options.devServerHost,
                     port: options.devServerPort,
@@ -70,24 +70,24 @@ module.exports = function (userOptions, callback) {
                     publicPath,
                 },
                 devtool:
-                    argv.mode === "development"
-                        ? "cheap-module-source-map"
+                    argv.mode === 'development'
+                        ? 'cheap-module-source-map'
                         : false,
                 resolve: {
                     extensions: [
-                        ".wasm",
-                        ".mjs",
-                        ".js",
-                        ".json",
-                        ".vue",
-                        ".jsx",
+                        '.wasm',
+                        '.mjs',
+                        '.js',
+                        '.json',
+                        '.vue',
+                        '.jsx',
                     ],
                 },
                 module: {
                     rules: [
                         {
                             test: /\.js$/,
-                            loader: "babel-loader",
+                            loader: 'babel-loader',
                             exclude: /node_modules/,
                         },
                         {
@@ -96,12 +96,12 @@ module.exports = function (userOptions, callback) {
                                 {
                                     loader: MiniCssExtractPlugin.loader,
                                     options: {
-                                        hmr: argv.mode === "development",
+                                        hmr: argv.mode === 'development',
                                         reloadAll: true,
                                     },
                                 },
                                 {
-                                    loader: "css-loader",
+                                    loader: 'css-loader',
                                     options: {
                                         importLoaders: 1,
                                         sourceMap: true,
@@ -109,7 +109,7 @@ module.exports = function (userOptions, callback) {
                                     },
                                 },
                                 {
-                                    loader: "postcss-loader",
+                                    loader: 'postcss-loader',
                                     options: {
                                         sourceMap: true,
                                     },
@@ -122,12 +122,12 @@ module.exports = function (userOptions, callback) {
                                 {
                                     loader: MiniCssExtractPlugin.loader,
                                     options: {
-                                        hmr: argv.mode === "development",
+                                        hmr: argv.mode === 'development',
                                         reloadAll: true,
                                     },
                                 },
                                 {
-                                    loader: "css-loader",
+                                    loader: 'css-loader',
                                     options: {
                                         importLoaders: 2,
                                         sourceMap: true,
@@ -135,13 +135,13 @@ module.exports = function (userOptions, callback) {
                                     },
                                 },
                                 {
-                                    loader: "postcss-loader",
+                                    loader: 'postcss-loader',
                                     options: {
                                         sourceMap: true,
                                     },
                                 },
                                 {
-                                    loader: "sass-loader",
+                                    loader: 'sass-loader',
                                 },
                             ],
                         },
@@ -174,26 +174,26 @@ module.exports = function (userOptions, callback) {
                         }),
                     ],
                     splitChunks: {
-                        chunks: "initial",
+                        chunks: 'initial',
                     },
                 },
                 output: {
                     hashDigestLength: 8,
                     publicPath: isDevServer
                         ? publicPath
-                        : "/" + options.path + "/",
+                        : '/' + options.path + '/',
                     path: options.outputPath,
                     filename:
-                        argv.mode === "development"
-                            ? "[name].js"
-                            : "[name].[contenthash].js",
+                        argv.mode === 'development'
+                            ? '[name].js'
+                            : '[name].[contenthash].js',
                 },
                 plugins: [
                     new MiniCssExtractPlugin({
                         filename:
-                            argv.mode === "development"
-                                ? "[name].css"
-                                : "[name].[contenthash].css",
+                            argv.mode === 'development'
+                                ? '[name].css'
+                                : '[name].[contenthash].css',
                     }),
                     new ChunksWebpackPlugin(),
                 ],
