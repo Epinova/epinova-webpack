@@ -29,7 +29,7 @@ const config = epinovaWebpackConfig({
 }, (config, env, argv) => {
     config.entry = './Scripts/global/index.js';
 
-    if(env === 'development') {
+    if(argv.mode === 'development') {
         ...
     }
 
