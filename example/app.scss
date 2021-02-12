@@ -1,6 +1,25 @@
 body {
+    background: url(./assets/logo.jpg);
+
+    header {
+        background: url(./assets/image.jpg);
+    }
+
+    main {
+        background: url(./assets/image2.jpg);
+    }
+
     p {
         color: hotpink;
         text-align: center;
+
+        &::before {
+            content: '';
+            background: url(./assets/logo.svg);
+        }
+    }
+
+    footer {
+        background: url('/UI/footer.jpg');
     }
 }
