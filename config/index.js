@@ -131,7 +131,7 @@ module.exports = function (userOptions, callback) {
                                     options: {
                                         importLoaders: 2,
                                         sourceMap: true,
-                                        url: false,
+                                        url: (url) => !url.startsWith('/'),
                                     },
                                 },
                                 {
@@ -144,6 +144,14 @@ module.exports = function (userOptions, callback) {
                                     loader: "sass-loader",
                                 },
                             ],
+                        },
+                        {
+                            test: /\.(svg|png|jpg|gif)$/i,
+                            loader: 'url-loader',
+                            options: {
+                                limit: 8192,
+                                outputPath: 'assets',
+                            },
                         },
                     ],
                 },
