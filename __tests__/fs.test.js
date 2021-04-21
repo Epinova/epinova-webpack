@@ -2,13 +2,13 @@
  * @jest-environment node
  */
 
-const webpack = require("webpack");
-const { createFsFromVolume, Volume } = require("memfs");
-const joinPath = require("memory-fs/lib/join");
-const path = require("path");
-const serializer = require("jest-serializer-path");
+const webpack = require('webpack');
+const { createFsFromVolume, Volume } = require('memfs');
+const joinPath = require('memory-fs/lib/join');
+const path = require('path');
+const serializer = require('jest-serializer-path');
 
-const config = require("../config");
+const config = require('../config');
 
 expect.addSnapshotSerializer(serializer);
 
@@ -33,33 +33,32 @@ function buildWebpackCompiler(fs, webpackConfig) {
     const compiler = webpack(webpackConfig);
 
     compiler.outputFileSystem = webpackFs;
-    compiler.resolvers.context.fileSystem = webpackFs;
 
     return compiler;
 }
 
-test("fs", () => {
+test('fs', () => {
     expect.assertions(2);
 
     Date.now = jest.fn(() => 1482363367071);
 
     const vol = new Volume();
     const fs = new createFsFromVolume(vol);
-    fs.mkdirSync("/dist");
+    fs.mkdirSync('/dist');
 
     const promise = new Promise((resolve, reject) => {
-        const c = config({ path: "dist", outputPath: "/dist" }, (config) => {
-            config.mode = "production";
+        const c = config({ path: 'dist', outputPath: '/dist' }, (config) => {
+            config.mode = 'production';
 
             config.entry = {
                 main: [
-                    path.join(__dirname, "../example/app.js"),
-                    path.join(__dirname, "../example/app.scss"),
+                    path.join(__dirname, '../example/app.js'),
+                    path.join(__dirname, '../example/app.scss'),
                 ],
             };
 
             return config;
-        })("production", { mode: "production" });
+        })('production', { mode: 'production' });
 
         buildWebpackCompiler(fs, c).run((err, stats) => {
             if (err) reject(err);
@@ -70,6 +69,6 @@ test("fs", () => {
 
     return promise.then((stats) => {
         expect(vol.toJSON()).toMatchSnapshot();
-        expect(stats.toJson("minimal")).toMatchSnapshot();
+        expect(stats.toJson('minimal')).toMatchSnapshot();
     });
 });

@@ -25,13 +25,7 @@ Object {
       Object {
         "test": /\\\\\\.css\\$/,
         "use": Array [
-          Object {
-            "loader": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
-            "options": Object {
-              "hmr": true,
-              "reloadAll": true,
-            },
-          },
+          "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
           Object {
             "loader": "css-loader",
             "options": Object {
@@ -51,13 +45,7 @@ Object {
       Object {
         "test": /\\\\\\.s\\(c\\|a\\)ss\\$/,
         "use": Array [
-          Object {
-            "loader": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
-            "options": Object {
-              "hmr": true,
-              "reloadAll": true,
-            },
-          },
+          "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
           Object {
             "loader": "css-loader",
             "options": Object {
@@ -72,9 +60,7 @@ Object {
               "sourceMap": true,
             },
           },
-          Object {
-            "loader": "sass-loader",
-          },
+          "sass-loader",
         ],
       },
       Object {
@@ -88,59 +74,31 @@ Object {
     ],
   },
   "optimization": Object {
+    "minimize": true,
     "minimizer": Array [
-      OptimizeCssAssetsWebpackPlugin {
-        "deleteAssetsMap": Object {},
-        "options": Object {
-          "assetNameRegExp": /\\\\\\.css\\(\\\\\\?\\.\\*\\)\\?\\$/i,
-          "assetProcessors": Array [
-            Object {
-              "phase": "compilation.optimize-chunk-assets",
-              "processor": [Function],
-              "regExp": /\\\\\\.css\\(\\\\\\?\\.\\*\\)\\?\\$/i,
-            },
-          ],
-          "canPrint": undefined,
-          "cssProcessor": [Function],
-          "cssProcessorOptions": Object {
-            "discardComments": Object {
-              "removeAll": true,
-            },
-          },
-          "cssProcessorPluginOptions": Object {},
-        },
-        "phaseAssetProcessors": Object {
-          "compilation.optimize-assets": Array [],
-          "compilation.optimize-chunk-assets": Array [
-            Object {
-              "phase": "compilation.optimize-chunk-assets",
-              "processor": [Function],
-              "regExp": /\\\\\\.css\\(\\\\\\?\\.\\*\\)\\?\\$/i,
-            },
-          ],
-          "emit": Array [],
-        },
-        "pluginDescriptor": Object {
-          "name": "OptimizeCssAssetsWebpackPlugin",
-        },
-      },
       TerserPlugin {
         "options": Object {
-          "cache": false,
-          "cacheKeys": [Function],
-          "chunkFilter": [Function],
           "exclude": undefined,
-          "extractComments": false,
+          "extractComments": true,
           "include": undefined,
           "minify": undefined,
           "parallel": true,
-          "sourceMap": false,
           "terserOptions": Object {
             "output": Object {
               "comments": false,
             },
           },
-          "test": /\\\\\\.m\\?js\\(\\\\\\?\\.\\*\\)\\?\\$/i,
+          "test": /\\\\\\.\\[cm\\]\\?js\\(\\\\\\?\\.\\*\\)\\?\\$/i,
+        },
+      },
+      CssMinimizerPlugin {
+        "options": Object {
+          "exclude": undefined,
+          "include": undefined,
+          "minify": [Function],
+          "minimizerOptions": undefined,
+          "parallel": true,
+          "test": /\\\\\\.css\\(\\\\\\?\\.\\*\\)\\?\\$/i,
           "warningsFilter": [Function],
         },
       },
@@ -152,16 +110,22 @@ Object {
   "output": Object {
     "filename": "[name].js",
     "hashDigestLength": 8,
-    "path": undefined,
+    "path": "<PROJECT_ROOT>/dist",
     "publicPath": "/dist/",
   },
   "plugins": Array [
     MiniCssExtractPlugin {
+      "_sortedModulesCache": WeakMap {},
       "options": Object {
         "chunkFilename": "[name].css",
+        "experimentalUseImportModule": false,
         "filename": "[name].css",
         "ignoreOrder": false,
-        "moduleFilename": [Function],
+      },
+      "runtimeOptions": Object {
+        "attributes": undefined,
+        "insert": undefined,
+        "linkType": "text/css",
       },
     },
     ChunksWebpackPlugin {
@@ -216,13 +180,7 @@ Object {
       Object {
         "test": /\\\\\\.css\\$/,
         "use": Array [
-          Object {
-            "loader": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
-            "options": Object {
-              "hmr": false,
-              "reloadAll": true,
-            },
-          },
+          "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
           Object {
             "loader": "css-loader",
             "options": Object {
@@ -242,13 +200,7 @@ Object {
       Object {
         "test": /\\\\\\.s\\(c\\|a\\)ss\\$/,
         "use": Array [
-          Object {
-            "loader": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
-            "options": Object {
-              "hmr": false,
-              "reloadAll": true,
-            },
-          },
+          "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
           Object {
             "loader": "css-loader",
             "options": Object {
@@ -263,9 +215,7 @@ Object {
               "sourceMap": true,
             },
           },
-          Object {
-            "loader": "sass-loader",
-          },
+          "sass-loader",
         ],
       },
       Object {
@@ -279,59 +229,31 @@ Object {
     ],
   },
   "optimization": Object {
+    "minimize": true,
     "minimizer": Array [
-      OptimizeCssAssetsWebpackPlugin {
-        "deleteAssetsMap": Object {},
-        "options": Object {
-          "assetNameRegExp": /\\\\\\.css\\(\\\\\\?\\.\\*\\)\\?\\$/i,
-          "assetProcessors": Array [
-            Object {
-              "phase": "compilation.optimize-chunk-assets",
-              "processor": [Function],
-              "regExp": /\\\\\\.css\\(\\\\\\?\\.\\*\\)\\?\\$/i,
-            },
-          ],
-          "canPrint": undefined,
-          "cssProcessor": [Function],
-          "cssProcessorOptions": Object {
-            "discardComments": Object {
-              "removeAll": true,
-            },
-          },
-          "cssProcessorPluginOptions": Object {},
-        },
-        "phaseAssetProcessors": Object {
-          "compilation.optimize-assets": Array [],
-          "compilation.optimize-chunk-assets": Array [
-            Object {
-              "phase": "compilation.optimize-chunk-assets",
-              "processor": [Function],
-              "regExp": /\\\\\\.css\\(\\\\\\?\\.\\*\\)\\?\\$/i,
-            },
-          ],
-          "emit": Array [],
-        },
-        "pluginDescriptor": Object {
-          "name": "OptimizeCssAssetsWebpackPlugin",
-        },
-      },
       TerserPlugin {
         "options": Object {
-          "cache": false,
-          "cacheKeys": [Function],
-          "chunkFilter": [Function],
           "exclude": undefined,
-          "extractComments": false,
+          "extractComments": true,
           "include": undefined,
           "minify": undefined,
           "parallel": true,
-          "sourceMap": false,
           "terserOptions": Object {
             "output": Object {
               "comments": false,
             },
           },
-          "test": /\\\\\\.m\\?js\\(\\\\\\?\\.\\*\\)\\?\\$/i,
+          "test": /\\\\\\.\\[cm\\]\\?js\\(\\\\\\?\\.\\*\\)\\?\\$/i,
+        },
+      },
+      CssMinimizerPlugin {
+        "options": Object {
+          "exclude": undefined,
+          "include": undefined,
+          "minify": [Function],
+          "minimizerOptions": undefined,
+          "parallel": true,
+          "test": /\\\\\\.css\\(\\\\\\?\\.\\*\\)\\?\\$/i,
           "warningsFilter": [Function],
         },
       },
@@ -343,16 +265,22 @@ Object {
   "output": Object {
     "filename": "[name].[contenthash].js",
     "hashDigestLength": 8,
-    "path": undefined,
+    "path": "<PROJECT_ROOT>/dist",
     "publicPath": "/dist/",
   },
   "plugins": Array [
     MiniCssExtractPlugin {
+      "_sortedModulesCache": WeakMap {},
       "options": Object {
         "chunkFilename": "[name].[contenthash].css",
+        "experimentalUseImportModule": false,
         "filename": "[name].[contenthash].css",
         "ignoreOrder": false,
-        "moduleFilename": [Function],
+      },
+      "runtimeOptions": Object {
+        "attributes": undefined,
+        "insert": undefined,
+        "linkType": "text/css",
       },
     },
     ChunksWebpackPlugin {
