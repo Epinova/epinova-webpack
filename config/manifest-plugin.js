@@ -48,10 +48,6 @@ module.exports = /** @class */ (function () {
             this.hookCallback.bind(this)
         );
 
-        compiler.hooks.afterEmit.tap('alex-test', () =>
-            console.log('afterEmit')
-        );
-
         compiler.hooks.afterEmit.tap(
             'ChunksWebpackPlugin',
             this.writeChunksManifestFile.bind(this)

@@ -2,7 +2,7 @@ const path = require('path');
 
 const argv = require('yargs').argv;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const ChunksWebpackPlugin = require('./manifest-plugin');
 
@@ -67,7 +67,6 @@ module.exports = function (userOptions, callback) {
                     port: options.devServerPort,
                     contentBase: options.devServerContentBase,
                     publicPath,
-                    writeToDisk: true,
                 },
                 devtool:
                     argv.mode === 'development'
@@ -142,8 +141,14 @@ module.exports = function (userOptions, callback) {
                     ],
                 },
                 optimization: {
-                    minimize: true,
                     minimizer: [
+                        new OptimizeCssAssetsPlugin({
+                            cssProcessorOptions: {
+                                discardComments: {
+                                    removeAll: true,
+                                },
+                            },
+                        }),
                         new TerserPlugin({
                             parallel: true,
                             terserOptions: {
@@ -152,7 +157,6 @@ module.exports = function (userOptions, callback) {
                                 },
                             },
                         }),
-                        new CssMinimizerPlugin(),
                     ],
                     splitChunks: {
                         chunks: 'initial',

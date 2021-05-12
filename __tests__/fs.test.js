@@ -33,6 +33,7 @@ function buildWebpackCompiler(fs, webpackConfig) {
     const compiler = webpack(webpackConfig);
 
     compiler.outputFileSystem = webpackFs;
+    compiler.resolvers.context.fileSystem = webpackFs;
 
     return compiler;
 }
