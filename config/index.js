@@ -8,6 +8,7 @@ const ChunksWebpackPlugin = require('./manifest-plugin');
 
 const defaultOptions = {
     path: 'dist',
+    publicPath: '/dist/',
     https: false,
     outputPath: undefined,
     devServerContentBase: path.resolve(
@@ -48,9 +49,7 @@ module.exports = function (userOptions, callback) {
             options.browserstackUrl +
             ':' +
             options.devServerPort +
-            '/' +
-            options.path +
-            '/';
+            options.publicPath;
 
         if (!argv.browserstackUrl && options.https) {
             publicPath = publicPath.replace('http', 'https');
@@ -68,6 +67,7 @@ module.exports = function (userOptions, callback) {
                     port: options.devServerPort,
                     contentBase: options.devServerContentBase,
                     publicPath,
+                    writeToDisk: true,
                 },
                 devtool:
                     argv.mode === 'development'
@@ -160,9 +160,7 @@ module.exports = function (userOptions, callback) {
                 },
                 output: {
                     hashDigestLength: 8,
-                    publicPath: isDevServer
-                        ? publicPath
-                        : '/' + options.path + '/',
+                    publicPath: isDevServer ? publicPath : options.publicPath,
                     path: path.resolve(process.cwd(), options.path),
                     filename:
                         argv.mode === 'development'

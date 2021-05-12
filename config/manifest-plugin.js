@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 /**
  * @license MIT
  * @name ChunksWebpackPlugin
@@ -8,12 +8,12 @@
  * {@link https://github.com/yoriiis/chunks-webpack-plugins}
  * @copyright 2020 Joris DANIEL
  **/
-var webpack = require("webpack");
-var fs = require("fs");
+var webpack = require('webpack');
+var fs = require('fs');
 // webpack v4/v5 compatibility:
 // https://github.com/webpack/webpack/issues/11425#issuecomment-686607633
-var RawSource = (webpack.sources || require("webpack-sources")).RawSource;
-var path = require("path");
+var RawSource = (webpack.sources || require('webpack-sources')).RawSource;
+var path = require('path');
 module.exports = /** @class */ (function () {
     /**
      * Instanciate the constructor
@@ -26,7 +26,7 @@ module.exports = /** @class */ (function () {
         // Merge default options with user options
         this.options = Object.assign(
             {
-                filename: "manifest.json",
+                filename: 'manifest.json',
             },
             options
         );
@@ -41,15 +41,19 @@ module.exports = /** @class */ (function () {
      * @param {Object} compiler The Webpack compiler variable
      */
     ChunksWebpackPlugin.prototype.apply = function (compiler) {
-        this.isWebpack4 = webpack.version.startsWith("4.");
-        var compilerHook = this.isWebpack4 ? "emit" : "thisCompilation";
+        this.isWebpack4 = webpack.version.startsWith('4.');
+        var compilerHook = this.isWebpack4 ? 'emit' : 'thisCompilation';
         compiler.hooks[compilerHook].tap(
-            "ChunksWebpackPlugin",
+            'ChunksWebpackPlugin',
             this.hookCallback.bind(this)
         );
 
-        compiler.hooks["afterEmit"].tap(
-            "ChunksWebpackPlugin",
+        compiler.hooks.afterEmit.tap('alex-test', () =>
+            console.log('afterEmit')
+        );
+
+        compiler.hooks.afterEmit.tap(
+            'ChunksWebpackPlugin',
             this.writeChunksManifestFile.bind(this)
         );
     };
@@ -66,7 +70,7 @@ module.exports = /** @class */ (function () {
             // PROCESS_ASSETS_STAGE_ADDITIONAL: Add additional assets to the compilation
             this.compilation.hooks.processAssets.tap(
                 {
-                    name: "ChunksWebpackPlugin",
+                    name: 'ChunksWebpackPlugin',
                     stage: webpack.Compilation.PROCESS_ASSETS_STAGE_ADDITIONAL,
                 },
                 this.addAssets
@@ -111,7 +115,7 @@ module.exports = /** @class */ (function () {
             for (const chunk of chunks) {
                 const name = chunk.name;
                 if (!name) continue;
-                if (name.indexOf("vendors~") !== -1) continue;
+                if (name.indexOf('vendors~') !== -1) continue;
                 if (
                     Object.prototype.hasOwnProperty.call(
                         this.manifest.chunks,
@@ -129,7 +133,7 @@ module.exports = /** @class */ (function () {
                     this.manifest.assets[name] = [];
                 }
 
-                this.manifest.assets[name].push("" + this.publicPath + file);
+                this.manifest.assets[name].push('' + this.publicPath + file);
             }
         }
     };
@@ -151,14 +155,14 @@ module.exports = /** @class */ (function () {
      * @return {String} The public path
      */
     ChunksWebpackPlugin.prototype.getPublicPath = function () {
-        var publicPath = this.compilation.options.output.publicPath || "";
-        if (typeof publicPath === "function") {
+        var publicPath = this.compilation.options.output.publicPath || '';
+        if (typeof publicPath === 'function') {
             publicPath = publicPath();
         }
         return (
-            "" +
+            '' +
             publicPath +
-            (this.isPublicPathNeedsEndingSlash(publicPath) ? "/" : "")
+            (this.isPublicPathNeedsEndingSlash(publicPath) ? '/' : '')
         );
     };
     /**
@@ -168,7 +172,7 @@ module.exports = /** @class */ (function () {
      * @return {String} The output path
      */
     ChunksWebpackPlugin.prototype.getOutputPath = function () {
-        return this.compilation.options.output.path || "";
+        return this.compilation.options.output.path || '';
     };
     /**
      * Get entrypoint names from the compilation
@@ -200,17 +204,17 @@ module.exports = /** @class */ (function () {
         return {
             styles: files
                 .filter(function (file) {
-                    return _this.isValidExtensionByType(file, "css");
+                    return _this.isValidExtensionByType(file, 'css');
                 })
                 .map(function (file) {
-                    return "" + _this.publicPath + file;
+                    return '' + _this.publicPath + file;
                 }),
             scripts: files
                 .filter(function (file) {
-                    return _this.isValidExtensionByType(file, "js");
+                    return _this.isValidExtensionByType(file, 'js');
                 })
                 .map(function (file) {
-                    return "" + _this.publicPath + file;
+                    return '' + _this.publicPath + file;
                 }),
         };
     };
@@ -224,7 +228,7 @@ module.exports = /** @class */ (function () {
     ChunksWebpackPlugin.prototype.isPublicPathNeedsEndingSlash = function (
         publicPath
     ) {
-        return !!(publicPath && publicPath.substr(-1) !== "/");
+        return !!(publicPath && publicPath.substr(-1) !== '/');
     };
     /**
      * Check if file extension correspond to the type parameter
