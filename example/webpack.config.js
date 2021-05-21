@@ -37,7 +37,7 @@ module.exports = epinovaWebpackConfig(
             })
         );
 
-        // config.plugins.push(new CleanWebpackPlugin());
+        config.plugins.push(new CleanWebpackPlugin());
 
         return config;
     }

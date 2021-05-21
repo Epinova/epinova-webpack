@@ -7,7 +7,7 @@
         "build": "webpack --mode production --config webpack.config.js",
         "build:watch": "webpack --mode development --watch",
         "build:develop": "webpack --mode development",
-        "develop": "webpack serve --mode development --hot --hot-only",
+        "develop": "webpack-dev-server --mode development --hot --hot-only",
         "develop:browserstack": "webpack-dev-server --mode development --hot --hot-only --browserstack=http://bs-local.com"
     },
     "keywords": [],
@@ -28,8 +28,10 @@
     },
     "postcss": {
         "plugins": {
-            "autoprefixer": {},
-            "postcss-preset-env": {}
+            "autoprefixer": {}
         }
-    }
+    },
+    "browserslist": [
+        "cover 95% in NO"
+    ]
 }
