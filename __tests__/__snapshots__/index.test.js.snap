@@ -87,7 +87,127 @@ Object {
             },
           ],
           "canPrint": undefined,
-          "cssProcessor": [Function],
+          "cssProcessor": Processor {
+            "plugins": Array [
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-discard-comments",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-minify-gradients",
+              },
+              Object {
+                "postcssPlugin": "postcss-reduce-initial",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-svgo",
+              },
+              Object {
+                "postcssPlugin": "postcss-normalize-display-values",
+                "prepare": [Function],
+              },
+              Object {
+                "postcssPlugin": "postcss-reduce-transforms",
+                "prepare": [Function],
+              },
+              Object {
+                "postcssPlugin": "postcss-colormin",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-timing-functions",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-calc",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-convert-values",
+              },
+              Object {
+                "postcssPlugin": "postcss-ordered-values",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-minify-selectors",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-minify-params",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-charset",
+              },
+              Object {
+                "postcssPlugin": "postcss-discard-overridden",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-string",
+              },
+              Object {
+                "postcssPlugin": "postcss-normalize-unicode",
+                "prepare": [Function],
+              },
+              Object {
+                "postcssPlugin": "postcss-minify-font-values",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-url",
+              },
+              Object {
+                "postcssPlugin": "postcss-normalize-repeat-style",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-positions",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-whitespace",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-merge-longhand",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-discard-duplicates",
+              },
+              Object {
+                "postcssPlugin": "postcss-merge-rules",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-discard-empty",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-unique-selectors",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "css-declaration-sorter",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "cssnano-util-raw-cache",
+              },
+            ],
+            "version": "8.3.0",
+          },
           "cssProcessorOptions": Object {
             "discardComments": Object {
               "removeAll": true,
@@ -270,7 +390,127 @@ Object {
             },
           ],
           "canPrint": undefined,
-          "cssProcessor": [Function],
+          "cssProcessor": Processor {
+            "plugins": Array [
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-discard-comments",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-minify-gradients",
+              },
+              Object {
+                "postcssPlugin": "postcss-reduce-initial",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-svgo",
+              },
+              Object {
+                "postcssPlugin": "postcss-normalize-display-values",
+                "prepare": [Function],
+              },
+              Object {
+                "postcssPlugin": "postcss-reduce-transforms",
+                "prepare": [Function],
+              },
+              Object {
+                "postcssPlugin": "postcss-colormin",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-timing-functions",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-calc",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-convert-values",
+              },
+              Object {
+                "postcssPlugin": "postcss-ordered-values",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-minify-selectors",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-minify-params",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-charset",
+              },
+              Object {
+                "postcssPlugin": "postcss-discard-overridden",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-string",
+              },
+              Object {
+                "postcssPlugin": "postcss-normalize-unicode",
+                "prepare": [Function],
+              },
+              Object {
+                "postcssPlugin": "postcss-minify-font-values",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-url",
+              },
+              Object {
+                "postcssPlugin": "postcss-normalize-repeat-style",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-positions",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-whitespace",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-merge-longhand",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-discard-duplicates",
+              },
+              Object {
+                "postcssPlugin": "postcss-merge-rules",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-discard-empty",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-unique-selectors",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "css-declaration-sorter",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "cssnano-util-raw-cache",
+              },
+            ],
+            "version": "8.3.0",
+          },
           "cssProcessorOptions": Object {
             "discardComments": Object {
               "removeAll": true,
