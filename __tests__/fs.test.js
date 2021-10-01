@@ -6,12 +6,8 @@ const webpack = require('webpack');
 const { createFsFromVolume, Volume } = require('memfs');
 const joinPath = require('memory-fs/lib/join');
 const path = require('path');
-const serializer = require('jest-serializer-path');
 
 const config = require('../config');
-const { lutimesSync } = require('fs');
-
-expect.addSnapshotSerializer(serializer);
 
 function ensureWebpackMemoryFs(fs) {
     // Return it back, when it has Webpack 'join' method
@@ -51,6 +47,8 @@ test('fs', () => {
     const promise = new Promise((resolve, reject) => {
         const c = config({ path: 'dist', outputPath: '/dist' }, (config) => {
             config.mode = 'production';
+
+            config.output.path = '/dist';
 
             config.entry = {
                 main: [
