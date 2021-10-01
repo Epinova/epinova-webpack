@@ -9,6 +9,7 @@ const path = require('path');
 const serializer = require('jest-serializer-path');
 
 const config = require('../config');
+const { lutimesSync } = require('fs');
 
 expect.addSnapshotSerializer(serializer);
 
@@ -69,7 +70,14 @@ test('fs', () => {
     });
 
     return promise.then((stats) => {
-        expect(vol.toJSON()).toMatchSnapshot();
+        const json = vol.toJSON();
+
+        // No need to compare jpg content, just check that it is present
+        for (key in json) {
+            if (key.endsWith('.jpg')) json[key] = key;
+        }
+
+        expect(json).toMatchSnapshot();
         expect(stats.toJson('minimal')).toMatchSnapshot();
     });
 });
