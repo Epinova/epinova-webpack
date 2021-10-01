@@ -18,19 +18,6 @@ stages:
   - stage: install_build_test
     displayName: Install, build & test
     jobs:
-      - job: node_10
-        displayName: Node 10
-        steps:
-          - task: NodeTool@0
-            inputs:
-              versionSpec: "10.x"
-            displayName: "Install Node.js"
-
-          - script: |
-              npm install
-              npm test
-            displayName: "npm install & test"
-
       - job: node_12
         displayName: Node 12
         steps:
