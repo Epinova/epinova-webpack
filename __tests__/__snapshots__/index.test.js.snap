@@ -25,19 +25,13 @@ Object {
       Object {
         "test": /\\\\\\.css\\$/,
         "use": Array [
-          Object {
-            "loader": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
-            "options": Object {
-              "hmr": true,
-              "reloadAll": true,
-            },
-          },
+          "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
           Object {
             "loader": "css-loader",
             "options": Object {
               "importLoaders": 1,
               "sourceMap": true,
-              "url": [Function],
+              "url": false,
             },
           },
           Object {
@@ -51,13 +45,7 @@ Object {
       Object {
         "test": /\\\\\\.s\\(c\\|a\\)ss\\$/,
         "use": Array [
-          Object {
-            "loader": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
-            "options": Object {
-              "hmr": true,
-              "reloadAll": true,
-            },
-          },
+          "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
           Object {
             "loader": "css-loader",
             "options": Object {
@@ -72,9 +60,7 @@ Object {
               "sourceMap": true,
             },
           },
-          Object {
-            "loader": "sass-loader",
-          },
+          "sass-loader",
         ],
       },
       Object {
@@ -101,7 +87,127 @@ Object {
             },
           ],
           "canPrint": undefined,
-          "cssProcessor": [Function],
+          "cssProcessor": Processor {
+            "plugins": Array [
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-discard-comments",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-minify-gradients",
+              },
+              Object {
+                "postcssPlugin": "postcss-reduce-initial",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-svgo",
+              },
+              Object {
+                "postcssPlugin": "postcss-normalize-display-values",
+                "prepare": [Function],
+              },
+              Object {
+                "postcssPlugin": "postcss-reduce-transforms",
+                "prepare": [Function],
+              },
+              Object {
+                "postcssPlugin": "postcss-colormin",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-timing-functions",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-calc",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-convert-values",
+              },
+              Object {
+                "postcssPlugin": "postcss-ordered-values",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-minify-selectors",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-minify-params",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-charset",
+              },
+              Object {
+                "postcssPlugin": "postcss-discard-overridden",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-string",
+              },
+              Object {
+                "postcssPlugin": "postcss-normalize-unicode",
+                "prepare": [Function],
+              },
+              Object {
+                "postcssPlugin": "postcss-minify-font-values",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-url",
+              },
+              Object {
+                "postcssPlugin": "postcss-normalize-repeat-style",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-positions",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-whitespace",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-merge-longhand",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-discard-duplicates",
+              },
+              Object {
+                "postcssPlugin": "postcss-merge-rules",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-discard-empty",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-unique-selectors",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "css-declaration-sorter",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "cssnano-util-raw-cache",
+              },
+            ],
+            "version": "8.3.0",
+          },
           "cssProcessorOptions": Object {
             "discardComments": Object {
               "removeAll": true,
@@ -152,31 +258,34 @@ Object {
   "output": Object {
     "filename": "[name].js",
     "hashDigestLength": 8,
-    "path": undefined,
+    "path": "<PROJECT_ROOT>/dist",
     "publicPath": "/dist/",
   },
   "plugins": Array [
-    ManifestPlugin {
-      "opts": Object {
-        "basePath": "",
-        "fileName": "manifest.json",
-        "filter": null,
-        "generate": null,
-        "map": null,
-        "publicPath": null,
-        "seed": null,
-        "serialize": [Function],
-        "sort": null,
-        "transformExtensions": /\\^\\(gz\\|map\\)\\$/i,
-        "writeToFileEmit": true,
-      },
-    },
     MiniCssExtractPlugin {
+      "_sortedModulesCache": WeakMap {},
       "options": Object {
         "chunkFilename": "[name].css",
+        "experimentalUseImportModule": false,
         "filename": "[name].css",
         "ignoreOrder": false,
-        "moduleFilename": [Function],
+      },
+      "runtimeOptions": Object {
+        "attributes": undefined,
+        "insert": undefined,
+        "linkType": "text/css",
+      },
+    },
+    ChunksWebpackPlugin {
+      "addAssets": [Function],
+      "isDevServer": undefined,
+      "isWebpack4": false,
+      "manifest": Object {
+        "assets": Object {},
+        "chunks": Object {},
+      },
+      "options": Object {
+        "filename": "manifest.json",
       },
     },
   ],
@@ -219,19 +328,13 @@ Object {
       Object {
         "test": /\\\\\\.css\\$/,
         "use": Array [
-          Object {
-            "loader": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
-            "options": Object {
-              "hmr": false,
-              "reloadAll": true,
-            },
-          },
+          "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
           Object {
             "loader": "css-loader",
             "options": Object {
               "importLoaders": 1,
               "sourceMap": true,
-              "url": [Function],
+              "url": false,
             },
           },
           Object {
@@ -245,13 +348,7 @@ Object {
       Object {
         "test": /\\\\\\.s\\(c\\|a\\)ss\\$/,
         "use": Array [
-          Object {
-            "loader": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
-            "options": Object {
-              "hmr": false,
-              "reloadAll": true,
-            },
-          },
+          "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
           Object {
             "loader": "css-loader",
             "options": Object {
@@ -266,9 +363,7 @@ Object {
               "sourceMap": true,
             },
           },
-          Object {
-            "loader": "sass-loader",
-          },
+          "sass-loader",
         ],
       },
       Object {
@@ -295,7 +390,127 @@ Object {
             },
           ],
           "canPrint": undefined,
-          "cssProcessor": [Function],
+          "cssProcessor": Processor {
+            "plugins": Array [
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-discard-comments",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-minify-gradients",
+              },
+              Object {
+                "postcssPlugin": "postcss-reduce-initial",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-svgo",
+              },
+              Object {
+                "postcssPlugin": "postcss-normalize-display-values",
+                "prepare": [Function],
+              },
+              Object {
+                "postcssPlugin": "postcss-reduce-transforms",
+                "prepare": [Function],
+              },
+              Object {
+                "postcssPlugin": "postcss-colormin",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-timing-functions",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-calc",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-convert-values",
+              },
+              Object {
+                "postcssPlugin": "postcss-ordered-values",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-minify-selectors",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-minify-params",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-charset",
+              },
+              Object {
+                "postcssPlugin": "postcss-discard-overridden",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-string",
+              },
+              Object {
+                "postcssPlugin": "postcss-normalize-unicode",
+                "prepare": [Function],
+              },
+              Object {
+                "postcssPlugin": "postcss-minify-font-values",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-url",
+              },
+              Object {
+                "postcssPlugin": "postcss-normalize-repeat-style",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-positions",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-normalize-whitespace",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-merge-longhand",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-discard-duplicates",
+              },
+              Object {
+                "postcssPlugin": "postcss-merge-rules",
+                "prepare": [Function],
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-discard-empty",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "postcss-unique-selectors",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "css-declaration-sorter",
+              },
+              Object {
+                "OnceExit": [Function],
+                "postcssPlugin": "cssnano-util-raw-cache",
+              },
+            ],
+            "version": "8.3.0",
+          },
           "cssProcessorOptions": Object {
             "discardComments": Object {
               "removeAll": true,
@@ -346,31 +561,34 @@ Object {
   "output": Object {
     "filename": "[name].[contenthash].js",
     "hashDigestLength": 8,
-    "path": undefined,
+    "path": "<PROJECT_ROOT>/dist",
     "publicPath": "/dist/",
   },
   "plugins": Array [
-    ManifestPlugin {
-      "opts": Object {
-        "basePath": "",
-        "fileName": "manifest.json",
-        "filter": null,
-        "generate": null,
-        "map": null,
-        "publicPath": null,
-        "seed": null,
-        "serialize": [Function],
-        "sort": null,
-        "transformExtensions": /\\^\\(gz\\|map\\)\\$/i,
-        "writeToFileEmit": true,
-      },
-    },
     MiniCssExtractPlugin {
+      "_sortedModulesCache": WeakMap {},
       "options": Object {
         "chunkFilename": "[name].[contenthash].css",
+        "experimentalUseImportModule": false,
         "filename": "[name].[contenthash].css",
         "ignoreOrder": false,
-        "moduleFilename": [Function],
+      },
+      "runtimeOptions": Object {
+        "attributes": undefined,
+        "insert": undefined,
+        "linkType": "text/css",
+      },
+    },
+    ChunksWebpackPlugin {
+      "addAssets": [Function],
+      "isDevServer": undefined,
+      "isWebpack4": false,
+      "manifest": Object {
+        "assets": Object {},
+        "chunks": Object {},
+      },
+      "options": Object {
+        "filename": "manifest.json",
       },
     },
   ],

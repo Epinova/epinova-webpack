@@ -1,13 +1,14 @@
 const path = require('path');
 
 const argv = require('yargs').argv;
-const ManifestPlugin = require('webpack-manifest-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const ChunksWebpackPlugin = require('./manifest-plugin');
 
 const defaultOptions = {
     path: 'dist',
+    publicPath: '/dist/',
     https: false,
     outputPath: undefined,
     devServerContentBase: path.resolve(
@@ -48,9 +49,7 @@ module.exports = function (userOptions, callback) {
             options.browserstackUrl +
             ':' +
             options.devServerPort +
-            '/' +
-            options.path +
-            '/';
+            options.publicPath;
 
         if (!argv.browserstackUrl && options.https) {
             publicPath = publicPath.replace('http', 'https');
@@ -93,19 +92,13 @@ module.exports = function (userOptions, callback) {
                         {
                             test: /\.css$/,
                             use: [
-                                {
-                                    loader: MiniCssExtractPlugin.loader,
-                                    options: {
-                                        hmr: argv.mode === 'development',
-                                        reloadAll: true,
-                                    },
-                                },
+                                MiniCssExtractPlugin.loader,
                                 {
                                     loader: 'css-loader',
                                     options: {
                                         importLoaders: 1,
                                         sourceMap: true,
-                                        url: (url) => !url.startsWith('/'),
+                                        url: false,
                                     },
                                 },
                                 {
@@ -119,13 +112,7 @@ module.exports = function (userOptions, callback) {
                         {
                             test: /\.s(c|a)ss$/,
                             use: [
-                                {
-                                    loader: MiniCssExtractPlugin.loader,
-                                    options: {
-                                        hmr: argv.mode === 'development',
-                                        reloadAll: true,
-                                    },
-                                },
+                                MiniCssExtractPlugin.loader,
                                 {
                                     loader: 'css-loader',
                                     options: {
@@ -140,9 +127,7 @@ module.exports = function (userOptions, callback) {
                                         sourceMap: true,
                                     },
                                 },
-                                {
-                                    loader: 'sass-loader',
-                                },
+                                'sass-loader',
                             ],
                         },
                         {
@@ -179,25 +164,21 @@ module.exports = function (userOptions, callback) {
                 },
                 output: {
                     hashDigestLength: 8,
-                    publicPath: isDevServer
-                        ? publicPath
-                        : '/' + options.path + '/',
-                    path: options.outputPath,
+                    publicPath: isDevServer ? publicPath : options.publicPath,
+                    path: path.resolve(process.cwd(), options.path),
                     filename:
                         argv.mode === 'development'
                             ? '[name].js'
                             : '[name].[contenthash].js',
                 },
                 plugins: [
-                    new ManifestPlugin({
-                        writeToFileEmit: true,
-                    }),
                     new MiniCssExtractPlugin({
                         filename:
                             argv.mode === 'development'
                                 ? '[name].css'
                                 : '[name].[contenthash].css',
                     }),
+                    new ChunksWebpackPlugin(),
                 ],
             },
             env,
