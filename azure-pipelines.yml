@@ -46,7 +46,7 @@ stages:
 
   - stage: publish
     displayName: Pack and Publish
-    condition: and(succeeded(), eq(variables.isMain, true))
+    condition: and(succeeded(), eq(variables.isMaster, true))
     jobs:
       - job: pack_and_publish
         displayName: Pack & Publish
