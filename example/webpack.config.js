@@ -1,6 +1,5 @@
 const epinovaWebpackConfig = require('../config');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = epinovaWebpackConfig(
     { path: 'wwwroot/dist', publicPath: '/dist/' },
@@ -36,8 +35,6 @@ module.exports = epinovaWebpackConfig(
                 styles: false,
             })
         );
-
-        config.plugins.push(new CleanWebpackPlugin());
 
         return config;
     }
