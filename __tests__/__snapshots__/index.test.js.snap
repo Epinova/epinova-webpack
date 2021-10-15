@@ -206,7 +206,7 @@ Object {
                 "postcssPlugin": "cssnano-util-raw-cache",
               },
             ],
-            "version": "8.3.0",
+            "version": "8.3.9",
           },
           "cssProcessorOptions": Object {
             "discardComments": Object {
@@ -509,7 +509,7 @@ Object {
                 "postcssPlugin": "cssnano-util-raw-cache",
               },
             ],
-            "version": "8.3.0",
+            "version": "8.3.9",
           },
           "cssProcessorOptions": Object {
             "discardComments": Object {
