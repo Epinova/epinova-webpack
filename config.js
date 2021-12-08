@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 
 const ChunksWebpackPlugin = require('./manifest-plugin');
 
@@ -184,6 +185,7 @@ module.exports = function (userOptions, callback) {
                     }),
                     new ChunksWebpackPlugin(),
                     new CleanWebpackPlugin(),
+                    new FixStyleOnlyEntriesPlugin(),
                 ],
             },
             env,
