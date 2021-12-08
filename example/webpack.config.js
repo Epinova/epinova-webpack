@@ -1,5 +1,8 @@
+const path = require('path');
+
 const epinovaWebpackConfig = require('../config');
 const addTypeScript = require('../typescript');
+const dynamicBundles = require('../dynamic-bundles');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 
 module.exports = epinovaWebpackConfig(
@@ -20,6 +23,8 @@ module.exports = epinovaWebpackConfig(
             'application-i': ['./i.js'],
             'application-j': ['./j.js'],
         };
+
+        dynamicBundles(config, [path.resolve(__dirname, 'features')]);
 
         config.plugins.push(
             new SVGSpritemapPlugin('UI/*.svg', {
