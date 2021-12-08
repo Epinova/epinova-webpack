@@ -40,7 +40,7 @@
     },
     "homepage": "https://github.com/Epinova/epinova-webpack#readme",
     "license": "MIT",
-    "main": "config/index.js",
+    "main": "config.js",
     "name": "@epinova/webpack",
     "peerDependencies": {
         "fibers": ">= 4 < 6"

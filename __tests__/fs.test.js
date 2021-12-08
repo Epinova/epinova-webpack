@@ -8,7 +8,7 @@ const joinPath = require('memory-fs/lib/join');
 const path = require('path');
 
 const config = require('../config');
-const addTypeScript = require('../config/typescript');
+const addTypeScript = require('../typescript');
 
 function ensureWebpackMemoryFs(fs) {
     // Return it back, when it has Webpack 'join' method

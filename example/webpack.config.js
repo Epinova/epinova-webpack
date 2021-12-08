@@ -1,5 +1,5 @@
 const epinovaWebpackConfig = require('../config');
-const addTypeScript = require('../config/typescript');
+const addTypeScript = require('../typescript');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 
 module.exports = epinovaWebpackConfig(
