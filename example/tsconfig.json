@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "module": "esnext",
+        "target": "es5",
+        "lib": ["es5", "dom"],
+        "strict": true,
+        "sourceMap": true,
+        "allowJs": true,
+        "jsx": "react",
+        "moduleResolution": "node",
+        "rootDir": "../",
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "suppressImplicitAnyIndexErrors": false,
+        "noUnusedLocals": true,
+        "baseUrl": ".",
+        "allowSyntheticDefaultImports": true,
+        "outDir": "wwwroot/dist/",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "paths": {
+            "@/UI/*": ["UI/*"]
+        },
+        "importsNotUsedAsValues": "preserve"
+    },
+    "exclude": ["node_modules", "wwwroot"]
+}

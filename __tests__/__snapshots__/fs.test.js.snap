@@ -5,7 +5,7 @@ Object {
   "/dist/assets/02db17a28a7ceb3643e39c67bff25b53.jpg": "/dist/assets/02db17a28a7ceb3643e39c67bff25b53.jpg",
   "/dist/assets/41d56d912610ced8f905c1a685fbc606.jpg": "/dist/assets/41d56d912610ced8f905c1a685fbc606.jpg",
   "/dist/main.3e03e585.css": "body{background:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/2wCEAAICAgICAgMCAgMEAwMDBAUEBAQEBQcFBQUFBQcIBwcHBwcHCAgICAgICAgKCgoKCgoLCwsLCw0NDQ0NDQ0NDQ0BAgICAwMDBgMDBg0JBwkNDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDf/AABEIAEcARwMBIgACEQEDEQH/xAB6AAEBAQEAAwEAAAAAAAAAAAAACggJAwUHBhAAAAIGBAgNBAIDAAAAAAAAAAMBAgQFCBEGBxQZEhMVFiFWpdQJOFVXZ4WUlaa10tXlFyIjMxgkJTEyAQEAAAAAAAAAAAAAAAAAAAAAEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCf8AH0Cq2q2nddNO3ZVpVm7MsUkfFosTFaCGXG2UgxpN/K0mFEq4JJS633LonKSJpShCQ+fgN/3XMdnNnt9x+4Bdcx2c2e33H7gAwAA3/dcx2c2e33H7gF1zHZzZ7fcfuADAADf91zHZzZ7fcfuAXXMdnNnt9x+4APxnB9cbygXXPlLaA2ZB3wfUXlVcRtEaeU8oFktxOvKVra8sOloxdodzUQX+MhtMNWwjTFVftVTKc0yQhKUAHGcb/4Ljj11Z9f+RvAYAGgIXK8/wCNde1Ga68iZx5uW/8AxlrsOPtzC0MX78SfgYGPw/1rTwcHROaAt8AcAb87oT8V/EBfndCfiv4gB3+AcAb87oT8V/EBfndCfiv4gB3+AcAb87oT8V/EBfndCfiv4gB3+AcZ4fOFy+u1bzgqq+lGQ8uWz+/nHa8TZGQ5q/Tk0nCwsTg/9qywp6ZSSATNgA1zAlVRQiu+KuhFV9Y7Eu8aOvrK1sZizzWZYyyutsaSpGkrKGKyNKUW0LInKSdCUoAZGAVyXUsEOpTb348t5C6lgh1Kbe/HlvICRsBXJdSwQ6lNvfjy3kLqWCHUpt78eW8gJGwFcl1LBDqU29+PLeQupYIdSm3vx5byAnn4PrjeUC658pbQFKFW/B1QnVTU0d1YFBqKtTE+3Vj7Keu9m89VS0EmM5kyzT1lFplmLI0oTKc0aQARxjf/AAXHHrqz6/8AI3gMADzM7S0MhyrQyGrkmqTwVy1kqLImiSZJRJKJoTIBfsAgdzjpDyo29oM9QZx0h5Ube0GeoBfEAgdzjpDyo29oM9QZx0h5Ube0GeoBfEAgdzjpDyo29oM9QZx0h5Ube0GeoBfEAjkgAfj7aYuKBktDwajS1ssTUXOXWVTJ0tqUTQlMv9gA9Vd9ReahbYdO+hd9ReahbYdO+gABd9ReahbYdO+hd9ReahbYdO+gABd9ReahbYdO+hd9ReahbYdO+gABd9ReahbYdO+hd9ReahbYdO+gADUcF0F0S9XkS9DqYUwodk90O/KloaMqO07AxztaiVPsJa1zEzMXVRoVTKc06JpAAAf/2Q==)}body header{background:url(/dist/assets/02db17a28a7ceb3643e39c67bff25b53.jpg)}body main{background:url(/dist/assets/41d56d912610ced8f905c1a685fbc606.jpg)}body p{color:hotpink;text-align:center}body p:before{background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MC4yIDcwLjIiPjxwYXRoIGQ9Ik0wIDcwLjJoNzAuMnYtMTRIMTR2LTE0aDU2LjJWMjhIMTRWMTRoNTYuMlYwSDB6Ii8+PC9zdmc+);content:\\"\\"}body footer{background:url(/UI/footer.jpg)}body select{-webkit-appearance:none;appearance:none}",
-  "/dist/main.9905007f.js": "(window.webpackJsonp=window.webpackJsonp||[]).push([[0],[function(A,n,t){t(1),A.exports=t(4)},function(A,n,t){const c=t(2),i=t(3);console.log({logo:c,image:i})},function(A,n,t){\\"use strict\\";t.r(n),n.default=\\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEcAAABHBAMAAACnnkcsAAAAElBMVEUAAAAAAAAAAAAAAAAAAAAAAADgKxmiAAAABnRSTlP/MwAKzCgzjttlAAAANUlEQVR4AWMgAgiMEEWjipTwAIXhrmhUERyM5pZRRYJ4gMEIyS2jilzwgIDhnhFGFQkSBgYA+V52qP9U0qQAAAAASUVORK5CYII=\\"},function(A,n,t){\\"use strict\\";t.r(n),n.default=t.p+\\"assets/41d56d912610ced8f905c1a685fbc606.jpg\\"},function(A,n,t){\\"use strict\\";t.r(n)}],[[0,1]]]);",
+  "/dist/main.ad43807c.js": "(window.webpackJsonp=window.webpackJsonp||[]).push([[0],[function(A,n,t){t(1),A.exports=t(5)},function(A,n,t){const e=t(2),i=t(3),{createSomething:o}=t(4);console.log({logo:e,image:i},o(\\"Hello World\\"))},function(A,n,t){\\"use strict\\";t.r(n),n.default=\\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEcAAABHBAMAAACnnkcsAAAAElBMVEUAAAAAAAAAAAAAAAAAAAAAAADgKxmiAAAABnRSTlP/MwAKzCgzjttlAAAANUlEQVR4AWMgAgiMEEWjipTwAIXhrmhUERyM5pZRRYJ4gMEIyS2jilzwgIDhnhFGFQkSBgYA+V52qP9U0qQAAAAASUVORK5CYII=\\"},function(A,n,t){\\"use strict\\";t.r(n),n.default=t.p+\\"assets/41d56d912610ced8f905c1a685fbc606.jpg\\"},function(A,n,t){\\"use strict\\";function e(A){return{name:A,valid:!0}}t.r(n),t.d(n,\\"createSomething\\",(function(){return e}))},function(A,n,t){\\"use strict\\";t.r(n)}],[[0,1]]]);",
   "/dist/manifest.json": "{
   \\"assets\\": {
     \\"runtime\\": [
@@ -19,7 +19,7 @@ Object {
       ],
       \\"scripts\\": [
         \\"/dist/runtime.9da1a5c0.js\\",
-        \\"/dist/main.9905007f.js\\"
+        \\"/dist/main.ad43807c.js\\"
       ]
     }
   }
@@ -31,7 +31,7 @@ Object {
 exports[`fs 2`] = `
 Object {
   "errors": Array [],
-  "filteredModules": 6,
+  "filteredModules": 7,
   "logging": Object {
     "webpack.buildChunkGraph.visitModules": Object {
       "debug": false,

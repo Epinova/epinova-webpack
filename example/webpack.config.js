@@ -1,9 +1,12 @@
 const epinovaWebpackConfig = require('../config');
+const addTypeScript = require('../config/typescript');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 
 module.exports = epinovaWebpackConfig(
     { path: 'wwwroot/dist', publicPath: '/dist/' },
     (config) => {
+        addTypeScript(config);
+
         config.entry = {
             main: ['./app.js', './app.scss'],
             'application-a': ['./a.js', './a.scss'],

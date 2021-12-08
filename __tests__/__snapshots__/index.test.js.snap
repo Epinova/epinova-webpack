@@ -317,6 +317,7 @@ Object {
       ".vue",
       ".jsx",
     ],
+    "plugins": Array [],
   },
   "stats": "errors-warnings",
 }
@@ -639,6 +640,7 @@ Object {
       ".vue",
       ".jsx",
     ],
+    "plugins": Array [],
   },
   "stats": "errors-warnings",
 }

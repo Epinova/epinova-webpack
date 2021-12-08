@@ -1,10 +1,11 @@
 const path = require('path');
 
-const argv = require('yargs').argv;
+const { argv } = require('yargs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 const ChunksWebpackPlugin = require('./manifest-plugin');
 
 const defaultOptions = {
@@ -82,6 +83,7 @@ module.exports = function (userOptions, callback) {
                         '.vue',
                         '.jsx',
                     ],
+                    plugins: [],
                 },
                 module: {
                     rules: [
