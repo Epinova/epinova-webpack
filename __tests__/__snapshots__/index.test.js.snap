@@ -206,7 +206,7 @@ Object {
                 "postcssPlugin": "cssnano-util-raw-cache",
               },
             ],
-            "version": "8.3.9",
+            "version": "8.4.4",
           },
           "cssProcessorOptions": Object {
             "discardComments": Object {
@@ -251,8 +251,9 @@ Object {
         },
       },
     ],
+    "runtimeChunk": "single",
     "splitChunks": Object {
-      "chunks": "initial",
+      "chunks": "all",
     },
   },
   "output": Object {
@@ -527,7 +528,7 @@ Object {
                 "postcssPlugin": "cssnano-util-raw-cache",
               },
             ],
-            "version": "8.3.9",
+            "version": "8.4.4",
           },
           "cssProcessorOptions": Object {
             "discardComments": Object {
@@ -572,8 +573,9 @@ Object {
         },
       },
     ],
+    "runtimeChunk": "single",
     "splitChunks": Object {
-      "chunks": "initial",
+      "chunks": "all",
     },
   },
   "output": Object {

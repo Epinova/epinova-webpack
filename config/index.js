@@ -160,8 +160,9 @@ module.exports = function (userOptions, callback) {
                         }),
                     ],
                     splitChunks: {
-                        chunks: 'initial',
+                        chunks: 'all',
                     },
+                    runtimeChunk: 'single',
                 },
                 output: {
                     hashDigestLength: 8,
