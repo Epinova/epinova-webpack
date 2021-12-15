@@ -1,10 +1,12 @@
 const path = require('path');
 
-const argv = require('yargs').argv;
+const { argv } = require('yargs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
+
 const ChunksWebpackPlugin = require('./manifest-plugin');
 
 const defaultOptions = {
@@ -82,6 +84,7 @@ module.exports = function (userOptions, callback) {
                         '.vue',
                         '.jsx',
                     ],
+                    plugins: [],
                 },
                 module: {
                     rules: [
@@ -160,8 +163,9 @@ module.exports = function (userOptions, callback) {
                         }),
                     ],
                     splitChunks: {
-                        chunks: 'initial',
+                        chunks: 'all',
                     },
+                    runtimeChunk: 'single',
                 },
                 output: {
                     hashDigestLength: 8,
@@ -181,6 +185,7 @@ module.exports = function (userOptions, callback) {
                     }),
                     new ChunksWebpackPlugin(),
                     new CleanWebpackPlugin(),
+                    new FixStyleOnlyEntriesPlugin(),
                 ],
             },
             env,

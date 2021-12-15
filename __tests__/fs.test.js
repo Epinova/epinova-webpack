@@ -2,12 +2,14 @@
  * @jest-environment node
  */
 
+require('jest');
 const webpack = require('webpack');
 const { createFsFromVolume, Volume } = require('memfs');
 const joinPath = require('memory-fs/lib/join');
 const path = require('path');
 
 const config = require('../config');
+const addTypeScript = require('../typescript');
 
 function ensureWebpackMemoryFs(fs) {
     // Return it back, when it has Webpack 'join' method
@@ -35,6 +37,8 @@ function buildWebpackCompiler(fs, webpackConfig) {
     return compiler;
 }
 
+jest.setTimeout(10000);
+
 test('fs', () => {
     expect.assertions(2);
 
@@ -45,20 +49,34 @@ test('fs', () => {
     fs.mkdirSync('/dist');
 
     const promise = new Promise((resolve, reject) => {
-        const c = config({ path: 'dist', outputPath: '/dist' }, (config) => {
-            config.mode = 'production';
+        const c = config(
+            {
+                path: 'dist',
+                outputPath: '/dist',
+                tsConfigPath: './example/tsconfig.json',
+            },
+            (config) => {
+                addTypeScript(config, {
+                    configFile: path.resolve(
+                        __dirname,
+                        '../example/tsconfig.json'
+                    ),
+                });
 
-            config.output.path = '/dist';
+                config.mode = 'production';
 
-            config.entry = {
-                main: [
-                    path.join(__dirname, '../example/app.js'),
-                    path.join(__dirname, '../example/app.scss'),
-                ],
-            };
+                config.output.path = '/dist';
 
-            return config;
-        })('production', { mode: 'production' });
+                config.entry = {
+                    main: [
+                        path.join(__dirname, '../example/app.js'),
+                        path.join(__dirname, '../example/app.scss'),
+                    ],
+                };
+
+                return config;
+            }
+        )('production', { mode: 'production' });
 
         buildWebpackCompiler(fs, c).run((err, stats) => {
             if (err) reject(err);

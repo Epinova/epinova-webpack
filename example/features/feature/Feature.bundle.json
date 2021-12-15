@@ -1,0 +1,4 @@
+{
+    "styles": ["./feature.scss"],
+    "scripts": ["./feature.js"]
+}

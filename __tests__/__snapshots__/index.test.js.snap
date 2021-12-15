@@ -206,7 +206,7 @@ Object {
                 "postcssPlugin": "cssnano-util-raw-cache",
               },
             ],
-            "version": "8.3.9",
+            "version": "8.4.4",
           },
           "cssProcessorOptions": Object {
             "discardComments": Object {
@@ -251,8 +251,9 @@ Object {
         },
       },
     ],
+    "runtimeChunk": "single",
     "splitChunks": Object {
-      "chunks": "initial",
+      "chunks": "all",
     },
   },
   "output": Object {
@@ -306,6 +307,20 @@ Object {
       "removeFiles": [Function],
       "verbose": false,
     },
+    WebpackFixStyleOnlyEntriesPlugin {
+      "apply": [Function],
+      "options": Object {
+        "extensions": Array [
+          "less",
+          "scss",
+          "css",
+          "sass",
+          "styl",
+        ],
+        "ignore": undefined,
+        "silent": false,
+      },
+    },
   ],
   "resolve": Object {
     "extensions": Array [
@@ -316,6 +331,7 @@ Object {
       ".vue",
       ".jsx",
     ],
+    "plugins": Array [],
   },
   "stats": "errors-warnings",
 }
@@ -527,7 +543,7 @@ Object {
                 "postcssPlugin": "cssnano-util-raw-cache",
               },
             ],
-            "version": "8.3.9",
+            "version": "8.4.4",
           },
           "cssProcessorOptions": Object {
             "discardComments": Object {
@@ -572,8 +588,9 @@ Object {
         },
       },
     ],
+    "runtimeChunk": "single",
     "splitChunks": Object {
-      "chunks": "initial",
+      "chunks": "all",
     },
   },
   "output": Object {
@@ -627,6 +644,20 @@ Object {
       "removeFiles": [Function],
       "verbose": false,
     },
+    WebpackFixStyleOnlyEntriesPlugin {
+      "apply": [Function],
+      "options": Object {
+        "extensions": Array [
+          "less",
+          "scss",
+          "css",
+          "sass",
+          "styl",
+        ],
+        "ignore": undefined,
+        "silent": false,
+      },
+    },
   ],
   "resolve": Object {
     "extensions": Array [
@@ -637,6 +668,7 @@ Object {
       ".vue",
       ".jsx",
     ],
+    "plugins": Array [],
   },
   "stats": "errors-warnings",
 }
