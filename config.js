@@ -131,7 +131,15 @@ module.exports = function (userOptions, callback) {
                                         sourceMap: true,
                                     },
                                 },
-                                'sass-loader',
+                                {
+                                    loader: 'sass-loader',
+                                    options: {
+                                        implementation: require('sass'),
+                                        sassOptions: {
+                                            fiber: false,
+                                        },
+                                    },
+                                },
                             ],
                         },
                         {
