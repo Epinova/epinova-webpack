@@ -37,9 +37,9 @@ function buildWebpackCompiler(fs, webpackConfig) {
     return compiler;
 }
 
-test('fs', () => {
-    jest.setTimeout(10000);
+jest.setTimeout(10000);
 
+test('fs', () => {
     expect.assertions(2);
 
     Date.now = jest.fn(() => 1482363367071);
