@@ -307,6 +307,20 @@ Object {
       "removeFiles": [Function],
       "verbose": false,
     },
+    WebpackFixStyleOnlyEntriesPlugin {
+      "apply": [Function],
+      "options": Object {
+        "extensions": Array [
+          "less",
+          "scss",
+          "css",
+          "sass",
+          "styl",
+        ],
+        "ignore": undefined,
+        "silent": false,
+      },
+    },
   ],
   "resolve": Object {
     "extensions": Array [
@@ -629,6 +643,20 @@ Object {
       "protectWebpackAssets": true,
       "removeFiles": [Function],
       "verbose": false,
+    },
+    WebpackFixStyleOnlyEntriesPlugin {
+      "apply": [Function],
+      "options": Object {
+        "extensions": Array [
+          "less",
+          "scss",
+          "css",
+          "sass",
+          "styl",
+        ],
+        "ignore": undefined,
+        "silent": false,
+      },
     },
   ],
   "resolve": Object {
