@@ -2,6 +2,7 @@
  * @jest-environment node
  */
 
+require('jest');
 const webpack = require('webpack');
 const { createFsFromVolume, Volume } = require('memfs');
 const joinPath = require('memory-fs/lib/join');
@@ -37,6 +38,8 @@ function buildWebpackCompiler(fs, webpackConfig) {
 }
 
 test('fs', () => {
+    jest.setTimeout(10000);
+
     expect.assertions(2);
 
     Date.now = jest.fn(() => 1482363367071);
