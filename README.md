@@ -2,7 +2,14 @@
 
 Default Webpack configuration for Epinova Webpack projects
 
-## Usage
+# Table of Contents
+
+1. [Usage](#usage)
+2. [HTTPS](#https)
+3. [Examples](#examples)
+4. [Upgrade](#upgrade)
+
+# Usage
 
 `webpack.config.js`
 
@@ -39,6 +46,57 @@ const config = epinovaWebpackConfig({
 module.exports = config;
 ```
 
+## TypeScript
+
+```javascript
+const path = require('path');
+
+const epinovaWebpackConfig = require('@epinova/webpack');
+const addTypeScript = require('@epinova/webpack/typescript');
+
+module.exports = epinovaWebpackConfig(
+    { path: 'wwwroot/dist', publicPath: '/dist/', https: true },
+    (config, env, argv) => {
+        config.name = 'Client';
+
+        config.entry = './Scripts/global/index.js';
+
+        addTypeScript(config, {
+            configFile: path.resolve(__dirname, 'tsconfig.json'),
+        });
+
+        return config;
+    }
+);
+```
+
+## Dynamic Bundling
+
+This will automatically add all files that ends with `.bundle.json` as entries to the webpack config so that you don't have to manually update entries for each new bundle. The second argument to the `addDynamicBundles` will define which folders to scan for these bundle json files.
+
+```javascript
+const path = require('path');
+
+const epinovaWebpackConfig = require('@epinova/webpack');
+const addDynamicBundles = require('@epinova/webpack/dynamic-bundles');
+
+module.exports = epinovaWebpackConfig(
+    { path: 'wwwroot/dist', publicPath: '/dist/', https: true },
+    (config, env, argv) => {
+        config.name = 'Client';
+
+        config.entry = './Scripts/global/index.js';
+
+        addDynamicBundles(config, [
+            path.resolve(__dirname, 'Features'),
+            path.resolve(__dirname, 'UI'),
+        ]);
+
+        return config;
+    }
+);
+```
+
 # HTTPS
 
 Using webpack-dev-server with https is now possible, to activate https you need to pass `https: true` to the epinova config.
@@ -65,7 +123,7 @@ This will prevent the `Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID`
 
 For Firefox you need to open the console and check for lines such as `Error loading script "https://127.0.0.1/dist/global.js"` and click the link to the JavaScript file. Firefox will then show you an alert page which says the certificate is not safe, you can then click "Advanced" and accept the certificate anyways.
 
-# Customization/Examples
+# Examples
 
 ## GlobbedEntriesPlugin
 
@@ -122,20 +180,45 @@ module.exports = config;
 }
 ```
 
+# Upgrade
+
+## Upgrade from v1.3
+
+In v1.4 the default values for `optimization.splitChunks.chunks` & `optimization.runtimeChunk` has been updated to work better with async modules, if these new settings don't work for your project you can change them back to how they were in v1.3
+
+```javascript
+const epinovaWebpackConfig = require('@epinova/webpack');
+
+const config = epinovaWebpackConfig({}, (config) => {
+    ...
+    config.optimization.splitChunks.chunks = 'initial';
+    config.optimization.runtimeChunk = false;
+    ...
+
+    return config;
+});
+
+module.exports = config;
+```
+
 ## Upgrade from v1.1
 
 ### Update Epinova.Webpack nuget
+
 This update changes the format of the `manifest.json` file that the [Epinova.Webpack](https://dev.azure.com/epinova/Epinova%20-%20Modules/_git/Epinova.Webpack) nuget reads to output correct link and script tags to your CSS and script files.
 
 This nuget requires update and has also been split into two new nugets, one for .NET 4 and one for .NET 5. The [README](https://dev.azure.com/epinova/Epinova%20-%20Modules/_git/Epinova.Webpack?anchor=epinova.webpack) file in the repository will guide you to the correct version to use.
 
 ### Node version 12+ is now required
+
 It is worth noting that @epinova/webpack v1.3.0+ requires Node 12 or newer so you will need to update your system and potentially any build agents to use Node 12+. (It is recommended to switch to the current LTS version, which is currently Node 14)
 
 ### Babel
+
 You will most likely get errors like `Module not found: Error: Can't resolve 'core-js/modules/es6.array.filter.js'` when updating from older versions, to fix this we need to update the babel configuration.
 
 In the package.json file change this section
+
 ```json
 "babel": {
     "presets": [
@@ -148,7 +231,9 @@ In the package.json file change this section
     ]
 }
 ```
+
 to
+
 ```json
 "babel": {
     "presets": ["@babel/preset-env"]
