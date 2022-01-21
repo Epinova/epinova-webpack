@@ -81,7 +81,6 @@ module.exports = function (userOptions, callback) {
                         '.mjs',
                         '.js',
                         '.json',
-                        '.vue',
                         '.jsx',
                     ],
                     plugins: [],
