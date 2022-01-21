@@ -76,13 +76,7 @@ module.exports = function (userOptions, callback) {
                         ? 'cheap-module-source-map'
                         : false,
                 resolve: {
-                    extensions: [
-                        '.wasm',
-                        '.mjs',
-                        '.js',
-                        '.json',
-                        '.jsx',
-                    ],
+                    extensions: ['.wasm', '.mjs', '.js', '.json', '.jsx'],
                     plugins: [],
                 },
                 module: {
