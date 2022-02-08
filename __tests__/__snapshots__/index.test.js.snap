@@ -60,7 +60,66 @@ Object {
               "sourceMap": true,
             },
           },
-          "sass-loader",
+          Object {
+            "loader": "sass-loader",
+            "options": Object {
+              "implementation": Object {
+                "Exception": [Function],
+                "FALSE": SassBoolean0 {
+                  "value": false,
+                },
+                "Logger": Object {
+                  "silent": Object {
+                    "debug": [Function],
+                    "warn": [Function],
+                  },
+                },
+                "NULL": _SassNull0 {},
+                "SassArgumentList": [Function],
+                "SassBoolean": [Function],
+                "SassColor": [Function],
+                "SassFunction": [Function],
+                "SassList": [Function],
+                "SassMap": [Function],
+                "SassNumber": [Function],
+                "SassString": [Function],
+                "TRUE": SassBoolean0 {
+                  "value": true,
+                },
+                "Value": [Function],
+                "cli_pkg_main_0_": [Function],
+                "compile": [Function],
+                "compileAsync": [Function],
+                "compileString": [Function],
+                "compileStringAsync": [Function],
+                "info": "dart-sass	1.45.0	(Sass Compiler)	[Dart]
+dart2js	2.15.0	(Dart Compiler)	[Dart]",
+                "load": [Function],
+                "render": [Function],
+                "renderSync": [Function],
+                "sassFalse": SassBoolean0 {
+                  "value": false,
+                },
+                "sassNull": _SassNull0 {},
+                "sassTrue": SassBoolean0 {
+                  "value": true,
+                },
+                "types": Object {
+                  "Boolean": [Function],
+                  "Color": [Function],
+                  "Error": [Function],
+                  "List": [Function],
+                  "Map": [Function],
+                  "Null": [Function],
+                  "Number": [Function],
+                  "String": [Function],
+                },
+              },
+              "sassOptions": Object {
+                "fiber": false,
+              },
+            },
+          },
         ],
       },
       Object {
@@ -206,7 +265,7 @@ Object {
                 "postcssPlugin": "cssnano-util-raw-cache",
               },
             ],
-            "version": "8.4.4",
+            "version": "8.4.5",
           },
           "cssProcessorOptions": Object {
             "discardComments": Object {
@@ -328,7 +387,6 @@ Object {
       ".mjs",
       ".js",
       ".json",
-      ".vue",
       ".jsx",
     ],
     "plugins": Array [],
@@ -397,7 +455,66 @@ Object {
               "sourceMap": true,
             },
           },
-          "sass-loader",
+          Object {
+            "loader": "sass-loader",
+            "options": Object {
+              "implementation": Object {
+                "Exception": [Function],
+                "FALSE": SassBoolean0 {
+                  "value": false,
+                },
+                "Logger": Object {
+                  "silent": Object {
+                    "debug": [Function],
+                    "warn": [Function],
+                  },
+                },
+                "NULL": _SassNull0 {},
+                "SassArgumentList": [Function],
+                "SassBoolean": [Function],
+                "SassColor": [Function],
+                "SassFunction": [Function],
+                "SassList": [Function],
+                "SassMap": [Function],
+                "SassNumber": [Function],
+                "SassString": [Function],
+                "TRUE": SassBoolean0 {
+                  "value": true,
+                },
+                "Value": [Function],
+                "cli_pkg_main_0_": [Function],
+                "compile": [Function],
+                "compileAsync": [Function],
+                "compileString": [Function],
+                "compileStringAsync": [Function],
+                "info": "dart-sass	1.45.0	(Sass Compiler)	[Dart]
+dart2js	2.15.0	(Dart Compiler)	[Dart]",
+                "load": [Function],
+                "render": [Function],
+                "renderSync": [Function],
+                "sassFalse": SassBoolean0 {
+                  "value": false,
+                },
+                "sassNull": _SassNull0 {},
+                "sassTrue": SassBoolean0 {
+                  "value": true,
+                },
+                "types": Object {
+                  "Boolean": [Function],
+                  "Color": [Function],
+                  "Error": [Function],
+                  "List": [Function],
+                  "Map": [Function],
+                  "Null": [Function],
+                  "Number": [Function],
+                  "String": [Function],
+                },
+              },
+              "sassOptions": Object {
+                "fiber": false,
+              },
+            },
+          },
         ],
       },
       Object {
@@ -543,7 +660,7 @@ Object {
                 "postcssPlugin": "cssnano-util-raw-cache",
               },
             ],
-            "version": "8.4.4",
+            "version": "8.4.5",
           },
           "cssProcessorOptions": Object {
             "discardComments": Object {
@@ -665,7 +782,6 @@ Object {
       ".mjs",
       ".js",
       ".json",
-      ".vue",
       ".jsx",
     ],
     "plugins": Array [],

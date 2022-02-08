@@ -76,14 +76,7 @@ module.exports = function (userOptions, callback) {
                         ? 'cheap-module-source-map'
                         : false,
                 resolve: {
-                    extensions: [
-                        '.wasm',
-                        '.mjs',
-                        '.js',
-                        '.json',
-                        '.vue',
-                        '.jsx',
-                    ],
+                    extensions: ['.wasm', '.mjs', '.js', '.json', '.jsx'],
                     plugins: [],
                 },
                 module: {
@@ -131,7 +124,15 @@ module.exports = function (userOptions, callback) {
                                         sourceMap: true,
                                     },
                                 },
-                                'sass-loader',
+                                {
+                                    loader: 'sass-loader',
+                                    options: {
+                                        implementation: require('sass'),
+                                        sassOptions: {
+                                            fiber: false,
+                                        },
+                                    },
+                                },
                             ],
                         },
                         {

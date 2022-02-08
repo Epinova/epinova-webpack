@@ -44,6 +44,19 @@ stages:
               npm test
             displayName: "npm install & test"
 
+      - job: node_16
+        displayName: Node 16
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: "16.x"
+            displayName: "Install Node.js"
+
+          - script: |
+              npm install
+              npm test
+            displayName: "npm install & test"
+
   - stage: publish
     displayName: Pack and Publish
     condition: and(succeeded(), eq(variables.isMaster, true))
