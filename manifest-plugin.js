@@ -129,7 +129,13 @@ module.exports = /** @class */ (function () {
                     this.manifest.assets[name] = [];
                 }
 
-                this.manifest.assets[name].push('' + this.publicPath + file);
+                if (file.endsWith('.hot-update.js')) return;
+                if (file.endsWith('.map')) return;
+
+                var fullPath = '' + this.publicPath + file;
+                if (this.manifest.assets[name].includes(fullPath)) return;
+
+                this.manifest.assets[name].push(fullPath);
             }
         }
     };
@@ -207,6 +213,10 @@ module.exports = /** @class */ (function () {
                 }),
             scripts: files
                 .filter(function (file) {
+                    if (file.endsWith('.hot-update.js')) {
+                        return false;
+                    }
+
                     return _this.isValidExtensionByType(file, 'js');
                 })
                 .map(function (file) {
