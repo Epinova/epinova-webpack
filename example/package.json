@@ -1,6 +1,6 @@
 {
     "name": "epinova-webpack-example",
-    "version": "1.0.0",
+    "version": "1.4.3-rc1",
     "description": "",
     "main": "test.js",
     "scripts": {
