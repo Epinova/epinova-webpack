@@ -1,6 +1,8 @@
 const path = require('path');
 
-const epinovaWebpackServerConfig = require('@epinova/webpack/server');
+const {
+    config: epinovaWebpackServerConfig,
+} = require('@epinova/webpack/server');
 const addTypeScript = require('@epinova/webpack/typescript');
 
 module.exports = epinovaWebpackServerConfig(
