@@ -82,7 +82,7 @@ module.exports = function (userOptions, callback) {
                 module: {
                     rules: [
                         {
-                            test: /\.js$/,
+                            test: /\.jsx?$/,
                             loader: 'babel-loader',
                             exclude: /node_modules/,
                         },
