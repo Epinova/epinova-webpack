@@ -1,8 +1,8 @@
 const path = require('path');
 
-const epinovaWebpackConfig = require('../config');
-const addTypeScript = require('../typescript');
-const dynamicBundles = require('../dynamic-bundles');
+const epinovaWebpackConfig = require('@epinova/webpack');
+const addTypeScript = require('@epinova/webpack/typescript');
+const dynamicBundles = require('@epinova/webpack/dynamic-bundles');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 
 module.exports = epinovaWebpackConfig(

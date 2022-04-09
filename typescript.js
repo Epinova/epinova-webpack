@@ -21,7 +21,7 @@ function addTypeScript(
     }
 
     config.module.rules.push({
-        test: /.ts$/,
+        test: /.tsx?$/,
         loader: 'ts-loader',
         exclude: /node_modules/,
         options: {
