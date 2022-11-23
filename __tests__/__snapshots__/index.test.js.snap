@@ -20,7 +20,7 @@ Object {
       Object {
         "exclude": /node_modules/,
         "loader": "babel-loader",
-        "test": /\\\\\\.js\\$/,
+        "test": /\\\\\\.jsx\\?\\$/,
       },
       Object {
         "test": /\\\\\\.css\\$/,
@@ -415,7 +415,7 @@ Object {
       Object {
         "exclude": /node_modules/,
         "loader": "babel-loader",
-        "test": /\\\\\\.js\\$/,
+        "test": /\\\\\\.jsx\\?\\$/,
       },
       Object {
         "test": /\\\\\\.css\\$/,
