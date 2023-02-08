@@ -9,7 +9,7 @@ module.exports = epinovaWebpackServerConfig(
     { path: 'ssr-react' },
     (config, env, argv) => {
         config.entry = {
-            server: './Features/server/react.ts',
+            server: './Features/React/server.ts',
         };
 
         addTypeScript(config, {

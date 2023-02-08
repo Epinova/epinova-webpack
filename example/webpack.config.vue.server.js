@@ -10,7 +10,7 @@ module.exports = epinovaWebpackServerConfig(
     { path: 'ssr-vue' },
     (config, env, argv) => {
         config.entry = {
-            server: './Features/server/vue.ts',
+            server: './features/Vue/server.ts',
         };
 
         addTypeScript(config, {

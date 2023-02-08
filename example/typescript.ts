@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import DemoComponent from './features/DemoComponent/DemoComponent';
+import DemoComponent from './features/React/DemoComponent';
 
 interface MyInterface {
     name: string;

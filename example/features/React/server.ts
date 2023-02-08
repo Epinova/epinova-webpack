@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactDOMServer from 'react-dom/server';
 
-import DemoComponent from '../DemoComponent/DemoComponent';
+import DemoComponent from './DemoComponent';
 
 declare global {
     var Components: { [key: string]: React.ElementType };
