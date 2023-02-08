@@ -9,8 +9,10 @@
         "build:develop": "webpack --mode development",
         "build:server-react": "webpack --mode production --config webpack.config.react.server.js",
         "build:server-vue": "webpack --mode production --config webpack.config.vue.server.js",
-        "develop": "webpack-dev-server --mode development --hot --hot-only --content-base ./wwwroot",
-        "develop:browserstack": "webpack-dev-server --mode development --hot --static ./wwwroot --browserstack=http://bs-local.com"
+        "develop": "concurrently -n client,react,vue \"npm run develop:client\" \"npm run develop:server-react\" \"npm run develop:server-vue\"",
+        "develop:client": "webpack serve --mode development --config webpack.config.client.js",
+        "develop:server-react": "webpack watch --mode development --config webpack.config.react.server.js",
+        "develop:server-vue": "webpack watch --mode development --config webpack.config.vue.server.js"
     },
     "engines": {
         "node": ">=16"
@@ -30,15 +32,16 @@
         "@epinova/webpack": "file:../",
         "@types/react": "^17.0.44",
         "@types/react-dom": "^17.0.15",
+        "concurrently": "^7.6.0",
         "copy-webpack-plugin": "^6.4.1",
         "css-loader": "^5.2.7",
         "svg-spritemap-webpack-plugin": "^3.9.1",
         "vue-loader": "^15.9.8",
         "vue-server-renderer": "^2.6.14",
         "vue-template-compiler": "^2.6.14",
-        "webpack": "^4.46.0",
-        "webpack-cli": "^4.9.1",
-        "webpack-dev-server": "^3.11.3"
+        "webpack": "^5.75.0",
+        "webpack-cli": "^5.0.0",
+        "webpack-dev-server": "^4.11.1"
     },
     "postcss": {
         "plugins": {
