@@ -51,10 +51,22 @@ stages:
               versionSpec: "14.x"
             displayName: "Install Node.js"
 
-          - script: |
-              npm install
-              npm test
-            displayName: "npm install & test"
+          - task: Npm@1
+            displayName: 'npm install'
+            inputs:
+              command: 'install'
+
+          - task: Npm@1
+            displayName: 'npm install (example)'
+            inputs:
+              command: 'install'
+              workingDir: 'example/'
+              
+          - task: Npm@1
+            displayName: 'npm test'
+            inputs:
+              command: 'custom'
+              customCommand: 'test'
 
       - job: node_16
         displayName: Node 16
@@ -64,10 +76,22 @@ stages:
               versionSpec: "16.x"
             displayName: "Install Node.js"
 
-          - script: |
-              npm install
-              npm test
-            displayName: "npm install & test"
+          - task: Npm@1
+            displayName: 'npm install'
+            inputs:
+              command: 'install'
+
+          - task: Npm@1
+            displayName: 'npm install (example)'
+            inputs:
+              command: 'install'
+              workingDir: 'example/'
+              
+          - task: Npm@1
+            displayName: 'npm test'
+            inputs:
+              command: 'custom'
+              customCommand: 'test'
 
   - stage: publish
     displayName: Pack and Publish
