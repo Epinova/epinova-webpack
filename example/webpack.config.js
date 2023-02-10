@@ -1,9 +1,10 @@
 const path = require('path');
 
-const epinovaWebpackConfig = require('../config');
-const addTypeScript = require('../typescript');
-const dynamicBundles = require('../dynamic-bundles');
+const epinovaWebpackConfig = require('@epinova/webpack');
+const addTypeScript = require('@epinova/webpack/typescript');
+const dynamicBundles = require('@epinova/webpack/dynamic-bundles');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = epinovaWebpackConfig(
     { path: 'wwwroot/dist', publicPath: '/dist/' },
@@ -23,6 +24,13 @@ module.exports = epinovaWebpackConfig(
             'application-i': ['./i.js'],
             'application-j': ['./j.js'],
         };
+
+        config.module.rules.push({
+            test: /\.vue$/,
+            loader: 'vue-loader',
+        });
+
+        config.plugins.push(new VueLoaderPlugin());
 
         dynamicBundles(config, [path.resolve(__dirname, 'features')]);
 

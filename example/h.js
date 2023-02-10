@@ -1,10 +1,10 @@
-import Vue from "vue";
+import Vue from 'vue';
 
-import { store } from "./store";
+import { store } from './features/Vue/vuex-store';
 
 new Vue({
     store,
     data() {
-        return "application";
+        return 'application';
     },
 });
