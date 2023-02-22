@@ -58,8 +58,6 @@ module.exports = function (userOptions, callback) {
             publicPath = publicPath.replace('http', 'https');
         }
 
-        console.log({ publicPath });
-
         const config = {
             stats: 'errors-warnings',
             devServer: {
