@@ -23,8 +23,7 @@
         "esModuleInterop": true,
         "paths": {
             "@/UI/*": ["UI/*"]
-        },
-        "importsNotUsedAsValues": "preserve"
+        }
     },
     "exclude": ["node_modules", "wwwroot"]
 }

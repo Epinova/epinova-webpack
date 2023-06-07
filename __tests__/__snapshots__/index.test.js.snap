@@ -1,75 +1,78 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`development 1`] = `
-Object {
-  "devServer": Object {
+{
+  "devServer": {
     "compress": true,
-    "contentBase": "<PROJECT_ROOT>",
-    "disableHostCheck": true,
-    "headers": Object {
+    "devMiddleware": {
+      "publicPath": "http://127.0.0.1:8080/dist/",
+      "writeToDisk": [Function],
+    },
+    "headers": {
       "Access-Control-Allow-Origin": "*",
     },
     "host": "0.0.0.0",
     "https": false,
     "port": 8080,
-    "publicPath": "http://127.0.0.1:8080/dist/",
   },
   "devtool": "cheap-module-source-map",
-  "module": Object {
-    "rules": Array [
-      Object {
+  "module": {
+    "rules": [
+      {
         "exclude": /node_modules/,
         "loader": "babel-loader",
         "test": /\\\\\\.jsx\\?\\$/,
       },
-      Object {
+      {
         "test": /\\\\\\.css\\$/,
-        "use": Array [
+        "use": [
           "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
-          Object {
+          {
             "loader": "css-loader",
-            "options": Object {
+            "options": {
               "importLoaders": 1,
               "sourceMap": true,
               "url": false,
             },
           },
-          Object {
+          {
             "loader": "postcss-loader",
-            "options": Object {
+            "options": {
               "sourceMap": true,
             },
           },
         ],
       },
-      Object {
+      {
         "test": /\\\\\\.s\\(c\\|a\\)ss\\$/,
-        "use": Array [
+        "use": [
           "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
-          Object {
+          {
             "loader": "css-loader",
-            "options": Object {
+            "options": {
               "importLoaders": 2,
               "sourceMap": true,
-              "url": [Function],
+              "url": {
+                "filter": [Function],
+              },
             },
           },
-          Object {
+          {
             "loader": "postcss-loader",
-            "options": Object {
+            "options": {
               "sourceMap": true,
             },
           },
-          Object {
+          {
             "loader": "sass-loader",
-            "options": Object {
-              "implementation": Object {
+            "options": {
+              "implementation": {
                 "Exception": [Function],
                 "FALSE": SassBoolean0 {
                   "value": false,
                 },
-                "Logger": Object {
-                  "silent": Object {
+                "Logger": {
+                  "silent": {
                     "debug": [Function],
                     "warn": [Function],
                   },
@@ -92,8 +95,8 @@ Object {
                 "compileAsync": [Function],
                 "compileString": [Function],
                 "compileStringAsync": [Function],
-                "info": "dart-sass	1.45.0	(Sass Compiler)	[Dart]
-dart2js	2.15.0	(Dart Compiler)	[Dart]",
+                "info": "dart-sass	1.62.1	(Sass Compiler)	[Dart]
+dart2js	2.19.6	(Dart Compiler)	[Dart]",
                 "load": [Function],
                 "render": [Function],
                 "renderSync": [Function],
@@ -104,7 +107,7 @@ dart2js	2.15.0	(Dart Compiler)	[Dart]",
                 "sassTrue": SassBoolean0 {
                   "value": true,
                 },
-                "types": Object {
+                "types": {
                   "Boolean": [Function],
                   "Color": [Function],
                   "Error": [Function],
@@ -115,16 +118,16 @@ dart2js	2.15.0	(Dart Compiler)	[Dart]",
                   "String": [Function],
                 },
               },
-              "sassOptions": Object {
+              "sassOptions": {
                 "fiber": false,
               },
             },
           },
         ],
       },
-      Object {
+      {
         "loader": "url-loader",
-        "options": Object {
+        "options": {
           "limit": 8192,
           "outputPath": "assets",
         },
@@ -132,205 +135,61 @@ dart2js	2.15.0	(Dart Compiler)	[Dart]",
       },
     ],
   },
-  "optimization": Object {
-    "minimizer": Array [
-      OptimizeCssAssetsWebpackPlugin {
-        "deleteAssetsMap": Object {},
-        "options": Object {
-          "assetNameRegExp": /\\\\\\.css\\(\\\\\\?\\.\\*\\)\\?\\$/i,
-          "assetProcessors": Array [
-            Object {
-              "phase": "compilation.optimize-chunk-assets",
-              "processor": [Function],
-              "regExp": /\\\\\\.css\\(\\\\\\?\\.\\*\\)\\?\\$/i,
-            },
-          ],
-          "canPrint": undefined,
-          "cssProcessor": Processor {
-            "plugins": Array [
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-discard-comments",
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-minify-gradients",
-              },
-              Object {
-                "postcssPlugin": "postcss-reduce-initial",
-                "prepare": [Function],
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-svgo",
-              },
-              Object {
-                "postcssPlugin": "postcss-normalize-display-values",
-                "prepare": [Function],
-              },
-              Object {
-                "postcssPlugin": "postcss-reduce-transforms",
-                "prepare": [Function],
-              },
-              Object {
-                "postcssPlugin": "postcss-colormin",
-                "prepare": [Function],
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-normalize-timing-functions",
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-calc",
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-convert-values",
-              },
-              Object {
-                "postcssPlugin": "postcss-ordered-values",
-                "prepare": [Function],
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-minify-selectors",
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-minify-params",
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-normalize-charset",
-              },
-              Object {
-                "postcssPlugin": "postcss-discard-overridden",
-                "prepare": [Function],
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-normalize-string",
-              },
-              Object {
-                "postcssPlugin": "postcss-normalize-unicode",
-                "prepare": [Function],
-              },
-              Object {
-                "postcssPlugin": "postcss-minify-font-values",
-                "prepare": [Function],
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-normalize-url",
-              },
-              Object {
-                "postcssPlugin": "postcss-normalize-repeat-style",
-                "prepare": [Function],
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-normalize-positions",
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-normalize-whitespace",
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-merge-longhand",
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-discard-duplicates",
-              },
-              Object {
-                "postcssPlugin": "postcss-merge-rules",
-                "prepare": [Function],
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-discard-empty",
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-unique-selectors",
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "css-declaration-sorter",
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "cssnano-util-raw-cache",
-              },
-            ],
-            "version": "8.4.5",
+  "optimization": {
+    "minimizer": [
+      CssMinimizerPlugin {
+        "options": {
+          "exclude": undefined,
+          "include": undefined,
+          "minimizer": {
+            "implementation": [Function],
+            "options": {},
           },
-          "cssProcessorOptions": Object {
-            "discardComments": Object {
-              "removeAll": true,
-            },
-          },
-          "cssProcessorPluginOptions": Object {},
-        },
-        "phaseAssetProcessors": Object {
-          "compilation.optimize-assets": Array [],
-          "compilation.optimize-chunk-assets": Array [
-            Object {
-              "phase": "compilation.optimize-chunk-assets",
-              "processor": [Function],
-              "regExp": /\\\\\\.css\\(\\\\\\?\\.\\*\\)\\?\\$/i,
-            },
-          ],
-          "emit": Array [],
-        },
-        "pluginDescriptor": Object {
-          "name": "OptimizeCssAssetsWebpackPlugin",
+          "parallel": true,
+          "test": /\\\\\\.css\\(\\\\\\?\\.\\*\\)\\?\\$/i,
+          "warningsFilter": [Function],
         },
       },
       TerserPlugin {
-        "options": Object {
-          "cache": false,
-          "cacheKeys": [Function],
-          "chunkFilter": [Function],
+        "options": {
           "exclude": undefined,
-          "extractComments": false,
+          "extractComments": true,
           "include": undefined,
-          "minify": undefined,
-          "parallel": true,
-          "sourceMap": false,
-          "terserOptions": Object {
-            "output": Object {
-              "comments": false,
+          "minimizer": {
+            "implementation": [Function],
+            "options": {
+              "output": {
+                "comments": false,
+              },
             },
           },
-          "test": /\\\\\\.m\\?js\\(\\\\\\?\\.\\*\\)\\?\\$/i,
-          "warningsFilter": [Function],
+          "parallel": true,
+          "test": /\\\\\\.\\[cm\\]\\?js\\(\\\\\\?\\.\\*\\)\\?\\$/i,
         },
       },
     ],
     "runtimeChunk": "single",
-    "splitChunks": Object {
+    "splitChunks": {
       "chunks": "all",
     },
   },
-  "output": Object {
+  "output": {
     "filename": "[name].js",
     "hashDigestLength": 8,
     "path": "<PROJECT_ROOT>/dist",
     "publicPath": "/dist/",
   },
-  "plugins": Array [
+  "plugins": [
     MiniCssExtractPlugin {
       "_sortedModulesCache": WeakMap {},
-      "options": Object {
+      "options": {
         "chunkFilename": "[name].css",
-        "experimentalUseImportModule": false,
+        "experimentalUseImportModule": undefined,
         "filename": "[name].css",
         "ignoreOrder": false,
+        "runtime": true,
       },
-      "runtimeOptions": Object {
+      "runtimeOptions": {
         "attributes": undefined,
         "insert": undefined,
         "linkType": "text/css",
@@ -338,24 +197,25 @@ dart2js	2.15.0	(Dart Compiler)	[Dart]",
     },
     ChunksWebpackPlugin {
       "addAssets": [Function],
-      "isDevServer": undefined,
-      "isWebpack4": false,
-      "manifest": Object {
-        "assets": Object {},
-        "chunks": Object {},
-      },
-      "options": Object {
-        "filename": "manifest.json",
+      "manifest": {},
+      "options": {
+        "customFormatTags": false,
+        "filename": "[name]-[type].html",
+        "generateChunksFiles": false,
+        "generateChunksManifest": true,
+        "outputPath": null,
+        "templateScript": "<script src="{{chunk}}"></script>",
+        "templateStyle": "<link rel="stylesheet" href="{{chunk}}" />",
       },
     },
     CleanWebpackPlugin {
       "apply": [Function],
-      "cleanAfterEveryBuildPatterns": Array [],
-      "cleanOnceBeforeBuildPatterns": Array [
+      "cleanAfterEveryBuildPatterns": [],
+      "cleanOnceBeforeBuildPatterns": [
         "**/*",
       ],
       "cleanStaleWebpackAssets": true,
-      "currentAssets": Array [],
+      "currentAssets": [],
       "dangerouslyAllowCleanPatternsOutsideProject": false,
       "dry": false,
       "handleDone": [Function],
@@ -366,105 +226,109 @@ dart2js	2.15.0	(Dart Compiler)	[Dart]",
       "removeFiles": [Function],
       "verbose": false,
     },
-    WebpackFixStyleOnlyEntriesPlugin {
+    WebpackRemoveEmptyScriptsPlugin {
       "apply": [Function],
-      "options": Object {
-        "extensions": Array [
-          "less",
-          "scss",
-          "css",
-          "sass",
-          "styl",
-        ],
-        "ignore": undefined,
-        "silent": false,
+      "enabled": true,
+      "options": {
+        "enabled": true,
+        "extensions": /\\.\\(css\\|scss\\|sass\\|less\\|styl\\)\\(\\[\\?\\]\\.\\*\\)\\?\\$/,
+        "ignore": [],
+        "remove": /\\\\\\.\\(js\\|mjs\\)\\$/,
+        "stage": 100,
+        "verbose": true,
       },
+      "outputPath": "",
+      "trash": [],
+      "verbose": true,
     },
   ],
-  "resolve": Object {
-    "extensions": Array [
+  "resolve": {
+    "extensions": [
       ".wasm",
       ".mjs",
       ".js",
       ".json",
       ".jsx",
     ],
-    "plugins": Array [],
+    "plugins": [],
   },
   "stats": "errors-warnings",
 }
 `;
 
 exports[`production 1`] = `
-Object {
-  "devServer": Object {
+{
+  "devServer": {
     "compress": true,
-    "contentBase": "<PROJECT_ROOT>",
-    "disableHostCheck": true,
-    "headers": Object {
+    "devMiddleware": {
+      "publicPath": "http://127.0.0.1:8080/dist/",
+      "writeToDisk": [Function],
+    },
+    "headers": {
       "Access-Control-Allow-Origin": "*",
     },
     "host": "0.0.0.0",
     "https": false,
     "port": 8080,
-    "publicPath": "http://127.0.0.1:8080/dist/",
   },
   "devtool": false,
-  "module": Object {
-    "rules": Array [
-      Object {
+  "module": {
+    "rules": [
+      {
         "exclude": /node_modules/,
         "loader": "babel-loader",
         "test": /\\\\\\.jsx\\?\\$/,
       },
-      Object {
+      {
         "test": /\\\\\\.css\\$/,
-        "use": Array [
+        "use": [
           "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
-          Object {
+          {
             "loader": "css-loader",
-            "options": Object {
+            "options": {
               "importLoaders": 1,
               "sourceMap": true,
               "url": false,
             },
           },
-          Object {
+          {
             "loader": "postcss-loader",
-            "options": Object {
+            "options": {
               "sourceMap": true,
             },
           },
         ],
       },
-      Object {
+      {
         "test": /\\\\\\.s\\(c\\|a\\)ss\\$/,
-        "use": Array [
+        "use": [
           "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
-          Object {
+          {
             "loader": "css-loader",
-            "options": Object {
+            "options": {
               "importLoaders": 2,
               "sourceMap": true,
-              "url": [Function],
+              "url": {
+                "filter": [Function],
+              },
             },
           },
-          Object {
+          {
             "loader": "postcss-loader",
-            "options": Object {
+            "options": {
               "sourceMap": true,
             },
           },
-          Object {
+          {
             "loader": "sass-loader",
-            "options": Object {
-              "implementation": Object {
+            "options": {
+              "implementation": {
                 "Exception": [Function],
                 "FALSE": SassBoolean0 {
                   "value": false,
                 },
-                "Logger": Object {
-                  "silent": Object {
+                "Logger": {
+                  "silent": {
                     "debug": [Function],
                     "warn": [Function],
                   },
@@ -487,8 +351,8 @@ Object {
                 "compileAsync": [Function],
                 "compileString": [Function],
                 "compileStringAsync": [Function],
-                "info": "dart-sass	1.45.0	(Sass Compiler)	[Dart]
-dart2js	2.15.0	(Dart Compiler)	[Dart]",
+                "info": "dart-sass	1.62.1	(Sass Compiler)	[Dart]
+dart2js	2.19.6	(Dart Compiler)	[Dart]",
                 "load": [Function],
                 "render": [Function],
                 "renderSync": [Function],
@@ -499,7 +363,7 @@ dart2js	2.15.0	(Dart Compiler)	[Dart]",
                 "sassTrue": SassBoolean0 {
                   "value": true,
                 },
-                "types": Object {
+                "types": {
                   "Boolean": [Function],
                   "Color": [Function],
                   "Error": [Function],
@@ -510,16 +374,16 @@ dart2js	2.15.0	(Dart Compiler)	[Dart]",
                   "String": [Function],
                 },
               },
-              "sassOptions": Object {
+              "sassOptions": {
                 "fiber": false,
               },
             },
           },
         ],
       },
-      Object {
+      {
         "loader": "url-loader",
-        "options": Object {
+        "options": {
           "limit": 8192,
           "outputPath": "assets",
         },
@@ -527,205 +391,61 @@ dart2js	2.15.0	(Dart Compiler)	[Dart]",
       },
     ],
   },
-  "optimization": Object {
-    "minimizer": Array [
-      OptimizeCssAssetsWebpackPlugin {
-        "deleteAssetsMap": Object {},
-        "options": Object {
-          "assetNameRegExp": /\\\\\\.css\\(\\\\\\?\\.\\*\\)\\?\\$/i,
-          "assetProcessors": Array [
-            Object {
-              "phase": "compilation.optimize-chunk-assets",
-              "processor": [Function],
-              "regExp": /\\\\\\.css\\(\\\\\\?\\.\\*\\)\\?\\$/i,
-            },
-          ],
-          "canPrint": undefined,
-          "cssProcessor": Processor {
-            "plugins": Array [
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-discard-comments",
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-minify-gradients",
-              },
-              Object {
-                "postcssPlugin": "postcss-reduce-initial",
-                "prepare": [Function],
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-svgo",
-              },
-              Object {
-                "postcssPlugin": "postcss-normalize-display-values",
-                "prepare": [Function],
-              },
-              Object {
-                "postcssPlugin": "postcss-reduce-transforms",
-                "prepare": [Function],
-              },
-              Object {
-                "postcssPlugin": "postcss-colormin",
-                "prepare": [Function],
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-normalize-timing-functions",
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-calc",
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-convert-values",
-              },
-              Object {
-                "postcssPlugin": "postcss-ordered-values",
-                "prepare": [Function],
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-minify-selectors",
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-minify-params",
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-normalize-charset",
-              },
-              Object {
-                "postcssPlugin": "postcss-discard-overridden",
-                "prepare": [Function],
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-normalize-string",
-              },
-              Object {
-                "postcssPlugin": "postcss-normalize-unicode",
-                "prepare": [Function],
-              },
-              Object {
-                "postcssPlugin": "postcss-minify-font-values",
-                "prepare": [Function],
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-normalize-url",
-              },
-              Object {
-                "postcssPlugin": "postcss-normalize-repeat-style",
-                "prepare": [Function],
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-normalize-positions",
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-normalize-whitespace",
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-merge-longhand",
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-discard-duplicates",
-              },
-              Object {
-                "postcssPlugin": "postcss-merge-rules",
-                "prepare": [Function],
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-discard-empty",
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "postcss-unique-selectors",
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "css-declaration-sorter",
-              },
-              Object {
-                "OnceExit": [Function],
-                "postcssPlugin": "cssnano-util-raw-cache",
-              },
-            ],
-            "version": "8.4.5",
+  "optimization": {
+    "minimizer": [
+      CssMinimizerPlugin {
+        "options": {
+          "exclude": undefined,
+          "include": undefined,
+          "minimizer": {
+            "implementation": [Function],
+            "options": {},
           },
-          "cssProcessorOptions": Object {
-            "discardComments": Object {
-              "removeAll": true,
-            },
-          },
-          "cssProcessorPluginOptions": Object {},
-        },
-        "phaseAssetProcessors": Object {
-          "compilation.optimize-assets": Array [],
-          "compilation.optimize-chunk-assets": Array [
-            Object {
-              "phase": "compilation.optimize-chunk-assets",
-              "processor": [Function],
-              "regExp": /\\\\\\.css\\(\\\\\\?\\.\\*\\)\\?\\$/i,
-            },
-          ],
-          "emit": Array [],
-        },
-        "pluginDescriptor": Object {
-          "name": "OptimizeCssAssetsWebpackPlugin",
+          "parallel": true,
+          "test": /\\\\\\.css\\(\\\\\\?\\.\\*\\)\\?\\$/i,
+          "warningsFilter": [Function],
         },
       },
       TerserPlugin {
-        "options": Object {
-          "cache": false,
-          "cacheKeys": [Function],
-          "chunkFilter": [Function],
+        "options": {
           "exclude": undefined,
-          "extractComments": false,
+          "extractComments": true,
           "include": undefined,
-          "minify": undefined,
-          "parallel": true,
-          "sourceMap": false,
-          "terserOptions": Object {
-            "output": Object {
-              "comments": false,
+          "minimizer": {
+            "implementation": [Function],
+            "options": {
+              "output": {
+                "comments": false,
+              },
             },
           },
-          "test": /\\\\\\.m\\?js\\(\\\\\\?\\.\\*\\)\\?\\$/i,
-          "warningsFilter": [Function],
+          "parallel": true,
+          "test": /\\\\\\.\\[cm\\]\\?js\\(\\\\\\?\\.\\*\\)\\?\\$/i,
         },
       },
     ],
     "runtimeChunk": "single",
-    "splitChunks": Object {
+    "splitChunks": {
       "chunks": "all",
     },
   },
-  "output": Object {
+  "output": {
     "filename": "[name].[contenthash].js",
     "hashDigestLength": 8,
     "path": "<PROJECT_ROOT>/dist",
     "publicPath": "/dist/",
   },
-  "plugins": Array [
+  "plugins": [
     MiniCssExtractPlugin {
       "_sortedModulesCache": WeakMap {},
-      "options": Object {
+      "options": {
         "chunkFilename": "[name].[contenthash].css",
-        "experimentalUseImportModule": false,
+        "experimentalUseImportModule": undefined,
         "filename": "[name].[contenthash].css",
         "ignoreOrder": false,
+        "runtime": true,
       },
-      "runtimeOptions": Object {
+      "runtimeOptions": {
         "attributes": undefined,
         "insert": undefined,
         "linkType": "text/css",
@@ -733,24 +453,25 @@ dart2js	2.15.0	(Dart Compiler)	[Dart]",
     },
     ChunksWebpackPlugin {
       "addAssets": [Function],
-      "isDevServer": undefined,
-      "isWebpack4": false,
-      "manifest": Object {
-        "assets": Object {},
-        "chunks": Object {},
-      },
-      "options": Object {
-        "filename": "manifest.json",
+      "manifest": {},
+      "options": {
+        "customFormatTags": false,
+        "filename": "[name]-[type].html",
+        "generateChunksFiles": false,
+        "generateChunksManifest": true,
+        "outputPath": null,
+        "templateScript": "<script src="{{chunk}}"></script>",
+        "templateStyle": "<link rel="stylesheet" href="{{chunk}}" />",
       },
     },
     CleanWebpackPlugin {
       "apply": [Function],
-      "cleanAfterEveryBuildPatterns": Array [],
-      "cleanOnceBeforeBuildPatterns": Array [
+      "cleanAfterEveryBuildPatterns": [],
+      "cleanOnceBeforeBuildPatterns": [
         "**/*",
       ],
       "cleanStaleWebpackAssets": true,
-      "currentAssets": Array [],
+      "currentAssets": [],
       "dangerouslyAllowCleanPatternsOutsideProject": false,
       "dry": false,
       "handleDone": [Function],
@@ -761,30 +482,31 @@ dart2js	2.15.0	(Dart Compiler)	[Dart]",
       "removeFiles": [Function],
       "verbose": false,
     },
-    WebpackFixStyleOnlyEntriesPlugin {
+    WebpackRemoveEmptyScriptsPlugin {
       "apply": [Function],
-      "options": Object {
-        "extensions": Array [
-          "less",
-          "scss",
-          "css",
-          "sass",
-          "styl",
-        ],
-        "ignore": undefined,
-        "silent": false,
+      "enabled": true,
+      "options": {
+        "enabled": true,
+        "extensions": /\\.\\(css\\|scss\\|sass\\|less\\|styl\\)\\(\\[\\?\\]\\.\\*\\)\\?\\$/,
+        "ignore": [],
+        "remove": /\\\\\\.\\(js\\|mjs\\)\\$/,
+        "stage": 100,
+        "verbose": true,
       },
+      "outputPath": "",
+      "trash": [],
+      "verbose": true,
     },
   ],
-  "resolve": Object {
-    "extensions": Array [
+  "resolve": {
+    "extensions": [
       ".wasm",
       ".mjs",
       ".js",
       ".json",
       ".jsx",
     ],
-    "plugins": Array [],
+    "plugins": [],
   },
   "stats": "errors-warnings",
 }

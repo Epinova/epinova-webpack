@@ -119,7 +119,9 @@ module.exports = function (userOptions, callback) {
                                 options: {
                                     importLoaders: 2,
                                     sourceMap: true,
-                                    url: (url) => !url.startsWith('/'),
+                                    url: {
+                                        filter: (url) => !url.startsWith('/'),
+                                    },
                                 },
                             },
                             {

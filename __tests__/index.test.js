@@ -9,6 +9,25 @@ test('errors', () => {
     expect(() => config('dist', {})).toThrowError();
 });
 
+test('no duplicate dependencies in example', () => {
+    const packageJson = require('../package.json');
+    const examplePackage = require('../example/package.json');
+
+    const deps = Object.keys({
+        ...packageJson.dependencies,
+        ...packageJson.devDependencies,
+    });
+
+    const exampleDeps = Object.keys({
+        ...examplePackage.dependencies,
+        ...examplePackage.devDependencies,
+    });
+
+    for (dep of deps) {
+        expect(exampleDeps).not.toContain(dep);
+    }
+});
+
 test('configuration', () => {
     const path = 'wwwroot/dist';
     const publicPath = '/dist/';
@@ -32,7 +51,6 @@ test('configuration', () => {
     expect(typeof c).toEqual('function');
     expect(typeof value).toEqual('object');
     expect(value.entry).toEqual('./Scripts/global/index.js');
-    expect(value.devServer.publicPath).toContain(publicPath);
     expect(value.output.publicPath).toEqual(publicPath);
 });
 
