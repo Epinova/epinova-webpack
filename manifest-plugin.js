@@ -309,11 +309,11 @@ module.exports = /** @class */ (function () {
      */
     ChunksWebpackPlugin.prototype.createChunksManifestFile = function () {
         // Stringify the content of the manifest
-        var output = JSON.stringify(this.manifest, null, 2);
+        var output = JSON.stringify({ chunks: this.manifest }, null, 2);
         // Expose the manifest file into the assets compilation
         // The file is automatically created by the compiler
         this.createAsset({
-            filename: 'chunks-manifest.json',
+            filename: 'manifest.json',
             output: output,
         });
     };
