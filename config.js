@@ -139,11 +139,7 @@ module.exports = function (userOptions, callback) {
                     },
                     {
                         test: /\.(svg|png|jpg|gif)$/i,
-                        loader: 'url-loader',
-                        options: {
-                            limit: 8192,
-                            outputPath: 'assets',
-                        },
+                        type: 'asset',
                     },
                 ],
             },
@@ -172,6 +168,7 @@ module.exports = function (userOptions, callback) {
                     argv.mode === 'development'
                         ? '[name].js'
                         : '[name].[contenthash].js',
+                assetModuleFilename: 'assets/[hash][ext][query]',
             },
             plugins: [
                 new MiniCssExtractPlugin({

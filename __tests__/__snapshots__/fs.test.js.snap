@@ -46,24 +46,20 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 ",
-  "/dist/368d0c91.jpg": "/dist/368d0c91.jpg",
-  "/dist/46f3ed92.jpg": "/dist/46f3ed92.jpg",
-  "/dist/a984fbe4.jpg": "/dist/a984fbe4.jpg",
-  "/dist/app.7a25dbee.js": "(self.webpackChunk_epinova_webpack=self.webpackChunk_epinova_webpack||[]).push([[143],{210:(A,e,t)=>{const n=t(837),c=t(899),{createSomething:a}=t(830);console.log({logo:n,image:c},a("Hello World"))},565:()=>{},830:(A,e,t)=>{"use strict";t.r(e),t.d(e,{createSomething:()=>r});var n=t(278),c=t(561),a=t(263);const i=function(A){var e=(0,n.useState)(!1),t=e[0],c=e[1];return(0,a.jsxs)("div",{children:[(0,a.jsx)("h1",{children:A.heading}),(0,a.jsx)("p",{children:t?"active":"not active"}),(0,a.jsx)("button",{onClick:function(){return c(!t)},type:"button",children:"toggle active"})]})};function r(A){return{name:A,valid:!0}}var o=document.createElement("div");document.body.appendChild(o),c.render(n.createElement(i,{heading:"TypeScript"}),o)},899:(A,e,t)=>{"use strict";t.r(e),t.d(e,{default:()=>n});const n=t.p+"assets/41d56d912610ced8f905c1a685fbc606.jpg"},837:(A,e,t)=>{"use strict";t.r(e),t.d(e,{default:()=>n});const n="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEcAAABHBAMAAACnnkcsAAAAElBMVEUAAAAAAAAAAAAAAAAAAAAAAADgKxmiAAAABnRSTlP/MwAKzCgzjttlAAAANUlEQVR4AWMgAgiMEEWjipTwAIXhrmhUERyM5pZRRYJ4gMEIyS2jilzwgIDhnhFGFQkSBgYA+V52qP9U0qQAAAAASUVORK5CYII="}},A=>{var e=e=>A(A.s=e);A.O(0,[296],(()=>(e(210),e(565))));A.O()}]);",
-  "/dist/app.7c35f63d.css": "body{background:url(/dist/46f3ed92.jpg)}body header{background:url(/dist/a984fbe4.jpg)}body main{background:url(/dist/368d0c91.jpg)}body p{color:hotpink;text-align:center}body p:before{background:url(/dist/cef5d3c2.svg);content:""}body footer{background:url(/UI/footer.jpg)}body select{-webkit-appearance:none;appearance:none}",
-  "/dist/assets/02db17a28a7ceb3643e39c67bff25b53.jpg": "/dist/assets/02db17a28a7ceb3643e39c67bff25b53.jpg",
-  "/dist/assets/41d56d912610ced8f905c1a685fbc606.jpg": "/dist/assets/41d56d912610ced8f905c1a685fbc606.jpg",
-  "/dist/cef5d3c2.svg": "export default "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MC4yIDcwLjIiPg0KICAgIDxwYXRoIGQ9Ik0wIDcwLjJoNzAuMnYtMTRIMTR2LTE0aDU2LjJWMjhIMTRWMTRoNTYuMlYwSDB6Ii8+DQo8L3N2Zz4="",
+  "/dist/app.c68683ce.js": "(self.webpackChunk_epinova_webpack=self.webpackChunk_epinova_webpack||[]).push([[143],{210:(A,e,t)=>{const n=t(855),i=t(765),{createSomething:c}=t(830);console.log({logo:n,image:i},c("Hello World"))},565:()=>{},830:(A,e,t)=>{"use strict";t.r(e),t.d(e,{createSomething:()=>r});var n=t(278),i=t(561),c=t(263);const a=function(A){var e=(0,n.useState)(!1),t=e[0],i=e[1];return(0,c.jsxs)("div",{children:[(0,c.jsx)("h1",{children:A.heading}),(0,c.jsx)("p",{children:t?"active":"not active"}),(0,c.jsx)("button",{onClick:function(){return i(!t)},type:"button",children:"toggle active"})]})};function r(A){return{name:A,valid:!0}}var o=document.createElement("div");document.body.appendChild(o),i.render(n.createElement(a,{heading:"TypeScript"}),o)},765:(A,e,t)=>{"use strict";A.exports=t.p+"assets/41d56d91.jpg"},855:A=>{"use strict";A.exports="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEcAAABHBAMAAACnnkcsAAAAElBMVEUAAAAAAAAAAAAAAAAAAAAAAADgKxmiAAAABnRSTlP/MwAKzCgzjttlAAAANUlEQVR4AWMgAgiMEEWjipTwAIXhrmhUERyM5pZRRYJ4gMEIyS2jilzwgIDhnhFGFQkSBgYA+V52qP9U0qQAAAAASUVORK5CYII="}},A=>{var e=e=>A(A.s=e);A.O(0,[296],(()=>(e(210),e(565))));A.O()}]);",
+  "/dist/app.ca039c01.css": "body{background:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/2wCEAAICAgICAgMCAgMEAwMDBAUEBAQEBQcFBQUFBQcIBwcHBwcHCAgICAgICAgKCgoKCgoLCwsLCw0NDQ0NDQ0NDQ0BAgICAwMDBgMDBg0JBwkNDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDf/AABEIAEcARwMBIgACEQEDEQH/xAB6AAEBAQEAAwEAAAAAAAAAAAAACggJAwUHBhAAAAIGBAgNBAIDAAAAAAAAAAMBAgQFCBEGBxQZEhMVFiFWpdQJOFVXZ4WUlaa10tXlFyIjMxgkJTEyAQEAAAAAAAAAAAAAAAAAAAAAEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCf8AH0Cq2q2nddNO3ZVpVm7MsUkfFosTFaCGXG2UgxpN/K0mFEq4JJS633LonKSJpShCQ+fgN/3XMdnNnt9x+4Bdcx2c2e33H7gAwAA3/dcx2c2e33H7gF1zHZzZ7fcfuADAADf91zHZzZ7fcfuAXXMdnNnt9x+4APxnB9cbygXXPlLaA2ZB3wfUXlVcRtEaeU8oFktxOvKVra8sOloxdodzUQX+MhtMNWwjTFVftVTKc0yQhKUAHGcb/4Ljj11Z9f+RvAYAGgIXK8/wCNde1Ga68iZx5uW/8AxlrsOPtzC0MX78SfgYGPw/1rTwcHROaAt8AcAb87oT8V/EBfndCfiv4gB3+AcAb87oT8V/EBfndCfiv4gB3+AcAb87oT8V/EBfndCfiv4gB3+AcZ4fOFy+u1bzgqq+lGQ8uWz+/nHa8TZGQ5q/Tk0nCwsTg/9qywp6ZSSATNgA1zAlVRQiu+KuhFV9Y7Eu8aOvrK1sZizzWZYyyutsaSpGkrKGKyNKUW0LInKSdCUoAZGAVyXUsEOpTb348t5C6lgh1Kbe/HlvICRsBXJdSwQ6lNvfjy3kLqWCHUpt78eW8gJGwFcl1LBDqU29+PLeQupYIdSm3vx5byAnn4PrjeUC658pbQFKFW/B1QnVTU0d1YFBqKtTE+3Vj7Keu9m89VS0EmM5kyzT1lFplmLI0oTKc0aQARxjf/AAXHHrqz6/8AI3gMADzM7S0MhyrQyGrkmqTwVy1kqLImiSZJRJKJoTIBfsAgdzjpDyo29oM9QZx0h5Ube0GeoBfEAgdzjpDyo29oM9QZx0h5Ube0GeoBfEAgdzjpDyo29oM9QZx0h5Ube0GeoBfEAjkgAfj7aYuKBktDwajS1ssTUXOXWVTJ0tqUTQlMv9gA9Vd9ReahbYdO+hd9ReahbYdO+gABd9ReahbYdO+hd9ReahbYdO+gABd9ReahbYdO+hd9ReahbYdO+gABd9ReahbYdO+hd9ReahbYdO+gADUcF0F0S9XkS9DqYUwodk90O/KloaMqO07AxztaiVPsJa1zEzMXVRoVTKc06JpAAAf/2Q==)}body header{background:url(/dist/assets/02db17a2.jpg)}body main{background:url(/dist/assets/41d56d91.jpg)}body p{color:hotpink;text-align:center}body p:before{background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MC4yIDcwLjIiPjxwYXRoIGQ9Ik0wIDcwLjJoNzAuMnYtMTRIMTR2LTE0aDU2LjJWMjhIMTRWMTRoNTYuMlYwSDB6Ii8+PC9zdmc+);content:""}body footer{background:url(/UI/footer.jpg)}body select{-webkit-appearance:none;appearance:none}",
+  "/dist/assets/02db17a2.jpg": "/dist/assets/02db17a2.jpg",
+  "/dist/assets/41d56d91.jpg": "/dist/assets/41d56d91.jpg",
   "/dist/manifest.json": "{
   "chunks": {
     "app": {
       "styles": [
-        "/dist/app.7c35f63d.css"
+        "/dist/app.ca039c01.css"
       ],
       "scripts": [
         "/dist/runtime.064b5dc3.js",
         "/dist/296.4fd682ff.js",
-        "/dist/app.7a25dbee.js"
+        "/dist/app.c68683ce.js"
       ]
     }
   }
@@ -77,8 +73,8 @@ exports[`fs 2`] = `
   "assets": undefined,
   "assetsByChunkName": {
     "app": [
-      "app.7c35f63d.css",
-      "app.7a25dbee.js",
+      "app.ca039c01.css",
+      "app.c68683ce.js",
     ],
     "runtime": [
       "runtime.064b5dc3.js",
@@ -86,9 +82,9 @@ exports[`fs 2`] = `
   },
   "errors": [],
   "errorsCount": 0,
-  "filteredAssets": 11,
+  "filteredAssets": 7,
   "filteredErrorDetailsCount": 0,
-  "filteredModules": 36,
+  "filteredModules": 35,
   "filteredWarningDetailsCount": 0,
   "logging": {
     "webpack.Compilation": {
@@ -149,7 +145,7 @@ exports[`fs 2`] = `
   },
   "modules": undefined,
   "time": 0,
-  "version": "5.85.1",
+  "version": "5.86.0",
   "warnings": [],
   "warningsCount": 0,
 }
