@@ -69,7 +69,7 @@ module.exports = function (userOptions, callback) {
                     },
                 },
                 headers: { 'Access-Control-Allow-Origin': '*' },
-                https: options.https,
+                server: options.https ? 'https' : 'http',
                 host: options.devServerHost,
                 port: options.devServerPort,
             },
