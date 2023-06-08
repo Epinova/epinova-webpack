@@ -62,20 +62,16 @@ module.exports = function (userOptions, callback) {
             stats: 'errors-warnings',
             devServer: {
                 compress: true,
-                // static: [options.devServerContentBase],
                 devMiddleware: {
                     publicPath,
                     writeToDisk: (filePath) => {
-                        return /chunks-manifest\.json$/.test(filePath);
+                        return /manifest\.json$/.test(filePath);
                     },
                 },
-                // disableHostCheck: true,
                 headers: { 'Access-Control-Allow-Origin': '*' },
                 https: options.https,
                 host: options.devServerHost,
                 port: options.devServerPort,
-                // contentBase: options.devServerContentBase,
-                // publicPath,
             },
             devtool:
                 argv.mode === 'development' ? 'cheap-module-source-map' : false,
