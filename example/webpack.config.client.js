@@ -4,6 +4,7 @@ const epinovaWebpackConfig = require('@epinova/webpack');
 const addTypeScript = require('@epinova/webpack/typescript');
 const dynamicBundles = require('@epinova/webpack/dynamic-bundles');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = epinovaWebpackConfig(
     { path: 'wwwroot/dist', publicPath: '/dist/' },
@@ -27,6 +28,13 @@ module.exports = epinovaWebpackConfig(
         addTypeScript(config);
 
         dynamicBundles(config, [path.resolve(__dirname, 'features')]);
+
+        // Vue
+        config.module.rules.push({
+            test: /\.vue$/,
+            use: 'vue-loader',
+        });
+        config.plugins.push(new VueLoaderPlugin());
 
         config.plugins.push(
             new SVGSpritemapPlugin('UI/*.svg', {
