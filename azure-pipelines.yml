@@ -43,6 +43,10 @@ stages:
               versionSpec: "18.x"
             displayName: "Install Node.js"
 
+          - script: npm install
+            workingDirectory: "example"
+            displayName: "npm install (example)"
+
           - script: |
               npm install
               npm test
@@ -55,6 +59,10 @@ stages:
             inputs:
               versionSpec: "20.x"
             displayName: "Install Node.js"
+
+          - script: npm install
+            workingDirectory: "example"
+            displayName: "npm install (example)"
 
           - script: |
               npm install
