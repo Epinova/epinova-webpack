@@ -26,6 +26,10 @@ stages:
               versionSpec: "16.x"
             displayName: "Install Node.js"
 
+          - script: npm install
+            workingDirectory: "example"
+            displayName: "npm install (example)"
+
           - script: |
               npm install
               npm test
