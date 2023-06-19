@@ -12,6 +12,10 @@ Default Webpack configuration for Epinova Webpack projects
 
 # Release Notes
 
+# 1.4.4
+
+-   Fixes issue with assets missing in manifest.json
+
 ## 1.4.3
 
 -   Added support for .tsx files in base configuration (React support)
