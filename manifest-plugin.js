@@ -129,11 +129,11 @@ module.exports = /** @class */ (function () {
                     this.manifest.assets[name] = [];
                 }
 
-                if (file.endsWith('.hot-update.js')) return;
-                if (file.endsWith('.map')) return;
+                if (file.endsWith('.hot-update.js')) continue;
+                if (file.endsWith('.map')) continue;
 
                 var fullPath = '' + this.publicPath + file;
-                if (this.manifest.assets[name].includes(fullPath)) return;
+                if (this.manifest.assets[name].includes(fullPath)) continue;
 
                 this.manifest.assets[name].push(fullPath);
             }
