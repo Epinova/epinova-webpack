@@ -1,10 +1,15 @@
 import Vue from 'vue';
 
-import { store } from './features/Vue/vuex-store';
+import DemoComponent from './features/DemoComponent/DemoComponent.vue';
+import { store } from './store';
 
 new Vue({
+    components: {
+        DemoComponent,
+    },
     store,
     data() {
         return 'application';
     },
+    template: `<DemoComponent />`,
 });

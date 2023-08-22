@@ -9,6 +9,8 @@ const addTypeScript = require('@epinova/webpack/typescript');
 module.exports = epinovaWebpackServerConfig(
     { path: 'ssr-vue' },
     (config, env, argv) => {
+        config.name = 'Server Vue';
+
         config.entry = {
             server: './features/Vue/server.ts',
         };

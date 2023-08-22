@@ -12,6 +12,11 @@ Default Webpack configuration for Epinova Webpack projects
 
 # Release Notes
 
+# 1.6.0
+
+- Webpack 5
+- Support for Node 17+
+
 # 1.4.4
 
 -   Fixes issue with assets missing in manifest.json

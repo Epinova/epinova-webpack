@@ -8,6 +8,8 @@ const addTypeScript = require('@epinova/webpack/typescript');
 module.exports = epinovaWebpackServerConfig(
     { path: 'ssr-react' },
     (config, env, argv) => {
+        config.name = 'Server React';
+
         config.entry = {
             server: './Features/React/server.ts',
         };

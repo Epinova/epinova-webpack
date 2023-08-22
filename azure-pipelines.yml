@@ -18,56 +18,6 @@ stages:
   - stage: install_build_test
     displayName: Install, build & test
     jobs:
-      - job: node_12
-        displayName: Node 12
-        steps:
-          - task: NodeTool@0
-            inputs:
-              versionSpec: "12.x"
-            displayName: "Install Node.js"
-            
-          - task: Npm@1
-            displayName: 'npm install'
-            inputs:
-              command: 'install'
-
-          - task: Npm@1
-            displayName: 'npm install (example)'
-            inputs:
-              command: 'install'
-              workingDir: 'example/'
-              
-          - task: Npm@1
-            displayName: 'npm test'
-            inputs:
-              command: 'custom'
-              customCommand: 'test'
-
-      - job: node_14
-        displayName: Node 14
-        steps:
-          - task: NodeTool@0
-            inputs:
-              versionSpec: "14.x"
-            displayName: "Install Node.js"
-
-          - task: Npm@1
-            displayName: 'npm install'
-            inputs:
-              command: 'install'
-
-          - task: Npm@1
-            displayName: 'npm install (example)'
-            inputs:
-              command: 'install'
-              workingDir: 'example/'
-              
-          - task: Npm@1
-            displayName: 'npm test'
-            inputs:
-              command: 'custom'
-              customCommand: 'test'
-
       - job: node_16
         displayName: Node 16
         steps:
@@ -76,22 +26,48 @@ stages:
               versionSpec: "16.x"
             displayName: "Install Node.js"
 
-          - task: Npm@1
-            displayName: 'npm install'
-            inputs:
-              command: 'install'
+          - script: npm install
+            workingDirectory: "example"
+            displayName: "npm install (example)"
 
-          - task: Npm@1
-            displayName: 'npm install (example)'
+          - script: |
+              npm install
+              npm test
+            displayName: "npm install & test"
+
+      - job: node_18
+        displayName: Node 18
+        steps:
+          - task: NodeTool@0
             inputs:
-              command: 'install'
-              workingDir: 'example/'
-              
-          - task: Npm@1
-            displayName: 'npm test'
+              versionSpec: "18.x"
+            displayName: "Install Node.js"
+
+          - script: npm install
+            workingDirectory: "example"
+            displayName: "npm install (example)"
+
+          - script: |
+              npm install
+              npm test
+            displayName: "npm install & test"
+
+      - job: node_20
+        displayName: Node 20
+        steps:
+          - task: NodeTool@0
             inputs:
-              command: 'custom'
-              customCommand: 'test'
+              versionSpec: "20.x"
+            displayName: "Install Node.js"
+
+          - script: npm install
+            workingDirectory: "example"
+            displayName: "npm install (example)"
+
+          - script: |
+              npm install
+              npm test
+            displayName: "npm install & test"
 
   - stage: publish
     displayName: Pack and Publish
@@ -102,8 +78,8 @@ stages:
         steps:
           - task: NodeTool@0
             inputs:
-              versionSpec: "14.x"
-            displayName: "Node 14"
+              versionSpec: "16.x"
+            displayName: "Node 16"
 
           - script: |
               npm pack
