@@ -3,7 +3,7 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 /**
  * @param { any } config
- * @param { { configFile?: string } } options
+ * @param { { vue: boolean, configFile?: string } } options
  */
 function addTypeScript(
     config,

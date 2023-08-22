@@ -12,7 +12,7 @@ module.exports = epinovaWebpackServerConfig(
         config.name = 'Server Vue';
 
         config.entry = {
-            server: './Features/server/vue.ts',
+            server: './features/Vue/server.ts',
         };
 
         addTypeScript(config, {

@@ -4,10 +4,22 @@ Default Webpack configuration for Epinova Webpack projects
 
 # Table of Contents
 
+1. [Release Notes](#release-notes)
 1. [Usage](#usage)
-2. [HTTPS](#https)
-3. [Examples](#examples)
-4. [Upgrade](#upgrade)
+1. [HTTPS](#https)
+1. [Examples](#examples)
+1. [Upgrade](#upgrade)
+
+# Release Notes
+
+# 1.4.4
+
+-   Fixes issue with assets missing in manifest.json
+
+## 1.4.3
+
+-   Added support for .tsx files in base configuration (React support)
+-   Added `addVue()` method to server configuration to simplify Vue SSR configuration.
 
 # Usage
 
@@ -152,7 +164,6 @@ module.exports = config;
 
 ```javascript
 const epinovaWebpackConfig = require('@epinova/webpack');
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 const config = epinovaWebpackConfig({}, config => {
     ...
