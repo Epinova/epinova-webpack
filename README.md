@@ -14,8 +14,8 @@ Default Webpack configuration for Epinova Webpack projects
 
 # 1.6.0
 
-- Webpack 5
-- Support for Node 17+
+-   Webpack 5
+-   Support for Node 17+
 
 # 1.4.4
 
@@ -197,6 +197,8 @@ module.exports = config;
 ```
 
 # Upgrade
+
+## [Upgrade to v1.6](MIGRATION_1.6.md)
 
 ## Upgrade from v1.3
 
