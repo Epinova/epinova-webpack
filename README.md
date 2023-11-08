@@ -19,6 +19,7 @@ Default Webpack configuration for Epinova Webpack projects
 -   HTTPS is now default for webpack-dev-server, see the [HTTPS](#https) section on how to switch to HTTP
 -   Add alert if using webpack's self signed certificate
 -   Add `addCertificate()` helper to assist with adding a custom certificate
+-   Readd support for "assets" section in manifest output (eg. sprite.svg from SVGSpritePlugin)
 
 ## 1.6.0
 
