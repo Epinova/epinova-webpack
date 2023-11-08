@@ -5,7 +5,7 @@ exports[`development 1`] = `
   "devServer": {
     "compress": true,
     "devMiddleware": {
-      "publicPath": "http://127.0.0.1:8080/dist/",
+      "publicPath": "https://localhost:8080/dist/",
       "writeToDisk": [Function],
     },
     "headers": {
@@ -13,7 +13,7 @@ exports[`development 1`] = `
     },
     "host": "0.0.0.0",
     "port": 8080,
-    "server": "http",
+    "server": "https",
   },
   "devtool": "cheap-module-source-map",
   "module": {
@@ -258,7 +258,7 @@ exports[`production 1`] = `
   "devServer": {
     "compress": true,
     "devMiddleware": {
-      "publicPath": "http://127.0.0.1:8080/dist/",
+      "publicPath": "https://localhost:8080/dist/",
       "writeToDisk": [Function],
     },
     "headers": {
@@ -266,7 +266,7 @@ exports[`production 1`] = `
     },
     "host": "0.0.0.0",
     "port": 8080,
-    "server": "http",
+    "server": "https",
   },
   "devtool": false,
   "module": {

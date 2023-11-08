@@ -1,7 +1,12 @@
-const fs = require('fs');
+// @ts-check
+/**
+ * @typedef {import('webpack').Configuration} Configuration
+ * @typedef {{mode?: 'development' | 'production' | 'none', env: Environment }} Arguments
+ * @typedef {Record<string, string | undefined>} Environment
+ */
+
 const path = require('path');
 
-const { argv } = require('yargs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -14,24 +19,20 @@ const ChunksWebpackPlugin = require('./manifest-plugin');
 const defaultOptions = {
     path: 'dist',
     publicPath: '/dist/',
-    https: false,
-    outputPath: undefined,
+    https: true,
     devServerContentBase: path.resolve(
         process.cwd() || process.env.PWD || __dirname
     ),
     devServerHost: '0.0.0.0',
     devServerPort: 8080,
-    browserstackUrl: argv.browserstack || 'http://127.0.0.1',
-    certificate: {
-        path: path.join(
-            path.resolve(process.cwd() || process.env.PWD),
-            './webpack-dev-server.pfx'
-        ),
-        passphrase: 'webpack-dev-server',
-        suppressCertificateWarning: false,
-    },
+    suppressCertificateWarning: false,
 };
 
+/**
+ * @param {Partial<typeof defaultOptions>} userOptions
+ * @param {(config: Configuration, env: Environment, argv: Arguments) => Configuration} callback
+ * @returns {(env: Environment, argv: Arguments) => Configuration}
+ */
 module.exports = function (userOptions, callback) {
     if (typeof userOptions !== 'object') {
         throw new Error(
@@ -48,6 +49,7 @@ module.exports = function (userOptions, callback) {
     }
 
     if (!callback) {
+        /** @param {Configuration} config */
         callback = function (config) {
             return config;
         };
@@ -55,35 +57,25 @@ module.exports = function (userOptions, callback) {
 
     const options = Object.assign({}, defaultOptions, userOptions);
 
-    if (!options.certificate.suppressCertificateWarning) {
-        if (!fs.existsSync(options.certificate.path)) {
-            const text = `WARNING @epinova/webpack: The certificate ${options.certificate.path} was not found, please export a valid certficate by running "dotnet dev-certs https -ep ./webpack-dev-server.pfx -p ${options.certificate.passphrase} --trust"`;
-            const message = chalk.black.bgYellow(text);
-            console.warn(message);
-        }
-    }
-
     return function (env, argv) {
-        const isDevServer = process.env.WEBPACK_SERVE;
+        const isDevServer = !!env.WEBPACK_SERVE;
 
         let publicPath =
-            options.browserstackUrl +
+            'http://localhost' +
             ':' +
             options.devServerPort +
             options.publicPath;
 
-        if (!argv.browserstackUrl && options.https) {
+        // https://www.browserstack.com/question/39574
+        if (env.BROWSERSTACK) {
+            publicPath = publicPath.replace('localhost', 'bs-local');
+        }
+
+        if (options.https) {
             publicPath = publicPath.replace('http', 'https');
         }
 
-        const https = {
-            type: 'https',
-            options: {
-                pfx: options.certificate.path,
-                passphrase: options.certificate.passphrase,
-            },
-        };
-
+        /** @type {Configuration} */
         const config = {
             stats: 'errors-warnings',
             devServer: {
@@ -95,7 +87,7 @@ module.exports = function (userOptions, callback) {
                     },
                 },
                 headers: { 'Access-Control-Allow-Origin': '*' },
-                server: options.https ? https : 'http',
+                server: options.https ? 'https' : 'http',
                 host: options.devServerHost,
                 port: options.devServerPort,
             },
@@ -212,6 +204,17 @@ module.exports = function (userOptions, callback) {
             ],
         };
 
-        return callback(config, env, argv);
+        const final = callback(config, env, argv);
+
+        if (isDevServer && !options.suppressCertificateWarning) {
+            if (final.devServer && final.devServer.server === 'https') {
+                const message = chalk.black.bgRed(
+                    `@epinova/webpack - Using a fallback certificate that will likely cause issues. Please reference https://dev.azure.com/epinova/Epinova%20FoU/_git/epinova-webpack?anchor=certificate for a solution`
+                );
+                console.warn(message);
+            }
+        }
+
+        return final;
     };
 };

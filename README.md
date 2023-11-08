@@ -7,17 +7,25 @@ Default Webpack configuration for Epinova Webpack projects
 1. [Release Notes](#release-notes)
 1. [Usage](#usage)
 1. [HTTPS](#https)
+1. [Certificate](#certificate)
 1. [Examples](#examples)
 1. [Upgrade](#upgrade)
 
 # Release Notes
 
-# 1.6.0
+## 1.7.0
+
+-   Add JSDoc types and TypeScript checking to all configs
+-   HTTPS is now default for webpack-dev-server, see the [HTTPS](#https) section on how to switch to HTTP
+-   Add alert if using webpack's self signed certificate
+-   Add `addCertificate()` helper to assist with adding a custom certificate
+
+## 1.6.0
 
 -   Webpack 5
 -   Support for Node 17+
 
-# 1.4.4
+## 1.4.4
 
 -   Fixes issue with assets missing in manifest.json
 
@@ -116,29 +124,69 @@ module.exports = epinovaWebpackConfig(
 
 # HTTPS
 
-Using webpack-dev-server with https is now possible, to activate https you need to pass `https: true` to the epinova config.
+From version 1.7.0 the config now uses https as default, so if your project requires you to run webpack in HTTP mode you have to set the https configuration to false explicitly.
 
 ```javascript
-const config = epinovaWebpackConfig({ https: true }, config => {
+const config = epinovaWebpackConfig({ https: false }, config => {
     ...
 
     return config;
 });
 ```
 
+# Certificate
+
+The self-signed certificate that webpack-dev-server generates will most likely cause alot of issues during development. We **strongly** recommend that you provide a certificate to the configuration.
+
+This can be achieved by using the `addCertificate()` helper
+
+```javascript
+const path = require("path");
+
+const epinovaWebpackConfig = require("@epinova/webpack");
+const addCertificate = require("@epinova/webpack/certificate");
+
+const config = epinovaWebpackConfig({ path: "wwwroot/dist" }, config => {
+    ...
+
+    addCertificate(config, path.join(__dirname, "webpack-dev-server.pfx"), "devcert-passphrase");
+
+    return config;
+});
+```
+
+If you don't provide a certificate you will get a warning, if you are fine with using the fallback certificate provided by webpack-dev-server you can disable this warning by adding `suppressCertificateWarning: true` to your options.
+
+```javascript
+const config = epinovaWebpackConfig({ ..., suppressCertificateWarning: true }, config => {
+    ...
+
+    return config;
+});
+
+```
+
+## Using a .NET developer certificate
+
+The preferred solution is to export the certificate that .NET uses when running .NET sites. To export the certificate for usage with webpack go to the folder with your webpack config file in your terminal of choice and run the following
+
+`dotnet dev-certs https -ep ./webpack-dev-server.pfx -p devcert-passphrase --trust`
+
+This will export the certificate to a pfx file called `webpack-dev-server.pfx` with the password `devcert-passphrase` to your current folder and also make sure it is trusted, make sure you use the filename and passphrase defined in the `addCertificate()` parameters when exporting your certificate.
+
 ## Browser issues
-
-### Chrome
-
-To be able to use webpack-dev-server and https in Chrome you will have to input `chrome://flags/` in the url field and on that page search for localhost and find the experiment called "Allow invalid certificates for resources loaded from localhost." and set that experiment to Enable.
-
-This will prevent the `Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID` errors that you may see in the Chrome Console and will also allow you to not have to accept/sign webpack-dev-servers self signed certificate.
-
-![Screenshot](docs/chrome-https.png)
 
 ### Firefox
 
-For Firefox you need to open the console and check for lines such as `Error loading script "https://127.0.0.1/dist/global.js"` and click the link to the JavaScript file. Firefox will then show you an alert page which says the certificate is not safe, you can then click "Advanced" and accept the certificate anyways.
+In Firefox you need to change a configuration that trusts your developer certificates. This is done by opening Settings in Firefox and then navigating to "about:config" i the URL field and clicking "Accept the Risk and Continue"
+
+In the search bar for the preferences type "enterprise" and change the value for `security.enterprise_roots.enabled` to **true**
+
+![Screenshot](docs/firefox-certificate.png)
+
+## Error: mac verify failure
+
+If you get this error when running webpack the issue is most likely that the passphrase for your certificate is invalid, so make sure you export it with the passphrase defined as the 3rd parameter for `addCertificate()` in your project.
 
 # Examples
 
@@ -188,11 +236,13 @@ module.exports = config;
 
 ## Browserstack
 
-[Browserstack does not like localhost url's](https://www.browserstack.com/question/759) so it is possible to start this config with a `--browserstack` argument. Example package.json script:
+[Browserstack does not like localhost url's](https://www.browserstack.com/question/759) so it is possible to start this config with a `--env BROWSERSTACK` argument.
 
-```javascript
+Example package.json script:
+
+```json
 {
-    "test:browserstack": "webpack-dev-server --mode development --hot --hot-only --browserstack=http://bs-local.com",
+    "test:browserstack": "webpack serve --mode development --config webpack.config.js --env BROWSERSTACK"
 }
 ```
 
