@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 
 const { argv } = require('yargs');
@@ -6,6 +7,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
+const chalk = require('chalk');
 
 const ChunksWebpackPlugin = require('./manifest-plugin');
 
@@ -20,6 +22,14 @@ const defaultOptions = {
     devServerHost: '0.0.0.0',
     devServerPort: 8080,
     browserstackUrl: argv.browserstack || 'http://127.0.0.1',
+    certificate: {
+        path: path.join(
+            path.resolve(process.cwd() || process.env.PWD),
+            './webpack-dev-server.pfx'
+        ),
+        passphrase: 'webpack-dev-server',
+        suppressCertificateWarning: false,
+    },
 };
 
 module.exports = function (userOptions, callback) {
@@ -45,6 +55,14 @@ module.exports = function (userOptions, callback) {
 
     const options = Object.assign({}, defaultOptions, userOptions);
 
+    if (!options.certificate.suppressCertificateWarning) {
+        if (!fs.existsSync(options.certificate.path)) {
+            const text = `WARNING @epinova/webpack: The certificate ${options.certificate.path} was not found, please export a valid certficate by running "dotnet dev-certs https -ep ./webpack-dev-server.pfx -p ${options.certificate.passphrase} --trust"`;
+            const message = chalk.black.bgYellow(text);
+            console.warn(message);
+        }
+    }
+
     return function (env, argv) {
         const isDevServer = process.env.WEBPACK_SERVE;
 
@@ -58,6 +76,14 @@ module.exports = function (userOptions, callback) {
             publicPath = publicPath.replace('http', 'https');
         }
 
+        const https = {
+            type: 'https',
+            options: {
+                pfx: options.certificate.path,
+                passphrase: options.certificate.passphrase,
+            },
+        };
+
         const config = {
             stats: 'errors-warnings',
             devServer: {
@@ -69,7 +95,7 @@ module.exports = function (userOptions, callback) {
                     },
                 },
                 headers: { 'Access-Control-Allow-Origin': '*' },
-                server: options.https ? 'https' : 'http',
+                server: options.https ? https : 'http',
                 host: options.devServerHost,
                 port: options.devServerPort,
             },
