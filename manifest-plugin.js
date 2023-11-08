@@ -56,7 +56,7 @@ module.exports = /** @class */ (function () {
         var stage = this.options.outputPath
             ? Infinity
             : webpack.Compilation.PROCESS_ASSETS_STAGE_ADDITIONAL;
-        this.compilation.hooks.processAssets.tap(
+        this.compilation.hooks.afterProcessAssets.tap(
             {
                 name: 'ChunksWebpackPlugin',
                 stage: stage,
@@ -81,6 +81,7 @@ module.exports = /** @class */ (function () {
             .map(function (entryName) {
                 return _this.processEntry(entryName);
             });
+
         // Check if manifest option is enabled
         if (this.options.generateChunksManifest) {
             this.createChunksManifestFile();
@@ -308,8 +309,15 @@ module.exports = /** @class */ (function () {
      * Contains all scripts and styles chunks grouped by entrypoint
      */
     ChunksWebpackPlugin.prototype.createChunksManifestFile = function () {
+        // Add chunks not already present in the manifest, for example SVGSpritePlugin assets etc.
+        var assets = {};
+        Array.from(this.compilation.chunks).forEach((chunk) => {
+            if (chunk.name && !this.manifest[chunk.name])
+                assets[chunk.name] = Array.from(chunk.files);
+        });
+
         // Stringify the content of the manifest
-        var output = JSON.stringify({ chunks: this.manifest }, null, 2);
+        var output = JSON.stringify({ assets, chunks: this.manifest }, null, 2);
         // Expose the manifest file into the assets compilation
         // The file is automatically created by the compiler
         this.createAsset({
