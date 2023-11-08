@@ -56,5 +56,5 @@
     "scripts": {
         "test": "jest"
     },
-    "version": "1.7.0-alpha2"
+    "version": "1.7.0-alpha3"
 }
