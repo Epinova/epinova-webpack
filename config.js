@@ -58,7 +58,7 @@ module.exports = function (userOptions, callback) {
     const options = Object.assign({}, defaultOptions, userOptions);
 
     return function (env, argv) {
-        const isDevServer = !!env.WEBPACK_SERVE;
+        const isDevServer = env.WEBPACK_SERVE === 'true';
 
         let publicPath =
             'http://localhost' +
