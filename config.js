@@ -2,7 +2,7 @@
 /**
  * @typedef {import('webpack').Configuration} Configuration
  * @typedef {{mode?: 'development' | 'production' | 'none', env: Environment }} Arguments
- * @typedef {Record<string, string | undefined>} Environment
+ * @typedef {Record<string, string | boolean | undefined>} Environment
  */
 
 const path = require('path');
@@ -58,7 +58,8 @@ module.exports = function (userOptions, callback) {
     const options = Object.assign({}, defaultOptions, userOptions);
 
     return function (env, argv) {
-        const isDevServer = env.WEBPACK_SERVE === 'true';
+        const isDevServer =
+            env.WEBPACK_SERVE === 'true' || env.WEBPACK_SERVE === true;
 
         let publicPath =
             'http://localhost' +
