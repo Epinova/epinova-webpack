@@ -51,6 +51,11 @@ object-assign
   "/dist/assets/02db17a2.jpg": "/dist/assets/02db17a2.jpg",
   "/dist/assets/41d56d91.jpg": "/dist/assets/41d56d91.jpg",
   "/dist/manifest.json": "{
+  "assets": {
+    "runtime": [
+      "runtime.064b5dc3.js"
+    ]
+  },
   "chunks": {
     "app": {
       "styles": [
