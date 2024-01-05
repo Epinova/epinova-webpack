@@ -12,6 +12,7 @@
         "@babel/preset-env": "^7.22.4",
         "autoprefixer": "^10.4.14",
         "babel-loader": "^9.1.2",
+        "chalk": "^4.1.2",
         "clean-webpack-plugin": "^4.0.0",
         "css-loader": "^6.8.1",
         "css-minimizer-webpack-plugin": "^5.0.0",
@@ -26,8 +27,7 @@
         "sass-loader": "^13.3.1",
         "ts-loader": "^9.4.3",
         "tsconfig-paths-webpack-plugin": "^4.0.1",
-        "webpack-remove-empty-scripts": "^1.0.3",
-        "yargs": "^17.7.2"
+        "webpack-remove-empty-scripts": "^1.0.3"
     },
     "description": "Epinova Webpack default configuration",
     "devDependencies": {
@@ -56,5 +56,5 @@
     "scripts": {
         "test": "jest"
     },
-    "version": "1.6.0"
+    "version": "1.7.0"
 }

@@ -1,25 +1,42 @@
+// @ts-check
+/**
+ * @typedef {import('webpack').Configuration} Configuration
+ * @typedef {{mode?: 'development' | 'production' | 'none', env: Environment }} Arguments
+ * @typedef {Record<string, string | undefined>} Environment
+ */
+
 const path = require('path');
 
 const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
+    /**
+     * @param {Configuration} config
+     * @param {string} dir
+     */
     addVue: function (config, dir = process.cwd()) {
         const VueLoaderPlugin = require(path.resolve(
             dir,
             'node_modules',
             'vue-loader/lib/plugin'
         ));
+
         const CopyWebpackPlugin = require(path.resolve(
             dir,
             'node_modules',
             'copy-webpack-plugin'
         ));
 
+        if (!config.module) config.module = {};
+        if (!Array.isArray(config.module.rules)) config.module.rules = [];
+
         config.module.rules.push({
             test: /\.vue$/,
             loader: 'vue-loader',
         });
+
+        if (!Array.isArray(config.plugins)) config.plugins = [];
 
         config.plugins.push(
             new VueLoaderPlugin(),
@@ -45,11 +62,20 @@ module.exports = {
 
         return config;
     },
+    /**
+     * @param {{ dir: string, path: string }} config
+     * @param {(config: Configuration) => Configuration} callback
+     */
     config: function (config, callback) {
         const dir = config.dir || process.cwd();
         const outputPath = config.path || 'ssr';
 
+        /**
+         * @param {Environment} env
+         * @param {Arguments} argv
+         */
         return function (env, argv) {
+            /** @type {Configuration} */
             const config = {
                 name: 'Server',
                 stats: 'errors-warnings',

@@ -1,27 +1,38 @@
+// @ts-check
+/**
+ * @typedef {import('webpack').Configuration} Configuration
+ * @typedef {{mode?: 'development' | 'production' | 'none', env: Environment }} Arguments
+ * @typedef {Record<string, string | boolean | undefined>} Environment
+ */
+
 const path = require('path');
 
-const { argv } = require('yargs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
+const chalk = require('chalk');
 
 const ChunksWebpackPlugin = require('./manifest-plugin');
 
 const defaultOptions = {
     path: 'dist',
     publicPath: '/dist/',
-    https: false,
-    outputPath: undefined,
+    https: true,
     devServerContentBase: path.resolve(
         process.cwd() || process.env.PWD || __dirname
     ),
     devServerHost: '0.0.0.0',
     devServerPort: 8080,
-    browserstackUrl: argv.browserstack || 'http://127.0.0.1',
+    suppressCertificateWarning: false,
 };
 
+/**
+ * @param {Partial<typeof defaultOptions>} userOptions
+ * @param {(config: Configuration, env: Environment, argv: Arguments) => Configuration} callback
+ * @returns {(env: Environment, argv: Arguments) => Configuration}
+ */
 module.exports = function (userOptions, callback) {
     if (typeof userOptions !== 'object') {
         throw new Error(
@@ -38,6 +49,7 @@ module.exports = function (userOptions, callback) {
     }
 
     if (!callback) {
+        /** @param {Configuration} config */
         callback = function (config) {
             return config;
         };
@@ -46,18 +58,25 @@ module.exports = function (userOptions, callback) {
     const options = Object.assign({}, defaultOptions, userOptions);
 
     return function (env, argv) {
-        const isDevServer = process.env.WEBPACK_SERVE;
+        const isDevServer =
+            env.WEBPACK_SERVE === 'true' || env.WEBPACK_SERVE === true;
 
         let publicPath =
-            options.browserstackUrl +
+            'http://localhost' +
             ':' +
             options.devServerPort +
             options.publicPath;
 
-        if (!argv.browserstackUrl && options.https) {
+        // https://www.browserstack.com/question/39574
+        if (env.BROWSERSTACK) {
+            publicPath = publicPath.replace('localhost', 'bs-local');
+        }
+
+        if (options.https) {
             publicPath = publicPath.replace('http', 'https');
         }
 
+        /** @type {Configuration} */
         const config = {
             stats: 'errors-warnings',
             devServer: {
@@ -186,6 +205,17 @@ module.exports = function (userOptions, callback) {
             ],
         };
 
-        return callback(config, env, argv);
+        const final = callback(config, env, argv);
+
+        if (isDevServer && !options.suppressCertificateWarning) {
+            if (final.devServer && final.devServer.server === 'https') {
+                const message = chalk.black.bgRed(
+                    `@epinova/webpack - Using a fallback certificate that will likely cause issues. Please reference https://dev.azure.com/epinova/Epinova%20FoU/_git/epinova-webpack?anchor=certificate for a solution`
+                );
+                console.warn(message);
+            }
+        }
+
+        return final;
     };
 };
