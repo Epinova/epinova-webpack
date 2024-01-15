@@ -299,6 +299,7 @@ module.exports = /** @class */ (function () {
     ChunksWebpackPlugin.prototype.updateManifest = function (_a) {
         var entryName = _a.entryName,
             chunks = _a.chunks;
+
         this.manifest[entryName] = {
             styles: chunks.styles,
             scripts: chunks.scripts,
@@ -310,19 +311,19 @@ module.exports = /** @class */ (function () {
      */
     ChunksWebpackPlugin.prototype.createChunksManifestFile = function () {
         // Add chunks not already present in the manifest, for example SVGSpritePlugin assets etc.
-        var assets = {};
+        const assets = {};
         Array.from(this.compilation.chunks).forEach((chunk) => {
             if (chunk.name && !this.manifest[chunk.name])
-                assets[chunk.name] = Array.from(chunk.files);
+                assets[chunk.name] = Array.from(chunk.files).map(
+                    (file) => this.getPublicPath() + file
+                );
         });
 
-        // Stringify the content of the manifest
-        var output = JSON.stringify({ assets, chunks: this.manifest }, null, 2);
         // Expose the manifest file into the assets compilation
         // The file is automatically created by the compiler
         this.createAsset({
             filename: 'manifest.json',
-            output: output,
+            output: JSON.stringify({ assets, chunks: this.manifest }, null, 2),
         });
     };
     /**
