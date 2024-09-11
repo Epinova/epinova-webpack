@@ -13,6 +13,10 @@ Default Webpack configuration for Epinova Webpack projects
 
 # Release Notes
 
+## 1.7.1
+
+-   Fix for manifest plugin not including plugin files in output JSON.
+
 ## 1.7.0
 
 -   Add JSDoc types and TypeScript checking to all configs
