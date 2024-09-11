@@ -15,7 +15,7 @@ Default Webpack configuration for Epinova Webpack projects
 
 ## 1.7.1
 
--   Fix for manifest plugin not including plugin files in output JSON.
+-   Fix assets in manfiest JSON output not including public path.
 
 ## 1.7.0
 
