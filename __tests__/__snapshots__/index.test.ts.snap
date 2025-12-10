@@ -25,9 +25,9 @@ exports[`development 1`] = `
       },
       {
         "test": /\\\\\\.css\\$/,
-        "use": {
-          "0": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
-          "1": {
+        "use": [
+          "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
+          {
             "loader": "css-loader",
             "options": {
               "importLoaders": 1,
@@ -35,19 +35,19 @@ exports[`development 1`] = `
               "url": false,
             },
           },
-          "2": {
+          {
             "loader": "postcss-loader",
             "options": {
               "sourceMap": true,
             },
           },
-        },
+        ],
       },
       {
         "test": /\\\\\\.s\\(c\\|a\\)ss\\$/,
-        "use": {
-          "0": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
-          "1": {
+        "use": [
+          "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
+          {
             "loader": "css-loader",
             "options": {
               "importLoaders": 2,
@@ -57,13 +57,13 @@ exports[`development 1`] = `
               },
             },
           },
-          "2": {
+          {
             "loader": "postcss-loader",
             "options": {
               "sourceMap": true,
             },
           },
-          "3": {
+          {
             "loader": "sass-loader",
             "options": {
               "implementation": {
@@ -72,7 +72,7 @@ exports[`development 1`] = `
                 "CalculationOperation": [Function],
                 "Compiler": [Function],
                 "Exception": [Function],
-                "FALSE": {
+                "FALSE": SassBoolean0 {
                   "value": false,
                 },
                 "Logger": {
@@ -81,7 +81,7 @@ exports[`development 1`] = `
                     "warn": [Function],
                   },
                 },
-                "NULL": {},
+                "NULL": _SassNull0 {},
                 "NodePackageImporter": [Function],
                 "SassArgumentList": [Function],
                 "SassBoolean": [Function],
@@ -93,7 +93,7 @@ exports[`development 1`] = `
                 "SassMixin": [Function],
                 "SassNumber": [Function],
                 "SassString": [Function],
-                "TRUE": {
+                "TRUE": SassBoolean0 {
                   "value": true,
                 },
                 "Value": [Function],
@@ -107,11 +107,11 @@ exports[`development 1`] = `
                   "abs-percent": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 65,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Passing percentages to the Sass abs() function.",
                     "id": "abs-percent",
@@ -121,11 +121,11 @@ exports[`development 1`] = `
                   "bogus-combinators": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 54,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Leading, trailing, and repeated combinators.",
                     "id": "bogus-combinators",
@@ -135,11 +135,11 @@ exports[`development 1`] = `
                   "call-string": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 0,
                       "minor": 0,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Passing a string directly to meta.call().",
                     "id": "call-string",
@@ -149,11 +149,11 @@ exports[`development 1`] = `
                   "color-4-api": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 79,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Certain uses of built-in sass:color functions.",
                     "id": "color-4-api",
@@ -163,11 +163,11 @@ exports[`development 1`] = `
                   "color-functions": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 79,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Using global color functions instead of sass:color.",
                     "id": "color-functions",
@@ -177,11 +177,11 @@ exports[`development 1`] = `
                   "color-module-compat": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 23,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Using color module functions in place of plain CSS functions.",
                     "id": "color-module-compat",
@@ -191,11 +191,11 @@ exports[`development 1`] = `
                   "compile-string-relative-url": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 88,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Passing a relative url to compileString().",
                     "id": "compile-string-relative-url",
@@ -205,11 +205,11 @@ exports[`development 1`] = `
                   "css-function-mixin": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 76,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Function and mixin names beginning with --.",
                     "id": "css-function-mixin",
@@ -219,11 +219,11 @@ exports[`development 1`] = `
                   "duplicate-var-flags": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 62,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Using !default or !global multiple times for one variable.",
                     "id": "duplicate-var-flags",
@@ -233,11 +233,11 @@ exports[`development 1`] = `
                   "elseif": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 3,
                       "patch": 2,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "@elseif.",
                     "id": "elseif",
@@ -247,11 +247,11 @@ exports[`development 1`] = `
                   "feature-exists": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 78,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "meta.feature-exists",
                     "id": "feature-exists",
@@ -261,11 +261,11 @@ exports[`development 1`] = `
                   "fs-importer-cwd": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 73,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Using the current working directory as an implicit load path.",
                     "id": "fs-importer-cwd",
@@ -275,11 +275,11 @@ exports[`development 1`] = `
                   "function-units": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 56,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Passing invalid units to built-in functions.",
                     "id": "function-units",
@@ -289,11 +289,11 @@ exports[`development 1`] = `
                   "global-builtin": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 80,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Global built-in functions that are available in sass: modules.",
                     "id": "global-builtin",
@@ -303,11 +303,11 @@ exports[`development 1`] = `
                   "if-function": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 95,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "The Sass if($condition, $if-true, $if-false) function.",
                     "id": "if-function",
@@ -317,11 +317,11 @@ exports[`development 1`] = `
                   "import": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 80,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "@import rules.",
                     "id": "import",
@@ -331,11 +331,11 @@ exports[`development 1`] = `
                   "legacy-js-api": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 79,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Legacy JS API.",
                     "id": "legacy-js-api",
@@ -345,11 +345,11 @@ exports[`development 1`] = `
                   "misplaced-rest": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 91,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "A rest parameter before a positional or named parameter.",
                     "id": "misplaced-rest",
@@ -359,32 +359,32 @@ exports[`development 1`] = `
                   "mixed-decls": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 77,
                       "patch": 7,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Declarations after or between nested rules.",
                     "id": "mixed-decls",
                     "obsoleteIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 92,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "status": "obsolete",
                   },
                   "moz-document": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 7,
                       "patch": 2,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "@-moz-document.",
                     "id": "moz-document",
@@ -394,11 +394,11 @@ exports[`development 1`] = `
                   "new-global": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 17,
                       "patch": 2,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Declaring new variables with !global.",
                     "id": "new-global",
@@ -408,11 +408,11 @@ exports[`development 1`] = `
                   "null-alpha": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 62,
                       "patch": 3,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Passing null as alpha in the JS API.",
                     "id": "null-alpha",
@@ -422,11 +422,11 @@ exports[`development 1`] = `
                   "relative-canonical": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 14,
                       "patch": 2,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Imports using relative canonical URLs.",
                     "id": "relative-canonical",
@@ -436,11 +436,11 @@ exports[`development 1`] = `
                   "slash-div": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 33,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "/ operator for division.",
                     "id": "slash-div",
@@ -450,11 +450,11 @@ exports[`development 1`] = `
                   "strict-unary": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 55,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Ambiguous + and - operators.",
                     "id": "strict-unary",
@@ -464,21 +464,21 @@ exports[`development 1`] = `
                   "type-function": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 86,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Functions named "type".",
                     "id": "type-function",
                     "obsoleteIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 92,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "status": "obsolete",
                   },
@@ -492,11 +492,11 @@ exports[`development 1`] = `
                   "with-private": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 92,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Configuring private variables in @use, @forward, or load-css().",
                     "id": "with-private",
@@ -512,11 +512,11 @@ dart2js	<VERSION>	(Dart Compiler)	[Dart]",
                 "loadParserExports_": [Function],
                 "render": [Function],
                 "renderSync": [Function],
-                "sassFalse": {
+                "sassFalse": SassBoolean0 {
                   "value": false,
                 },
-                "sassNull": {},
-                "sassTrue": {
+                "sassNull": _SassNull0 {},
+                "sassTrue": SassBoolean0 {
                   "value": true,
                 },
                 "types": {
@@ -535,7 +535,7 @@ dart2js	<VERSION>	(Dart Compiler)	[Dart]",
               },
             },
           },
-        },
+        ],
       },
       {
         "test": /\\\\\\.\\(svg\\|png\\|jpg\\|gif\\)\\$/i,
@@ -690,9 +690,9 @@ exports[`production 1`] = `
       },
       {
         "test": /\\\\\\.css\\$/,
-        "use": {
-          "0": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
-          "1": {
+        "use": [
+          "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
+          {
             "loader": "css-loader",
             "options": {
               "importLoaders": 1,
@@ -700,19 +700,19 @@ exports[`production 1`] = `
               "url": false,
             },
           },
-          "2": {
+          {
             "loader": "postcss-loader",
             "options": {
               "sourceMap": true,
             },
           },
-        },
+        ],
       },
       {
         "test": /\\\\\\.s\\(c\\|a\\)ss\\$/,
-        "use": {
-          "0": "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
-          "1": {
+        "use": [
+          "<PROJECT_ROOT>/node_modules/mini-css-extract-plugin/dist/loader.js",
+          {
             "loader": "css-loader",
             "options": {
               "importLoaders": 2,
@@ -722,13 +722,13 @@ exports[`production 1`] = `
               },
             },
           },
-          "2": {
+          {
             "loader": "postcss-loader",
             "options": {
               "sourceMap": true,
             },
           },
-          "3": {
+          {
             "loader": "sass-loader",
             "options": {
               "implementation": {
@@ -737,7 +737,7 @@ exports[`production 1`] = `
                 "CalculationOperation": [Function],
                 "Compiler": [Function],
                 "Exception": [Function],
-                "FALSE": {
+                "FALSE": SassBoolean0 {
                   "value": false,
                 },
                 "Logger": {
@@ -746,7 +746,7 @@ exports[`production 1`] = `
                     "warn": [Function],
                   },
                 },
-                "NULL": {},
+                "NULL": _SassNull0 {},
                 "NodePackageImporter": [Function],
                 "SassArgumentList": [Function],
                 "SassBoolean": [Function],
@@ -758,7 +758,7 @@ exports[`production 1`] = `
                 "SassMixin": [Function],
                 "SassNumber": [Function],
                 "SassString": [Function],
-                "TRUE": {
+                "TRUE": SassBoolean0 {
                   "value": true,
                 },
                 "Value": [Function],
@@ -772,11 +772,11 @@ exports[`production 1`] = `
                   "abs-percent": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 65,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Passing percentages to the Sass abs() function.",
                     "id": "abs-percent",
@@ -786,11 +786,11 @@ exports[`production 1`] = `
                   "bogus-combinators": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 54,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Leading, trailing, and repeated combinators.",
                     "id": "bogus-combinators",
@@ -800,11 +800,11 @@ exports[`production 1`] = `
                   "call-string": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 0,
                       "minor": 0,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Passing a string directly to meta.call().",
                     "id": "call-string",
@@ -814,11 +814,11 @@ exports[`production 1`] = `
                   "color-4-api": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 79,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Certain uses of built-in sass:color functions.",
                     "id": "color-4-api",
@@ -828,11 +828,11 @@ exports[`production 1`] = `
                   "color-functions": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 79,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Using global color functions instead of sass:color.",
                     "id": "color-functions",
@@ -842,11 +842,11 @@ exports[`production 1`] = `
                   "color-module-compat": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 23,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Using color module functions in place of plain CSS functions.",
                     "id": "color-module-compat",
@@ -856,11 +856,11 @@ exports[`production 1`] = `
                   "compile-string-relative-url": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 88,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Passing a relative url to compileString().",
                     "id": "compile-string-relative-url",
@@ -870,11 +870,11 @@ exports[`production 1`] = `
                   "css-function-mixin": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 76,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Function and mixin names beginning with --.",
                     "id": "css-function-mixin",
@@ -884,11 +884,11 @@ exports[`production 1`] = `
                   "duplicate-var-flags": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 62,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Using !default or !global multiple times for one variable.",
                     "id": "duplicate-var-flags",
@@ -898,11 +898,11 @@ exports[`production 1`] = `
                   "elseif": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 3,
                       "patch": 2,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "@elseif.",
                     "id": "elseif",
@@ -912,11 +912,11 @@ exports[`production 1`] = `
                   "feature-exists": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 78,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "meta.feature-exists",
                     "id": "feature-exists",
@@ -926,11 +926,11 @@ exports[`production 1`] = `
                   "fs-importer-cwd": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 73,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Using the current working directory as an implicit load path.",
                     "id": "fs-importer-cwd",
@@ -940,11 +940,11 @@ exports[`production 1`] = `
                   "function-units": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 56,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Passing invalid units to built-in functions.",
                     "id": "function-units",
@@ -954,11 +954,11 @@ exports[`production 1`] = `
                   "global-builtin": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 80,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Global built-in functions that are available in sass: modules.",
                     "id": "global-builtin",
@@ -968,11 +968,11 @@ exports[`production 1`] = `
                   "if-function": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 95,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "The Sass if($condition, $if-true, $if-false) function.",
                     "id": "if-function",
@@ -982,11 +982,11 @@ exports[`production 1`] = `
                   "import": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 80,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "@import rules.",
                     "id": "import",
@@ -996,11 +996,11 @@ exports[`production 1`] = `
                   "legacy-js-api": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 79,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Legacy JS API.",
                     "id": "legacy-js-api",
@@ -1010,11 +1010,11 @@ exports[`production 1`] = `
                   "misplaced-rest": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 91,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "A rest parameter before a positional or named parameter.",
                     "id": "misplaced-rest",
@@ -1024,32 +1024,32 @@ exports[`production 1`] = `
                   "mixed-decls": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 77,
                       "patch": 7,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Declarations after or between nested rules.",
                     "id": "mixed-decls",
                     "obsoleteIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 92,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "status": "obsolete",
                   },
                   "moz-document": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 7,
                       "patch": 2,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "@-moz-document.",
                     "id": "moz-document",
@@ -1059,11 +1059,11 @@ exports[`production 1`] = `
                   "new-global": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 17,
                       "patch": 2,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Declaring new variables with !global.",
                     "id": "new-global",
@@ -1073,11 +1073,11 @@ exports[`production 1`] = `
                   "null-alpha": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 62,
                       "patch": 3,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Passing null as alpha in the JS API.",
                     "id": "null-alpha",
@@ -1087,11 +1087,11 @@ exports[`production 1`] = `
                   "relative-canonical": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 14,
                       "patch": 2,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Imports using relative canonical URLs.",
                     "id": "relative-canonical",
@@ -1101,11 +1101,11 @@ exports[`production 1`] = `
                   "slash-div": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 33,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "/ operator for division.",
                     "id": "slash-div",
@@ -1115,11 +1115,11 @@ exports[`production 1`] = `
                   "strict-unary": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 55,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Ambiguous + and - operators.",
                     "id": "strict-unary",
@@ -1129,21 +1129,21 @@ exports[`production 1`] = `
                   "type-function": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 86,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Functions named "type".",
                     "id": "type-function",
                     "obsoleteIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 92,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "status": "obsolete",
                   },
@@ -1157,11 +1157,11 @@ exports[`production 1`] = `
                   "with-private": {
                     "deprecatedIn": {
                       "_version$_text": "<VERSION>",
-                      "build": {},
+                      "build": [],
                       "major": 1,
                       "minor": 92,
                       "patch": 0,
-                      "preRelease": {},
+                      "preRelease": [],
                     },
                     "description": "Configuring private variables in @use, @forward, or load-css().",
                     "id": "with-private",
@@ -1177,11 +1177,11 @@ dart2js	<VERSION>	(Dart Compiler)	[Dart]",
                 "loadParserExports_": [Function],
                 "render": [Function],
                 "renderSync": [Function],
-                "sassFalse": {
+                "sassFalse": SassBoolean0 {
                   "value": false,
                 },
-                "sassNull": {},
-                "sassTrue": {
+                "sassNull": _SassNull0 {},
+                "sassTrue": SassBoolean0 {
                   "value": true,
                 },
                 "types": {
@@ -1200,7 +1200,7 @@ dart2js	<VERSION>	(Dart Compiler)	[Dart]",
               },
             },
           },
-        },
+        ],
       },
       {
         "test": /\\\\\\.\\(svg\\|png\\|jpg\\|gif\\)\\$/i,

@@ -1,0 +1,121 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`fs 1`] = `
+[
+  "/dist/assets/41d56d91.jpg",
+  "/dist/assets/02db17a2.jpg",
+  "/dist/app.4a3083c1.css",
+  "/dist/app.7200f78f.js",
+  "/dist/runtime.9ee7185e.js",
+  "/dist/152.6c9e2cd5.js.LICENSE.txt",
+  "/dist/152.6c9e2cd5.js",
+  "/dist/manifest.json",
+]
+`;
+
+exports[`fs 2`] = `
+[
+  93457,
+  28701,
+  2032,
+  1138,
+  1196,
+  1043,
+  130139,
+  305,
+]
+`;
+
+exports[`fs 3`] = `
+{
+  "assets": undefined,
+  "assetsByChunkName": {
+    "app": [
+      "app.4a3083c1.css",
+      "app.7200f78f.js",
+    ],
+    "runtime": [
+      "runtime.9ee7185e.js",
+    ],
+  },
+  "errors": [],
+  "errorsCount": 0,
+  "filteredAssets": 7,
+  "filteredErrorDetailsCount": 0,
+  "filteredModules": 35,
+  "filteredWarningDetailsCount": 0,
+  "logging": {
+    "webpack.Compilation": {
+      "debug": false,
+      "entries": [],
+      "filteredEntries": 31,
+    },
+    "webpack.Compiler": {
+      "debug": false,
+      "entries": [],
+      "filteredEntries": 9,
+    },
+    "webpack.DefinePlugin": {
+      "debug": false,
+      "entries": [],
+      "filteredEntries": 9,
+    },
+    "webpack.FileSystemInfo": {
+      "debug": false,
+      "entries": [],
+      "filteredEntries": 10,
+    },
+    "webpack.FlagDependencyExportsPlugin": {
+      "debug": false,
+      "entries": [],
+      "filteredEntries": 4,
+    },
+    "webpack.FlagDependencyUsagePlugin": {
+      "debug": false,
+      "entries": [],
+      "filteredEntries": 2,
+    },
+    "webpack.InnerGraphPlugin": {
+      "debug": false,
+      "entries": [],
+      "filteredEntries": 1,
+    },
+    "webpack.ModuleConcatenationPlugin": {
+      "debug": false,
+      "entries": [],
+      "filteredEntries": 8,
+    },
+    "webpack.SideEffectsFlagPlugin": {
+      "debug": false,
+      "entries": [],
+      "filteredEntries": 1,
+    },
+    "webpack.SplitChunksPlugin": {
+      "debug": false,
+      "entries": [],
+      "filteredEntries": 4,
+    },
+    "webpack.buildChunkGraph": {
+      "debug": false,
+      "entries": [],
+      "filteredEntries": 9,
+    },
+  },
+  "modules": undefined,
+  "time": 0,
+  "version": Any<String>,
+  "warnings": [
+    {
+      "message": "Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation The legacy JS API is deprecated and will be removed in Dart Sass 2.0.0.
+
+More info: https://sass-lang.com/d/legacy-js-api
+
+null",
+      "moduleIdentifier": "<PROJECT_ROOT>/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!<PROJECT_ROOT>/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!<PROJECT_ROOT>/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!<PROJECT_ROOT>/example/app.scss",
+      "moduleName": "./example/app.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./example/app.scss",
+    },
+  ],
+  "warningsCount": 1,
+}
+`;
