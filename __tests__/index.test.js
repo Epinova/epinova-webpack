@@ -1,4 +1,4 @@
-const serializer = require('jest-serializer-path');
+const serializer = require('./path-serializer');
 
 const config = require('../config');
 
@@ -40,7 +40,7 @@ test('no duplicate dependencies in example', () => {
         ...examplePackage.devDependencies,
     });
 
-    for (dep of deps) {
+    for (const dep of deps) {
         expect(exampleDeps).not.toContain(dep);
     }
 });

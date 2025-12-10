@@ -1,11 +1,8 @@
-// @jest-environment node
-
 const path = require('path');
 
-require('jest');
 const webpack = require('webpack');
 const { fs, vol } = require('memfs');
-const serializer = require('jest-serializer-path');
+const serializer = require('./path-serializer');
 
 const config = require('../config');
 const addTypeScript = require('../typescript');
@@ -15,25 +12,23 @@ expect.addSnapshotSerializer(serializer);
 // Custom serializer to replace version numbers in snapshots
 // This prevents snapshot failures when dependencies are updated
 expect.addSnapshotSerializer({
-    test: (val) =>
-        typeof val === 'string' &&
-        /\d+\.\d+\.\d+/.test(val) &&
-        !val.includes('<VERSION>'),
-    print: (val) => {
+    serialize(val, config, indentation, depth, refs, printer) {
         // Replace semver versions with placeholder
         const sanitized = val.replace(
             /\b\d+\.\d+\.\d+(-[\w.]+)?\b/g,
             '<VERSION>'
         );
-        return `"${sanitized}"`;
+        return printer(sanitized, config, indentation, depth, refs);
     },
+    test: (val) =>
+        typeof val === 'string' &&
+        /\d+\.\d+\.\d+/.test(val) &&
+        !val.includes('<VERSION>'),
 });
-
-jest.setTimeout(10000);
 
 test('fs', () => {
     expect.assertions(2);
-    Date.now = jest.fn(() => 1482363367071);
+    Date.now = vi.fn(() => 1482363367071);
     fs.mkdirSync('/dist');
 
     const promise = new Promise((resolve, reject) => {
@@ -82,7 +77,7 @@ test('fs', () => {
         const json = vol.toJSON();
 
         // No need to compare jpg content, just check that it is present
-        for (key in json) {
+        for (const key in json) {
             if (key.endsWith('.jpg')) json[key] = key;
         }
 
