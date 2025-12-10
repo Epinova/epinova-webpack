@@ -2,27 +2,13 @@
 
 exports[`fs 1`] = `
 [
-  "/dist/assets/41d56d91.jpg",
-  "/dist/assets/02db17a2.jpg",
-  "/dist/app.4a3083c1.css",
-  "/dist/app.7200f78f.js",
-  "/dist/runtime.9ee7185e.js",
-  "/dist/152.6c9e2cd5.js.LICENSE.txt",
-  "/dist/152.6c9e2cd5.js",
-  "/dist/manifest.json",
+  "/dist",
 ]
 `;
 
 exports[`fs 2`] = `
 [
-  93457,
-  28701,
-  2032,
-  1138,
-  1196,
-  1043,
-  130139,
-  305,
+  undefined,
 ]
 `;
 
@@ -32,17 +18,257 @@ exports[`fs 3`] = `
   "assetsByChunkName": {
     "app": [
       "app.4a3083c1.css",
-      "app.7200f78f.js",
+      "app.0cf5d4b0.js",
     ],
     "runtime": [
       "runtime.9ee7185e.js",
     ],
   },
-  "errors": [],
-  "errorsCount": 0,
-  "filteredAssets": 7,
+  "errors": [
+    {
+      "loc": "1:0-63",
+      "message": "Module not found: Error: Can't resolve 'react/jsx-runtime' in '<PROJECT_ROOT>/example/features/React'",
+      "moduleIdentifier": "<PROJECT_ROOT>/node_modules/ts-loader/index.js??ruleSet[1].rules[4]!<PROJECT_ROOT>/example/features/React/DemoComponent.tsx",
+      "moduleName": "./example/features/React/DemoComponent.tsx",
+    },
+    {
+      "loc": "2:0-33",
+      "message": "Module not found: Error: Can't resolve 'react' in '<PROJECT_ROOT>/example/features/React'
+Did you mean './react'?
+Requests that should resolve in the current directory need to start with './'.
+Requests that start with a name are treated as module requests and resolve within module directories (node_modules).
+If changing the source code is not an option there is also a resolve options called 'preferRelative' which tries to resolve these kind of requests in the current directory too.",
+      "moduleIdentifier": "<PROJECT_ROOT>/node_modules/ts-loader/index.js??ruleSet[1].rules[4]!<PROJECT_ROOT>/example/features/React/DemoComponent.tsx",
+      "moduleName": "./example/features/React/DemoComponent.tsx",
+    },
+    {
+      "loc": "1:0-26",
+      "message": "Module not found: Error: Can't resolve 'react' in '<PROJECT_ROOT>/example'",
+      "moduleIdentifier": "<PROJECT_ROOT>/node_modules/ts-loader/index.js??ruleSet[1].rules[4]!<PROJECT_ROOT>/example/typescript.ts",
+      "moduleName": "./example/typescript.ts",
+    },
+    {
+      "loc": "2:0-33",
+      "message": "Module not found: Error: Can't resolve 'react-dom' in '<PROJECT_ROOT>/example'",
+      "moduleIdentifier": "<PROJECT_ROOT>/node_modules/ts-loader/index.js??ruleSet[1].rules[4]!<PROJECT_ROOT>/example/typescript.ts",
+      "moduleName": "./example/typescript.ts",
+    },
+    {
+      "file": "./example/features/React/DemoComponent.tsx:1:26",
+      "message": "TS2307: Cannot find module 'react' or its corresponding type declarations.
+  [0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m { useState } [36mfrom[39m [32m'react'[39m[33m;[39m
+   [90m   |[39m                          [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 2 |[39m
+   [90m 3 |[39m [36minterface[39m [33mIDemoComponent[39m {
+   [90m 4 |[39m     heading[33m:[39m string[33m;[39m[0m",
+    },
+    {
+      "file": "./example/features/React/DemoComponent.tsx:11:9",
+      "message": "TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+  [0m [90m  9 |[39m
+   [90m 10 |[39m     [36mreturn[39m (
+  [31m[1m>[22m[39m[90m 11 |[39m         [33m<[39m[33mdiv[39m[33m>[39m
+   [90m    |[39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 12 |[39m             [33m<[39m[33mh1[39m[33m>[39m{props[33m.[39mheading}[33m<[39m[33m/[39m[33mh1[39m[33m>[39m
+   [90m 13 |[39m             [33m<[39m[33mp[39m[33m>[39m{active [33m?[39m [32m'active'[39m [33m:[39m [32m'not active'[39m}[33m<[39m[33m/[39m[33mp[39m[33m>[39m
+   [90m 14 |[39m             [33m<[39m[33mbutton[39m onClick[33m=[39m{() [33m=>[39m setActive([33m![39mactive)} type[33m=[39m[32m"button"[39m[33m>[39m[0m",
+    },
+    {
+      "file": "./example/features/React/DemoComponent.tsx:11:9",
+      "message": "TS2307: Cannot find module 'react/jsx-runtime' or its corresponding type declarations.
+  [0m [90m  9 |[39m
+   [90m 10 |[39m     [36mreturn[39m (
+  [31m[1m>[22m[39m[90m 11 |[39m         [33m<[39m[33mdiv[39m[33m>[39m
+   [90m    |[39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+  [31m[1m>[22m[39m[90m 12 |[39m             [33m<[39m[33mh1[39m[33m>[39m{props[33m.[39mheading}[33m<[39m[33m/[39m[33mh1[39m[33m>[39m
+   [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+  [31m[1m>[22m[39m[90m 13 |[39m             [33m<[39m[33mp[39m[33m>[39m{active [33m?[39m [32m'active'[39m [33m:[39m [32m'not active'[39m}[33m<[39m[33m/[39m[33mp[39m[33m>[39m
+   [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+  [31m[1m>[22m[39m[90m 14 |[39m             [33m<[39m[33mbutton[39m onClick[33m=[39m{() [33m=>[39m setActive([33m![39mactive)} type[33m=[39m[32m"button"[39m[33m>[39m
+   [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+  [31m[1m>[22m[39m[90m 15 |[39m                 toggle active
+   [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+  [31m[1m>[22m[39m[90m 16 |[39m             [33m<[39m[33m/[39m[33mbutton[39m[33m>[39m
+   [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+  [31m[1m>[22m[39m[90m 17 |[39m         [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+   [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 18 |[39m     )[33m;[39m
+   [90m 19 |[39m }[33m;[39m
+   [90m 20 |[39m[0m",
+    },
+    {
+      "file": "./example/features/React/DemoComponent.tsx:12:13",
+      "message": "TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+  [0m [90m 10 |[39m     [36mreturn[39m (
+   [90m 11 |[39m         [33m<[39m[33mdiv[39m[33m>[39m
+  [31m[1m>[22m[39m[90m 12 |[39m             [33m<[39m[33mh1[39m[33m>[39m{props[33m.[39mheading}[33m<[39m[33m/[39m[33mh1[39m[33m>[39m
+   [90m    |[39m             [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 13 |[39m             [33m<[39m[33mp[39m[33m>[39m{active [33m?[39m [32m'active'[39m [33m:[39m [32m'not active'[39m}[33m<[39m[33m/[39m[33mp[39m[33m>[39m
+   [90m 14 |[39m             [33m<[39m[33mbutton[39m onClick[33m=[39m{() [33m=>[39m setActive([33m![39mactive)} type[33m=[39m[32m"button"[39m[33m>[39m
+   [90m 15 |[39m                 toggle active[0m",
+    },
+    {
+      "file": "./example/features/React/DemoComponent.tsx:12:32",
+      "message": "TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+  [0m [90m 10 |[39m     [36mreturn[39m (
+   [90m 11 |[39m         [33m<[39m[33mdiv[39m[33m>[39m
+  [31m[1m>[22m[39m[90m 12 |[39m             [33m<[39m[33mh1[39m[33m>[39m{props[33m.[39mheading}[33m<[39m[33m/[39m[33mh1[39m[33m>[39m
+   [90m    |[39m                                [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 13 |[39m             [33m<[39m[33mp[39m[33m>[39m{active [33m?[39m [32m'active'[39m [33m:[39m [32m'not active'[39m}[33m<[39m[33m/[39m[33mp[39m[33m>[39m
+   [90m 14 |[39m             [33m<[39m[33mbutton[39m onClick[33m=[39m{() [33m=>[39m setActive([33m![39mactive)} type[33m=[39m[32m"button"[39m[33m>[39m
+   [90m 15 |[39m                 toggle active[0m",
+    },
+    {
+      "file": "./example/features/React/DemoComponent.tsx:13:13",
+      "message": "TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+  [0m [90m 11 |[39m         [33m<[39m[33mdiv[39m[33m>[39m
+   [90m 12 |[39m             [33m<[39m[33mh1[39m[33m>[39m{props[33m.[39mheading}[33m<[39m[33m/[39m[33mh1[39m[33m>[39m
+  [31m[1m>[22m[39m[90m 13 |[39m             [33m<[39m[33mp[39m[33m>[39m{active [33m?[39m [32m'active'[39m [33m:[39m [32m'not active'[39m}[33m<[39m[33m/[39m[33mp[39m[33m>[39m
+   [90m    |[39m             [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 14 |[39m             [33m<[39m[33mbutton[39m onClick[33m=[39m{() [33m=>[39m setActive([33m![39mactive)} type[33m=[39m[32m"button"[39m[33m>[39m
+   [90m 15 |[39m                 toggle active
+   [90m 16 |[39m             [33m<[39m[33m/[39m[33mbutton[39m[33m>[39m[0m",
+    },
+    {
+      "file": "./example/features/React/DemoComponent.tsx:13:50",
+      "message": "TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+  [0m [90m 11 |[39m         [33m<[39m[33mdiv[39m[33m>[39m
+   [90m 12 |[39m             [33m<[39m[33mh1[39m[33m>[39m{props[33m.[39mheading}[33m<[39m[33m/[39m[33mh1[39m[33m>[39m
+  [31m[1m>[22m[39m[90m 13 |[39m             [33m<[39m[33mp[39m[33m>[39m{active [33m?[39m [32m'active'[39m [33m:[39m [32m'not active'[39m}[33m<[39m[33m/[39m[33mp[39m[33m>[39m
+   [90m    |[39m                                                  [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 14 |[39m             [33m<[39m[33mbutton[39m onClick[33m=[39m{() [33m=>[39m setActive([33m![39mactive)} type[33m=[39m[32m"button"[39m[33m>[39m
+   [90m 15 |[39m                 toggle active
+   [90m 16 |[39m             [33m<[39m[33m/[39m[33mbutton[39m[33m>[39m[0m",
+    },
+    {
+      "file": "./example/features/React/DemoComponent.tsx:14:13",
+      "message": "TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+  [0m [90m 12 |[39m             [33m<[39m[33mh1[39m[33m>[39m{props[33m.[39mheading}[33m<[39m[33m/[39m[33mh1[39m[33m>[39m
+   [90m 13 |[39m             [33m<[39m[33mp[39m[33m>[39m{active [33m?[39m [32m'active'[39m [33m:[39m [32m'not active'[39m}[33m<[39m[33m/[39m[33mp[39m[33m>[39m
+  [31m[1m>[22m[39m[90m 14 |[39m             [33m<[39m[33mbutton[39m onClick[33m=[39m{() [33m=>[39m setActive([33m![39mactive)} type[33m=[39m[32m"button"[39m[33m>[39m
+   [90m    |[39m             [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 15 |[39m                 toggle active
+   [90m 16 |[39m             [33m<[39m[33m/[39m[33mbutton[39m[33m>[39m
+   [90m 17 |[39m         [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m[0m",
+    },
+    {
+      "file": "./example/features/React/DemoComponent.tsx:16:13",
+      "message": "TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+  [0m [90m 14 |[39m             [33m<[39m[33mbutton[39m onClick[33m=[39m{() [33m=>[39m setActive([33m![39mactive)} type[33m=[39m[32m"button"[39m[33m>[39m
+   [90m 15 |[39m                 toggle active
+  [31m[1m>[22m[39m[90m 16 |[39m             [33m<[39m[33m/[39m[33mbutton[39m[33m>[39m
+   [90m    |[39m             [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 17 |[39m         [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+   [90m 18 |[39m     )[33m;[39m
+   [90m 19 |[39m }[33m;[39m[0m",
+    },
+    {
+      "file": "./example/features/React/DemoComponent.tsx:17:9",
+      "message": "TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+  [0m [90m 15 |[39m                 toggle active
+   [90m 16 |[39m             [33m<[39m[33m/[39m[33mbutton[39m[33m>[39m
+  [31m[1m>[22m[39m[90m 17 |[39m         [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+   [90m    |[39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 18 |[39m     )[33m;[39m
+   [90m 19 |[39m }[33m;[39m
+   [90m 20 |[39m[0m",
+    },
+    {
+      "file": "./example/features/React/server.ts:1:19",
+      "message": "TS2307: Cannot find module 'react' or its corresponding type declarations.
+  [0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+   [90m   |[39m                   [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 2 |[39m [36mimport[39m [33mReactDOM[39m [36mfrom[39m [32m'react-dom'[39m[33m;[39m
+   [90m 3 |[39m [36mimport[39m [33mReactDOMServer[39m [36mfrom[39m [32m'react-dom/server'[39m[33m;[39m
+   [90m 4 |[39m[0m",
+    },
+    {
+      "file": "./example/features/React/server.ts:2:22",
+      "message": "TS2307: Cannot find module 'react-dom' or its corresponding type declarations.
+  [0m [90m 1 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+  [31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m [33mReactDOM[39m [36mfrom[39m [32m'react-dom'[39m[33m;[39m
+   [90m   |[39m                      [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 3 |[39m [36mimport[39m [33mReactDOMServer[39m [36mfrom[39m [32m'react-dom/server'[39m[33m;[39m
+   [90m 4 |[39m
+   [90m 5 |[39m [36mimport[39m [33mDemoComponent[39m [36mfrom[39m [32m'./DemoComponent'[39m[33m;[39m[0m",
+    },
+    {
+      "file": "./example/features/React/server.ts:3:28",
+      "message": "TS2307: Cannot find module 'react-dom/server' or its corresponding type declarations.
+  [0m [90m 1 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+   [90m 2 |[39m [36mimport[39m [33mReactDOM[39m [36mfrom[39m [32m'react-dom'[39m[33m;[39m
+  [31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mReactDOMServer[39m [36mfrom[39m [32m'react-dom/server'[39m[33m;[39m
+   [90m   |[39m                            [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 4 |[39m
+   [90m 5 |[39m [36mimport[39m [33mDemoComponent[39m [36mfrom[39m [32m'./DemoComponent'[39m[33m;[39m
+   [90m 6 |[39m[0m",
+    },
+    {
+      "file": "./example/features/React/server.ts:11:8",
+      "message": "TS7017: Element implicitly has an 'any' type because type 'typeof globalThis' has no index signature.
+  [0m [90m  9 |[39m }
+   [90m 10 |[39m
+  [31m[1m>[22m[39m[90m 11 |[39m global[33m.[39m[33mReact[39m [33m=[39m [33mReact[39m[33m;[39m
+   [90m    |[39m        [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 12 |[39m global[33m.[39m[33mReactDOM[39m [33m=[39m [33mReactDOM[39m[33m;[39m
+   [90m 13 |[39m global[33m.[39m[33mReactDOMServer[39m [33m=[39m [33mReactDOMServer[39m[33m;[39m
+   [90m 14 |[39m[0m",
+    },
+    {
+      "file": "./example/features/React/server.ts:12:8",
+      "message": "TS7017: Element implicitly has an 'any' type because type 'typeof globalThis' has no index signature.
+  [0m [90m 10 |[39m
+   [90m 11 |[39m global[33m.[39m[33mReact[39m [33m=[39m [33mReact[39m[33m;[39m
+  [31m[1m>[22m[39m[90m 12 |[39m global[33m.[39m[33mReactDOM[39m [33m=[39m [33mReactDOM[39m[33m;[39m
+   [90m    |[39m        [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 13 |[39m global[33m.[39m[33mReactDOMServer[39m [33m=[39m [33mReactDOMServer[39m[33m;[39m
+   [90m 14 |[39m
+   [90m 15 |[39m global[33m.[39m[33mComponents[39m [33m=[39m {[0m",
+    },
+    {
+      "file": "./example/features/React/server.ts:13:8",
+      "message": "TS7017: Element implicitly has an 'any' type because type 'typeof globalThis' has no index signature.
+  [0m [90m 11 |[39m global[33m.[39m[33mReact[39m [33m=[39m [33mReact[39m[33m;[39m
+   [90m 12 |[39m global[33m.[39m[33mReactDOM[39m [33m=[39m [33mReactDOM[39m[33m;[39m
+  [31m[1m>[22m[39m[90m 13 |[39m global[33m.[39m[33mReactDOMServer[39m [33m=[39m [33mReactDOMServer[39m[33m;[39m
+   [90m    |[39m        [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 14 |[39m
+   [90m 15 |[39m global[33m.[39m[33mComponents[39m [33m=[39m {
+   [90m 16 |[39m     [33mDemoComponent[39m[33m,[39m[0m",
+    },
+    {
+      "file": "./example/features/Vue/vue.ts:1:17",
+      "message": "TS2307: Cannot find module 'vue' or its corresponding type declarations.
+  [0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [33mVue[39m [36mfrom[39m [32m'vue'[39m[33m;[39m
+   [90m   |[39m                 [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 2 |[39m
+   [90m 3 |[39m [36mimport[39m [33mDemoComponent[39m [36mfrom[39m [32m'./DemoComponent.vue'[39m[33m;[39m
+   [90m 4 |[39m[0m",
+    },
+    {
+      "file": "./example/typescript.ts:1:19",
+      "message": "TS2307: Cannot find module 'react' or its corresponding type declarations.
+  [0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+   [90m   |[39m                   [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 2 |[39m [36mimport[39m [33mReactDOM[39m [36mfrom[39m [32m'react-dom'[39m[33m;[39m
+   [90m 3 |[39m
+   [90m 4 |[39m [36mimport[39m [33mDemoComponent[39m [36mfrom[39m [32m'./features/React/DemoComponent'[39m[33m;[39m[0m",
+    },
+    {
+      "file": "./example/typescript.ts:2:22",
+      "message": "TS2307: Cannot find module 'react-dom' or its corresponding type declarations.
+  [0m [90m 1 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+  [31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m [33mReactDOM[39m [36mfrom[39m [32m'react-dom'[39m[33m;[39m
+   [90m   |[39m                      [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 3 |[39m
+   [90m 4 |[39m [36mimport[39m [33mDemoComponent[39m [36mfrom[39m [32m'./features/React/DemoComponent'[39m[33m;[39m
+   [90m 5 |[39m[0m",
+    },
+  ],
+  "errorsCount": 23,
+  "filteredAssets": 6,
   "filteredErrorDetailsCount": 0,
-  "filteredModules": 35,
+  "filteredModules": 26,
   "filteredWarningDetailsCount": 0,
   "logging": {
     "webpack.Compilation": {
@@ -53,12 +279,7 @@ exports[`fs 3`] = `
     "webpack.Compiler": {
       "debug": false,
       "entries": [],
-      "filteredEntries": 9,
-    },
-    "webpack.DefinePlugin": {
-      "debug": false,
-      "entries": [],
-      "filteredEntries": 9,
+      "filteredEntries": 5,
     },
     "webpack.FileSystemInfo": {
       "debug": false,
