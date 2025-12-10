@@ -11,7 +11,7 @@ exports[`development 1`] = `
     "headers": {
       "Access-Control-Allow-Origin": "*",
     },
-    "host": "0.0.0.0",
+    "host": "<VERSION>.0",
     "port": 8080,
     "server": "https",
   },
@@ -95,8 +95,8 @@ exports[`development 1`] = `
                 "compileAsync": [Function],
                 "compileString": [Function],
                 "compileStringAsync": [Function],
-                "info": "dart-sass	1.63.2	(Sass Compiler)	[Dart]
-dart2js	3.0.3	(Dart Compiler)	[Dart]",
+                "info": "dart-sass	<VERSION>	(Sass Compiler)	[Dart]
+dart2js	<VERSION>	(Dart Compiler)	[Dart]",
                 "load": [Function],
                 "render": [Function],
                 "renderSync": [Function],
@@ -264,7 +264,7 @@ exports[`production 1`] = `
     "headers": {
       "Access-Control-Allow-Origin": "*",
     },
-    "host": "0.0.0.0",
+    "host": "<VERSION>.0",
     "port": 8080,
     "server": "https",
   },
@@ -348,8 +348,8 @@ exports[`production 1`] = `
                 "compileAsync": [Function],
                 "compileString": [Function],
                 "compileStringAsync": [Function],
-                "info": "dart-sass	1.63.2	(Sass Compiler)	[Dart]
-dart2js	3.0.3	(Dart Compiler)	[Dart]",
+                "info": "dart-sass	<VERSION>	(Sass Compiler)	[Dart]
+dart2js	<VERSION>	(Dart Compiler)	[Dart]",
                 "load": [Function],
                 "render": [Function],
                 "renderSync": [Function],
