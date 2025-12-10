@@ -4,6 +4,23 @@ const config = require('../config');
 
 expect.addSnapshotSerializer(serializer);
 
+// Custom serializer to replace version numbers in snapshots
+// This prevents snapshot failures when dependencies are updated
+expect.addSnapshotSerializer({
+    test: (val) =>
+        typeof val === 'string' &&
+        /\d+\.\d+\.\d+/.test(val) &&
+        !val.includes('<VERSION>'),
+    print: (val) => {
+        // Replace semver versions with placeholder
+        const sanitized = val.replace(
+            /\b\d+\.\d+\.\d+(-[\w.]+)?\b/g,
+            '<VERSION>'
+        );
+        return `"${sanitized}"`;
+    },
+});
+
 test('errors', () => {
     expect(() => config(undefined)).toThrowError();
     expect(() => config('dist', {})).toThrowError();

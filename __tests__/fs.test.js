@@ -5,9 +5,29 @@ const path = require('path');
 require('jest');
 const webpack = require('webpack');
 const { fs, vol } = require('memfs');
+const serializer = require('jest-serializer-path');
 
 const config = require('../config');
 const addTypeScript = require('../typescript');
+
+expect.addSnapshotSerializer(serializer);
+
+// Custom serializer to replace version numbers in snapshots
+// This prevents snapshot failures when dependencies are updated
+expect.addSnapshotSerializer({
+    test: (val) =>
+        typeof val === 'string' &&
+        /\d+\.\d+\.\d+/.test(val) &&
+        !val.includes('<VERSION>'),
+    print: (val) => {
+        // Replace semver versions with placeholder
+        const sanitized = val.replace(
+            /\b\d+\.\d+\.\d+(-[\w.]+)?\b/g,
+            '<VERSION>'
+        );
+        return `"${sanitized}"`;
+    },
+});
 
 jest.setTimeout(10000);
 
