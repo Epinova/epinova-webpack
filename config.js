@@ -1,8 +1,8 @@
 // @ts-check
 /**
  * @typedef {import('webpack').Configuration} Configuration
- * @typedef {{mode?: 'development' | 'production' | 'none', env: Environment }} Arguments
- * @typedef {Record<string, string | boolean | undefined>} Environment
+ * @typedef {import('webpack-cli').Argv} Argv
+ * @typedef {Argv['env'] & Record<string, string | boolean | undefined>} Env
  */
 
 const path = require('path');
@@ -30,8 +30,8 @@ const defaultOptions = {
 
 /**
  * @param {Partial<typeof defaultOptions>} userOptions
- * @param {(config: Configuration, env: Environment, argv: Arguments) => Configuration} callback
- * @returns {(env: Environment, argv: Arguments) => Configuration}
+ * @param {(config: Configuration, env: Env, argv: Argv) => Configuration} callback
+ * @returns {(env: Env, argv: Argv) => Configuration}
  */
 module.exports = function (userOptions, callback) {
     if (typeof userOptions !== 'object') {
@@ -58,8 +58,7 @@ module.exports = function (userOptions, callback) {
     const options = Object.assign({}, defaultOptions, userOptions);
 
     return function (env, argv) {
-        const isDevServer =
-            env.WEBPACK_SERVE === 'true' || env.WEBPACK_SERVE === true;
+        const isDevServer = env.WEBPACK_SERVE === true;
 
         let publicPath =
             'http://localhost' +
@@ -135,7 +134,8 @@ module.exports = function (userOptions, callback) {
                                     importLoaders: 2,
                                     sourceMap: true,
                                     url: {
-                                        filter: (url) => !url.startsWith('/'),
+                                        filter: (/** @type {string} */ url) =>
+                                            !url.startsWith('/'),
                                     },
                                 },
                             },
