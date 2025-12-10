@@ -62,7 +62,7 @@ jobs:
 
       - name: Verify webpack build works
         working-directory: example
-        run: npx webpack --mode production
+        run: npm run build
 
   package-check:
     name: Package Check
