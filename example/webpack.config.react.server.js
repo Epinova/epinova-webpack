@@ -11,7 +11,7 @@ module.exports = epinovaWebpackServerConfig(
         config.name = 'Server React';
 
         config.entry = {
-            server: './Features/React/server.ts',
+            server: './features/React/server.ts',
         };
 
         addTypeScript(config, {
