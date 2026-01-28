@@ -13,31 +13,36 @@ Default Webpack configuration for Epinova Webpack projects
 
 # Release Notes
 
+## 2.0.0
+
+- Upgrade peer dependency to webpack-dev-server v5 (Node.js >= 18.12.0 required by dev server)
+- No config changes required for this package; consumers should review devServer proxy/middleware changes if used
+
 ## 1.7.1
 
--   Fix assets in manfiest JSON output not including public path.
+- Fix assets in manfiest JSON output not including public path.
 
 ## 1.7.0
 
--   Add JSDoc types and TypeScript checking to all configs
--   HTTPS is now default for webpack-dev-server, see the [HTTPS](#https) section on how to switch to HTTP
--   Add alert if using webpack's self signed certificate
--   Add `addCertificate()` helper to assist with adding a custom certificate
--   Readd support for "assets" section in manifest output (eg. sprite.svg from SVGSpritePlugin)
+- Add JSDoc types and TypeScript checking to all configs
+- HTTPS is now default for webpack-dev-server, see the [HTTPS](#https) section on how to switch to HTTP
+- Add alert if using webpack's self signed certificate
+- Add `addCertificate()` helper to assist with adding a custom certificate
+- Readd support for "assets" section in manifest output (eg. sprite.svg from SVGSpritePlugin)
 
 ## 1.6.0
 
--   Webpack 5
--   Support for Node 17+
+- Webpack 5
+- Support for Node 17+
 
 ## 1.4.4
 
--   Fixes issue with assets missing in manifest.json
+- Fixes issue with assets missing in manifest.json
 
 ## 1.4.3
 
--   Added support for .tsx files in base configuration (React support)
--   Added `addVue()` method to server configuration to simplify Vue SSR configuration.
+- Added support for .tsx files in base configuration (React support)
+- Added `addVue()` method to server configuration to simplify Vue SSR configuration.
 
 # Usage
 
@@ -96,7 +101,7 @@ module.exports = epinovaWebpackConfig(
         });
 
         return config;
-    }
+    },
 );
 ```
 
@@ -123,7 +128,7 @@ module.exports = epinovaWebpackConfig(
         ]);
 
         return config;
-    }
+    },
 );
 ```
 
