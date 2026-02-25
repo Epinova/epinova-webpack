@@ -13,6 +13,10 @@ Default Webpack configuration for Epinova Webpack projects
 
 # Release Notes
 
+## 1.7.2
+
+-   Update dependencies
+
 ## 1.7.1
 
 -   Fix assets in manfiest JSON output not including public path.
