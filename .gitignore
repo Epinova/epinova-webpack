@@ -8,6 +8,16 @@ node_modules/
 # Garbage
 Thumbs.db
 .DS_Store
+# Local secrets and certificates
+.env
+.env.*
+.npmrc
+*.pfx
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
 # Project
 example/dist
 example/wwwroot/dist

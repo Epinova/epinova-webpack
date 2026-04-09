@@ -50,6 +50,12 @@
     "engines": {
         "node": ">=18.12.0"
     },
+    "files": [
+        "*.js",
+        "README.md",
+        "LICENSE",
+        "MIGRATION_1.6.md"
+    ],
     "license": "MIT",
     "main": "config.js",
     "name": "@epinova/webpack",
